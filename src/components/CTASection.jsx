@@ -38,7 +38,7 @@ export default function CTASection() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="tel:+10000000000"
+                href="tel:+923338640860"
                 className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-all hover:scale-[1.03]"
               >
                 <Phone size={16} />

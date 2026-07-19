@@ -133,13 +133,13 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} className="mt-0.5 shrink-0 text-cyber" />
-                <a href="tel:+10000000000" className="transition-colors hover:text-cyber">
-                  +1 (000) 000-0000
+                <a href="tel:+923338640860" className="transition-colors hover:text-cyber">
+                  +92 333 8640860
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-cyber" />
-                <span>Remote-first · Serving clients worldwide</span>
+                <span>F-15, Islamabad, Pakistan</span>
               </li>
             </ul>
           </div>
