@@ -110,7 +110,7 @@ export default function CTASection() {
               </p>
 
               <a
-                href="https://calendly.com/adeel-zixer11/new-meeting"
+                href="https://calendly.com/blyskode/30min"
                 target="_blank"
                 rel="noreferrer"
                 className="group mt-8 inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter,box-shadow] hover:brightness-110"
