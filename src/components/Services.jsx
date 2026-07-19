@@ -22,7 +22,6 @@ const SERVICES = [
     icon: Code2,
     title: 'Full Stack Development',
     desc: 'End-to-end web applications built with modern frameworks, robust APIs, and scalable databases.',
-    featured: true,
   },
   {
     icon: BrainCircuit,
@@ -43,7 +42,6 @@ const SERVICES = [
     icon: Cloud,
     title: 'Cloud Services',
     desc: 'AWS, Azure, GCP, HuaweiCloud, Digital Ocean, Ali Baba, and more — architected for cost and scale.',
-    featured: true,
   },
   {
     icon: Layers,
@@ -82,7 +80,7 @@ const SERVICES = [
   },
 ]
 
-function ServiceCard({ icon: Icon, title, desc, featured }) {
+function ServiceCard({ icon: Icon, title, desc }) {
   const card = useRef(null)
 
   const { contextSafe } = useGSAP({ scope: card })
@@ -119,9 +117,7 @@ function ServiceCard({ icon: Icon, title, desc, featured }) {
       onMouseMove={onMove}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      className={`service-card spotlight-card group rounded-2xl border border-edge bg-panel/60 p-6 backdrop-blur transition-colors duration-300 hover:border-cyber/40 ${
-        featured ? 'md:col-span-2' : ''
-      }`}
+      className="service-card spotlight-card group rounded-2xl border border-edge bg-panel/60 p-6 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
     >
       <div className="card-icon mb-5 inline-grid size-12 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
         <Icon size={22} />
