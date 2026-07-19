@@ -1,0 +1,46 @@
+import { useRef } from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
+
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import WhyChooseUs from './components/WhyChooseUs'
+import CTASection from './components/CTASection'
+import Footer from './components/Footer'
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
+
+export default function App() {
+  const wrapper = useRef(null)
+  const content = useRef(null)
+
+  useGSAP(() => {
+    ScrollSmoother.create({
+      wrapper: wrapper.current,
+      content: content.current,
+      smooth: 1.2,
+      effects: true,
+      normalizeScroll: true,
+    })
+  })
+
+  return (
+    <>
+      <Navbar />
+      <div id="smooth-wrapper" ref={wrapper}>
+        <div id="smooth-content" ref={content}>
+          <main>
+            <Hero />
+            <Services />
+            <WhyChooseUs />
+            <CTASection />
+          </main>
+          <Footer />
+        </div>
+      </div>
+    </>
+  )
+}
