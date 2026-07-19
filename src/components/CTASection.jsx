@@ -1,10 +1,11 @@
 import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ArrowRight, CalendarDays, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { ArrowRight, CalendarDays, CheckCircle2, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { prefersReducedMotion } from '../lib/motion'
 
-const CONTACT_EMAIL = 'hello@blyskode.com'
+const CONTACT_EMAIL = 'blyskode@gmail.com'
+const WEB3FORMS_KEY = '3cb72e6b-caef-404a-8488-f16790ea2b8c'
 
 const SERVICES = [
   'Product Engineering',
@@ -23,37 +24,55 @@ const TIMELINES = ['ASAP', '1 – 3 months', '3 – 6 months', 'Flexible']
 const inputClasses =
   'w-full rounded-xl border border-edge bg-surface px-4 py-3 text-sm text-white placeholder:text-muted/70 focus:border-cyber/60 focus:outline-none'
 
+const EMPTY_FORM = {
+  name: '',
+  email: '',
+  company: '',
+  service: SERVICES[0],
+  budget: BUDGETS[0],
+  timeline: TIMELINES[0],
+  message: '',
+  botcheck: '',
+}
+
 export default function CTASection() {
   const root = useRef(null)
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    company: '',
-    service: SERVICES[0],
-    budget: BUDGETS[0],
-    timeline: TIMELINES[0],
-    message: '',
-  })
+  const [form, setForm] = useState(EMPTY_FORM)
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
 
   const set = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }))
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = `Project inquiry — ${form.service} (${form.name})`
-    const body = [
-      `Name: ${form.name}`,
-      `Work email: ${form.email}`,
-      `Company: ${form.company}`,
-      `Service: ${form.service}`,
-      `Budget: ${form.budget}`,
-      `Timeline: ${form.timeline}`,
-      '',
-      'Project description:',
-      form.message,
-    ].join('\n')
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`
+    setStatus('sending')
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Project inquiry — ${form.service} (${form.name})`,
+          from_name: 'Blyskode Website',
+          botcheck: form.botcheck,
+          Name: form.name,
+          'Work Email': form.email,
+          Company: form.company,
+          Service: form.service,
+          Budget: form.budget,
+          Timeline: form.timeline,
+          'Project Description': form.message,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setStatus('success')
+        setForm(EMPTY_FORM)
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   useGSAP(
@@ -128,6 +147,17 @@ export default function CTASection() {
               onSubmit={handleSubmit}
               className="rounded-2xl border border-edge bg-surface/60 p-6 backdrop-blur md:p-8"
             >
+              {/* Honeypot — humans never see it, bots fill it and get rejected */}
+              <input
+                type="text"
+                name="botcheck"
+                value={form.botcheck}
+                onChange={set('botcheck')}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute -left-[9999px] h-0 w-0 opacity-0"
+              />
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label htmlFor="inq-name" className="mb-1.5 block text-xs font-medium text-muted">
@@ -250,11 +280,31 @@ export default function CTASection() {
               </div>
               <button
                 type="submit"
-                className="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-cyber/40 bg-cyber/10 px-6 py-3 text-sm font-semibold text-cyber transition-colors hover:bg-cyber/20"
+                disabled={status === 'sending'}
+                className="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-cyber/40 bg-cyber/10 px-6 py-3 text-sm font-semibold text-cyber transition-colors hover:bg-cyber/20 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <Send size={15} />
-                Send Inquiry
+                {status === 'sending' ? 'Sending…' : 'Send Inquiry'}
               </button>
+
+              {status === 'success' && (
+                <p
+                  role="status"
+                  className="mt-4 flex items-center gap-2 rounded-xl border border-cyber/30 bg-cyber/10 px-4 py-3 text-sm text-cyber"
+                >
+                  <CheckCircle2 size={16} className="shrink-0" />
+                  Thanks — your inquiry has been sent. We&apos;ll reply within 24 hours.
+                </p>
+              )}
+              {status === 'error' && (
+                <p
+                  role="alert"
+                  className="mt-4 rounded-xl border border-magenta/40 bg-magenta/10 px-4 py-3 text-sm text-magenta"
+                >
+                  Something went wrong sending your inquiry. Please try again, or email us
+                  directly at {CONTACT_EMAIL}.
+                </p>
+              )}
             </form>
           </div>
         </div>

@@ -128,8 +128,8 @@ export default function Footer() {
             <ul className="mt-5 space-y-4 text-sm text-muted">
               <li className="flex items-start gap-3">
                 <Mail size={16} className="mt-0.5 shrink-0 text-cyber" />
-                <a href="mailto:hello@blyskode.com" className="transition-colors hover:text-cyber">
-                  hello@blyskode.com
+                <a href="mailto:blyskode@gmail.com" className="transition-colors hover:text-cyber">
+                  blyskode@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
