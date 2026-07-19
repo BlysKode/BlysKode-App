@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ArrowRight, Mail } from 'lucide-react'
+import { ArrowRight, Mail, Phone } from 'lucide-react'
 
 export default function CTASection() {
   const root = useRef(null)
@@ -38,18 +38,19 @@ export default function CTASection() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="mailto:hello@blyskode.com"
+                href="tel:+10000000000"
                 className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-all hover:scale-[1.03]"
               >
-                <Mail size={16} />
-                hello@blyskode.com
+                <Phone size={16} />
+                Schedule a Call
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href="tel:+10000000000"
+                href="mailto:hello@blyskode.com"
                 className="inline-flex items-center gap-2 rounded-full border border-edge bg-surface px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:border-cyber/50"
               >
-                Schedule a Call
+                <Mail size={16} />
+                hello@blyskode.com
               </a>
             </div>
           </div>
