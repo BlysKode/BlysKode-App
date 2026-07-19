@@ -1,14 +1,20 @@
-import { useRef } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ArrowRight, Sparkles } from 'lucide-react'
-import HeroScene from './three/HeroScene'
+
+// Loaded lazily so three.js/R3F never block first paint or LCP
+const HeroScene = lazy(() => import('./three/HeroScene'))
 
 const HEADLINE = 'Transforming Businesses with Modern AI & Cloud Solutions'
 
 export default function Hero() {
   const root = useRef(null)
+  // The canvas mounts after hydration only — it has no SEO content, and
+  // skipping it during SSR keeps server and client markup identical.
+  const [showScene, setShowScene] = useState(false)
+  useEffect(() => setShowScene(true), [])
 
   useGSAP(
     () => {
@@ -16,9 +22,9 @@ export default function Hero() {
       tl.from('.hero-word', {
         yPercent: 120,
         opacity: 0,
-        duration: 1.1,
-        stagger: 0.06,
-        delay: 0.35,
+        duration: 0.9,
+        stagger: 0.045,
+        delay: 0.1,
       })
         .from('.hero-sub', { y: 30, opacity: 0, duration: 0.9 }, '-=0.7')
         .from('.hero-cta', { y: 24, opacity: 0, duration: 0.8, stagger: 0.12 }, '-=0.6')
@@ -50,7 +56,11 @@ export default function Hero() {
     <section id="home" ref={root} className="relative flex min-h-svh items-center overflow-hidden">
       {/* 3D background */}
       <div className="absolute inset-0">
-        <HeroScene />
+        {showScene && (
+          <Suspense fallback={null}>
+            <HeroScene />
+          </Suspense>
+        )}
       </div>
 
       {/* Soft vignettes so text stays readable over the canvas */}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blys-kode-app.vercel.app/sitemap.xml

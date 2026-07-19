@@ -4,20 +4,101 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05060a" />
+
+    <title>Blyskode — Modern AI & Cloud Solutions | Software Agency</title>
     <meta
       name="description"
-      content="Blyskode — Transforming Businesses with Modern AI & Cloud Solutions. Full stack development, AI engineering, DevOps, cloud services and more."
+      content="Blyskode transforms businesses with modern AI & cloud solutions: full stack development, AI engineering & automation, DevOps, cloud services (AWS, Azure, GCP), mobile apps, QA and more."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://blys-kode-app.vercel.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Blyskode" />
+    <meta property="og:title" content="Blyskode — Modern AI & Cloud Solutions" />
+    <meta
+      property="og:description"
+      content="Full stack development, AI engineering & automation, DevOps, cloud services, mobile apps, QA and more — engineered for scale."
+    />
+    <meta property="og:url" content="https://blys-kode-app.vercel.app/" />
+    <meta property="og:image" content="https://blys-kode-app.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blyskode — Modern AI & Cloud Solutions" />
+    <meta
+      name="twitter:description"
+      content="Full stack development, AI engineering & automation, DevOps, cloud services, mobile apps, QA and more — engineered for scale."
+    />
+    <meta name="twitter:image" content="https://blys-kode-app.vercel.app/og.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Blyskode — Modern AI & Cloud Solutions</title>
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://blys-kode-app.vercel.app/#organization",
+            "name": "Blyskode",
+            "url": "https://blys-kode-app.vercel.app/",
+            "logo": "https://blys-kode-app.vercel.app/favicon.svg",
+            "email": "hello@blyskode.com",
+            "description": "Blyskode transforms businesses with modern AI & cloud solutions — from full stack development and AI engineering to DevOps, cloud services and quality assurance.",
+            "sameAs": []
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://blys-kode-app.vercel.app/#website",
+            "url": "https://blys-kode-app.vercel.app/",
+            "name": "Blyskode — Modern AI & Cloud Solutions",
+            "publisher": { "@id": "https://blys-kode-app.vercel.app/#organization" }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://blys-kode-app.vercel.app/#service",
+            "name": "Blyskode",
+            "url": "https://blys-kode-app.vercel.app/",
+            "image": "https://blys-kode-app.vercel.app/og.png",
+            "priceRange": "$$",
+            "areaServed": "Worldwide",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Blyskode Services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Stack Development", "description": "End-to-end web applications built with modern frameworks, robust APIs, and scalable databases." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Engineering", "description": "Custom LLM integrations, machine learning pipelines, and intelligent product features." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation", "description": "Agentic workflows and process automation that eliminate repetitive work at scale." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DevOps Engineering", "description": "CI/CD pipelines, infrastructure as code, and observability for shipping with confidence." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Services", "description": "AWS, Azure, GCP, HuaweiCloud, Digital Ocean, Ali Baba and more — architected for cost and scale." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multi-Platform Deployment", "description": "Seamless deployments across cloud providers and VPS servers with zero-downtime strategies." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "End-to-End Recruitment", "description": "Sourcing, vetting, and onboarding top technical talent tailored to your team." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile Application Development", "description": "Native and cross-platform mobile apps with polished UX for iOS and Android." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development", "description": "Bespoke platforms and internal tools engineered around your exact business logic." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Digital Marketing", "description": "Data-driven growth strategies that increase visibility and convert traffic into revenue." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content & Blog Writing", "description": "Technical and marketing content that builds authority and engages your audience." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quality Assurance (QA)", "description": "Automated and manual testing that keeps every release stable, secure, and regression-free." } }
+              ]
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
