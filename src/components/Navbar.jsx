@@ -46,7 +46,9 @@ export default function Navbar() {
           <span className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-cyber to-neon text-ink">
             <Zap size={18} strokeWidth={2.5} />
           </span>
-          Blys<span className="text-gradient">kode</span>
+          <span>
+            Blys<span className="text-gradient">kode</span>
+          </span>
         </button>
 
         <ul className="hidden items-center gap-8 md:flex">

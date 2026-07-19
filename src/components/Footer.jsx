@@ -58,7 +58,9 @@ export default function Footer() {
               <span className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-cyber to-neon text-ink">
                 <Zap size={18} strokeWidth={2.5} />
               </span>
-              Blys<span className="text-gradient">kode</span>
+              <span>
+                Blys<span className="text-gradient">kode</span>
+              </span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
               Transforming businesses with modern AI &amp; cloud solutions. We design, build, and
