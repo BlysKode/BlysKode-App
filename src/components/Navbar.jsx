@@ -3,10 +3,12 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { Menu, X, Zap } from 'lucide-react'
+import { prefersReducedMotion } from '../lib/motion'
 
 const LINKS = [
   { label: 'Home', target: '#home' },
   { label: 'Services', target: '#services' },
+  { label: 'Process', target: '#process' },
   { label: 'Why Blyskode', target: '#why' },
   { label: 'Contact', target: '#contact' },
 ]
@@ -15,6 +17,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   useGSAP(() => {
+    if (prefersReducedMotion()) return
+
     gsap.from('.nav-item', {
       y: -24,
       opacity: 0,
@@ -91,7 +95,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => scrollTo(link.target)}
-                  className="text-base font-medium text-slate-200"
+                  className="block min-h-11 w-full py-2 text-left text-base font-medium text-slate-200"
                 >
                   {link.label}
                 </button>

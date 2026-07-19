@@ -7,6 +7,8 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 // Loaded lazily so three.js/R3F never block first paint or LCP
 const HeroScene = lazy(() => import('./three/HeroScene'))
 
+import { prefersReducedMotion } from '../lib/motion'
+
 const HEADLINE = 'Transforming Businesses with Modern AI & Cloud Solutions'
 
 export default function Hero() {
@@ -14,10 +16,15 @@ export default function Hero() {
   // The canvas mounts after hydration only — it has no SEO content, and
   // skipping it during SSR keeps server and client markup identical.
   const [showScene, setShowScene] = useState(false)
-  useEffect(() => setShowScene(true), [])
+  useEffect(() => {
+    // Static gradient fallback for users who prefer reduced motion
+    if (!prefersReducedMotion()) setShowScene(true)
+  }, [])
 
   useGSAP(
     () => {
+      if (prefersReducedMotion()) return
+
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
       tl.from('.hero-word', {
         yPercent: 120,
@@ -89,8 +96,8 @@ export default function Hero() {
         </h1>
 
         <p className="hero-sub mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          We engineer intelligent software, resilient cloud infrastructure, and automation that
-          moves your business forward — from first commit to global scale.
+          We help startups, SaaS companies, and growing enterprises build AI-powered products
+          and scalable cloud platforms — from first commit to global scale.
         </p>
 
         <div className="pointer-events-auto mt-10 flex flex-col gap-4 sm:flex-row">
@@ -113,9 +120,9 @@ export default function Hero() {
 
         <div className="pointer-events-auto mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-white/5 pt-8">
           {[
-            ['120+', 'Projects Delivered'],
-            ['40+', 'Global Clients'],
+            ['<24h', 'Response Time'],
             ['24/7', 'Support Coverage'],
+            ['3', 'Core Practice Areas'],
           ].map(([value, label]) => (
             <div key={label} className="hero-stat">
               <p className="font-display text-2xl font-bold text-white sm:text-3xl">{value}</p>

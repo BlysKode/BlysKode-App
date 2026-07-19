@@ -25,6 +25,13 @@ body {
   overscroll-behavior: none;
 }
 
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid #38e1ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 ::selection {
   background: rgba(56, 225, 255, 0.25);
   color: #fff;

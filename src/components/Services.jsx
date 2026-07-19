@@ -3,65 +3,57 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
-  Blocks,
-  Bot,
   BrainCircuit,
+  Check,
   Cloud,
   Code2,
-  Layers,
   PenLine,
-  ServerCog,
-  ShieldCheck,
-  Smartphone,
   TrendingUp,
   Users,
 } from 'lucide-react'
+import { prefersReducedMotion } from '../lib/motion'
 
-const SERVICES = [
+const CORE_SERVICES = [
   {
     icon: Code2,
-    title: 'Full Stack Development',
-    desc: 'End-to-end web applications built with modern frameworks, robust APIs, and scalable databases.',
+    title: 'Product Engineering',
+    desc: 'Web, mobile, and custom software built end-to-end — from first wireframe to production release.',
+    items: [
+      'Full Stack Development',
+      'Mobile Application Development',
+      'Custom Software Development',
+      'Quality Assurance (QA)',
+    ],
   },
   {
     icon: BrainCircuit,
-    title: 'AI Engineering',
-    desc: 'Custom LLM integrations, machine learning pipelines, and intelligent product features.',
-  },
-  {
-    icon: Bot,
-    title: 'AI Automation',
-    desc: 'Agentic workflows and process automation that eliminate repetitive work at scale.',
-  },
-  {
-    icon: ServerCog,
-    title: 'DevOps Engineering',
-    desc: 'CI/CD pipelines, infrastructure as code, and observability for shipping with confidence.',
+    title: 'AI & Automation',
+    desc: 'Intelligent features and agentic workflows that remove manual work and unlock new product value.',
+    items: [
+      'AI Engineering & LLM Integrations',
+      'AI Automation & Agentic Workflows',
+      'Machine Learning Pipelines',
+      'AI Product Strategy',
+    ],
   },
   {
     icon: Cloud,
-    title: 'Cloud Services',
-    desc: 'AWS, Azure, GCP, HuaweiCloud, Digital Ocean, Ali Baba, and more — architected for cost and scale.',
+    title: 'Cloud & DevOps',
+    desc: 'Resilient infrastructure on AWS, Azure, GCP, Huawei Cloud, DigitalOcean, Alibaba Cloud, and VPS servers.',
+    items: [
+      'Cloud Architecture & Migration',
+      'DevOps & CI/CD Engineering',
+      'Multi-Platform Deployment',
+      'Observability & Cost Optimization',
+    ],
   },
-  {
-    icon: Layers,
-    title: 'Multi-Platform Deployment',
-    desc: 'Seamless deployments across cloud providers and VPS servers with zero-downtime strategies.',
-  },
+]
+
+const ADDITIONAL_SERVICES = [
   {
     icon: Users,
     title: 'End-to-End Recruitment',
     desc: 'Sourcing, vetting, and onboarding top technical talent tailored to your team.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile Application Development',
-    desc: 'Native and cross-platform mobile apps with polished UX for iOS and Android.',
-  },
-  {
-    icon: Blocks,
-    title: 'Custom Software Development',
-    desc: 'Bespoke platforms and internal tools engineered around your exact business logic.',
   },
   {
     icon: TrendingUp,
@@ -73,16 +65,9 @@ const SERVICES = [
     title: 'Content & Blog Writing',
     desc: 'Technical and marketing content that builds authority and engages your audience.',
   },
-  {
-    icon: ShieldCheck,
-    title: 'Quality Assurance (QA)',
-    desc: 'Automated and manual testing that keeps every release stable, secure, and regression-free.',
-  },
 ]
 
-function ServiceCard({ icon: Icon, title, desc }) {
-  const card = useRef(null)
-
+function useCardHover(card) {
   const { contextSafe } = useGSAP({ scope: card })
 
   const onMove = (e) => {
@@ -92,6 +77,7 @@ function ServiceCard({ icon: Icon, title, desc }) {
   }
 
   const onEnter = contextSafe(() => {
+    if (prefersReducedMotion()) return
     gsap.to(card.current, { y: -6, duration: 0.4, ease: 'power3.out' })
     gsap.to(card.current.querySelector('.card-icon'), {
       rotate: -8,
@@ -102,6 +88,7 @@ function ServiceCard({ icon: Icon, title, desc }) {
   })
 
   const onLeave = contextSafe(() => {
+    if (prefersReducedMotion()) return
     gsap.to(card.current, { y: 0, duration: 0.5, ease: 'power3.out' })
     gsap.to(card.current.querySelector('.card-icon'), {
       rotate: 0,
@@ -111,19 +98,55 @@ function ServiceCard({ icon: Icon, title, desc }) {
     })
   })
 
+  return { onMove, onEnter, onLeave }
+}
+
+function CoreServiceCard({ icon: Icon, title, desc, items }) {
+  const card = useRef(null)
+  const { onMove, onEnter, onLeave } = useCardHover(card)
+
   return (
     <article
       ref={card}
       onMouseMove={onMove}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      className="service-card spotlight-card group rounded-2xl border border-edge bg-panel/60 p-6 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
+      className="service-card spotlight-card group rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
     >
-      <div className="card-icon mb-5 inline-grid size-12 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
-        <Icon size={22} />
+      <div className="card-icon mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
+        <Icon size={24} />
       </div>
-      <h3 className="font-display text-lg font-semibold text-white">{title}</h3>
+      <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted">{desc}</p>
+      <ul className="mt-5 space-y-2.5 border-t border-white/5 pt-5">
+        {items.map((item) => (
+          <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300">
+            <Check size={15} className="mt-0.5 shrink-0 text-cyber" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </article>
+  )
+}
+
+function AdditionalServiceCard({ icon: Icon, title, desc }) {
+  const card = useRef(null)
+  const { onMove, onEnter, onLeave } = useCardHover(card)
+
+  return (
+    <article
+      ref={card}
+      onMouseMove={onMove}
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      className="service-card spotlight-card group rounded-2xl border border-edge bg-panel/40 p-6 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
+    >
+      <div className="card-icon mb-4 inline-grid size-11 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
+        <Icon size={20} />
+      </div>
+      <h4 className="font-display text-base font-semibold text-white">{title}</h4>
+      <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
     </article>
   )
 }
@@ -133,6 +156,8 @@ export default function Services() {
 
   useGSAP(
     () => {
+      if (prefersReducedMotion()) return
+
       gsap.from('.services-heading > *', {
         y: 40,
         opacity: 0,
@@ -164,17 +189,26 @@ export default function Services() {
         <div className="services-heading mb-14 max-w-3xl">
           <span className="section-pill">Our Services</span>
           <h2 className="mt-6 font-display text-3xl font-bold text-white sm:text-5xl">
-            Everything you need to <span className="text-gradient">build, ship & grow</span>
+            Three practices. <span className="text-gradient">One engineering partner.</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-            A full-spectrum engineering partner — from AI and cloud infrastructure to talent and
-            growth marketing.
+            We help startups, SaaS companies, and growing enterprises build AI-powered products
+            and scalable cloud platforms.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((service) => (
-            <ServiceCard key={service.title} {...service} />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {CORE_SERVICES.map((service) => (
+            <CoreServiceCard key={service.title} {...service} />
+          ))}
+        </div>
+
+        <p className="mt-14 mb-5 text-xs font-medium tracking-[0.2em] text-muted uppercase">
+          Also available
+        </p>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {ADDITIONAL_SERVICES.map((service) => (
+            <AdditionalServiceCard key={service.title} {...service} />
           ))}
         </div>
       </div>

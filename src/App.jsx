@@ -3,13 +3,16 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import { Analytics } from '@vercel/analytics/react'
 
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
+import Process from './components/Process'
 import WhyChooseUs from './components/WhyChooseUs'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
+import { prefersReducedMotion } from './lib/motion'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
@@ -18,6 +21,8 @@ export default function App() {
   const content = useRef(null)
 
   useGSAP(() => {
+    if (prefersReducedMotion()) return
+
     ScrollSmoother.create({
       wrapper: wrapper.current,
       content: content.current,
@@ -35,12 +40,14 @@ export default function App() {
           <main>
             <Hero />
             <Services />
+            <Process />
             <WhyChooseUs />
             <CTASection />
           </main>
           <Footer />
         </div>
       </div>
+      <Analytics />
     </>
   )
 }

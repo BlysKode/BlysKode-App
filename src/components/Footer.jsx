@@ -22,17 +22,18 @@ const BRAND_PATHS = {
 const QUICK_LINKS = [
   { label: 'Home', target: '#home' },
   { label: 'Services', target: '#services' },
+  { label: 'Process', target: '#process' },
   { label: 'Why Blyskode', target: '#why' },
   { label: 'Contact', target: '#contact' },
 ]
 
 const FOOTER_SERVICES = [
-  'Full Stack Development',
-  'AI Engineering & Automation',
-  'DevOps & Cloud Services',
-  'Mobile App Development',
+  'Product Engineering',
+  'AI & Automation',
+  'Cloud & DevOps',
+  'End-to-End Recruitment',
   'SEO & Digital Marketing',
-  'Quality Assurance',
+  'Content & Blog Writing',
 ]
 
 const SOCIALS = [

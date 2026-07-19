@@ -5,12 +5,13 @@ import {
   Cpu,
   Eye,
   Expand,
+  GitPullRequestArrow,
   LifeBuoy,
   Lock,
-  Trophy,
   UsersRound,
   Zap,
 } from 'lucide-react'
+import { prefersReducedMotion } from '../lib/motion'
 
 const REASONS = [
   {
@@ -21,12 +22,12 @@ const REASONS = [
   {
     icon: UsersRound,
     title: 'Expert Team',
-    desc: 'Certified professionals with expertise in the latest technologies and AI.',
+    desc: 'Senior engineers with hands-on expertise in modern stacks, cloud platforms, and AI.',
   },
   {
-    icon: Trophy,
-    title: 'Award-Winning',
-    desc: 'Recognized for excellence in innovation and digital transformation.',
+    icon: GitPullRequestArrow,
+    title: 'Quality-First Delivery',
+    desc: 'Every release ships through code review, automated testing, and staging gates.',
   },
   {
     icon: Expand,
@@ -60,6 +61,8 @@ export default function WhyChooseUs() {
 
   useGSAP(
     () => {
+      if (prefersReducedMotion()) return
+
       const mm = gsap.matchMedia()
 
       // Pin the intro column on desktop while the reasons scroll past it
@@ -128,9 +131,10 @@ export default function WhyChooseUs() {
               ships faster, scales further, and stays secure.
             </p>
             <div className="mt-8 rounded-2xl border border-edge bg-panel/60 p-6 backdrop-blur">
-              <p className="font-display text-4xl font-bold text-gradient">98%</p>
+              <p className="font-display text-4xl font-bold text-gradient">&lt;24h</p>
               <p className="mt-2 text-sm text-muted">
-                Client retention rate across long-term engagements.
+                Every inquiry gets a clear next step and an honest estimate within one business
+                day.
               </p>
             </div>
           </div>
