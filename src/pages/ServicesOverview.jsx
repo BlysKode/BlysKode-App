@@ -60,13 +60,13 @@ export default function ServicesOverview() {
             {ADDITIONAL.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="spotlight-card rounded-2xl border border-edge bg-panel/50 p-6 backdrop-blur"
+                className="spotlight-card rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors hover:border-cyber/40"
               >
-                <div className="mb-4 inline-grid size-11 place-items-center rounded-xl border border-edge bg-surface text-cyber">
-                  <Icon size={20} />
+                <div className="mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber">
+                  <Icon size={24} />
                 </div>
-                <h3 className="font-display text-base font-semibold text-white">{title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
+                <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{desc}</p>
               </div>
             ))}
           </div>
