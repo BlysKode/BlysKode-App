@@ -10,6 +10,7 @@ import Hero from './components/Hero'
 import Services from './components/Services'
 import Process from './components/Process'
 import WhyChooseUs from './components/WhyChooseUs'
+import FAQ from './components/FAQ'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -43,6 +44,7 @@ export default function App() {
             <Services />
             <Process />
             <WhyChooseUs />
+            <FAQ />
             <CTASection />
           </main>
           <Footer />

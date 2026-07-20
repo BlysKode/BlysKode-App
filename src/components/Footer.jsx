@@ -19,6 +19,7 @@ const QUICK_LINKS = [
   { label: 'Services', target: '#services' },
   { label: 'Process', target: '#process' },
   { label: 'Why Blyskode', target: '#why' },
+  { label: 'FAQ', target: '#faq' },
   { label: 'Contact', target: '#contact' },
 ]
 
