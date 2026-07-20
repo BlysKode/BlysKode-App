@@ -45,7 +45,7 @@ export default function ServicesOverview() {
                     </li>
                   ))}
                 </ul>
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cyber">
+                <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-cyber">
                   Learn more
                   <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
                 </span>

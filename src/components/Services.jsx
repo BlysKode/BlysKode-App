@@ -133,7 +133,7 @@ function CoreServiceCard({ icon: Icon, title, desc, items, slug }) {
       </ul>
       <Link
         to={`/services/${slug}`}
-        className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cyber transition-colors hover:text-white"
+        className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-cyber transition-colors hover:text-white"
       >
         Learn more
         <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
