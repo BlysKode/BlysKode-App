@@ -12,7 +12,7 @@ export default function Contact() {
           ]}
         />
       </div>
-      <CTASection />
+      <CTASection titleAs="h1" />
     </div>
   )
 }

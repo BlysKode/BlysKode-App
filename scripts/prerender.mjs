@@ -5,7 +5,7 @@ import { resolve, dirname } from 'node:path'
 const root = resolve(fileURLToPath(import.meta.url), '../..')
 
 const { render } = await import(resolve(root, 'dist-ssr/entry-server.js'))
-const { ROUTES, buildHead } = await import(resolve(root, 'src/seo/pages.js'))
+const { ROUTES, buildHead, buildNotFoundHead } = await import(resolve(root, 'src/seo/pages.js'))
 
 const template = readFileSync(resolve(root, 'dist/index.html'), 'utf-8')
 if (!template.includes('<!--app-head-->') || !template.includes('<!--app-html-->')) {
@@ -25,6 +25,15 @@ for (const path of ROUTES) {
   writeFileSync(outFile, page)
   console.log(`Prerendered ${path} -> ${outFile.replace(root + '/', '')} (${appHtml.length} bytes)`)
 }
+
+// 404 page: render an unmatched location so it hydrates cleanly, and
+// write to dist/404.html (Vercel serves this with a 404 status).
+const notFoundHtml = render('/__not_found__')
+const notFoundPage = template
+  .replace('<!--app-head-->', buildNotFoundHead())
+  .replace('<!--app-html-->', notFoundHtml)
+writeFileSync(resolve(root, 'dist/404.html'), notFoundPage)
+console.log('Prerendered 404 -> dist/404.html')
 
 // Clean up the SSR build output
 const { rmSync } = await import('node:fs')

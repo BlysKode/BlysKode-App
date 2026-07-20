@@ -270,3 +270,16 @@ export function buildHead(path) {
 }
 
 export const ROUTES = Object.keys(PAGES)
+
+// Head for the prerendered dist/404.html (served by Vercel on unknown
+// URLs). Rendered from an unmatched location so the client hydrates the
+// same NotFound markup — no hydration mismatch. noindex so it never ranks.
+export function buildNotFoundHead() {
+  return [
+    `<title>Page not found | Blyskode</title>`,
+    `<meta name="description" content="The page you are looking for doesn't exist or has moved." />`,
+    `<meta name="robots" content="noindex, follow" />`,
+    `<meta property="og:title" content="Page not found | Blyskode" />`,
+    `<meta property="og:image" content="${OG_IMAGE}" />`,
+  ].join('\n    ')
+}

@@ -35,7 +35,7 @@ const EMPTY_FORM = {
   botcheck: '',
 }
 
-export default function CTASection() {
+export default function CTASection({ titleAs: Title = 'h2' }) {
   const root = useRef(null)
   const [form, setForm] = useState(EMPTY_FORM)
   const [status, setStatus] = useState('idle') // idle | sending | success | error
@@ -100,10 +100,10 @@ export default function CTASection() {
           <div className="cta-inner relative grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
             <div>
               <span className="section-pill">Let&apos;s Build Together</span>
-              <h2 className="mt-6 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+              <Title className="mt-6 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
                 Ready to transform your business with{' '}
                 <span className="text-gradient">AI & Cloud?</span>
-              </h2>
+              </Title>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                 Tell us about your project and we&apos;ll get back to you within 24 hours with a
                 clear plan and honest estimate, or book a call directly.
