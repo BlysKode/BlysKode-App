@@ -138,7 +138,7 @@ export default function CTASection() {
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin size={16} className="shrink-0 text-cyber" />
-                  <span>F-15, Islamabad, Pakistan</span>
+                  <span>Islamabad, Pakistan</span>
                 </li>
               </ul>
             </div>

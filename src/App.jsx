@@ -12,6 +12,7 @@ import Process from './components/Process'
 import WhyChooseUs from './components/WhyChooseUs'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 import { prefersReducedMotion } from './lib/motion'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
@@ -47,6 +48,7 @@ export default function App() {
           <Footer />
         </div>
       </div>
+      <WhatsAppButton />
       <Analytics />
     </>
   )
