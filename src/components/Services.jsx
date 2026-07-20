@@ -1,8 +1,10 @@
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
+  ArrowRight,
   BrainCircuit,
   Check,
   Cloud,
@@ -16,6 +18,7 @@ import { prefersReducedMotion } from '../lib/motion'
 const CORE_SERVICES = [
   {
     icon: Code2,
+    slug: 'product-engineering',
     title: 'Product Engineering',
     desc: 'Web, mobile, and custom software built end-to-end, from first wireframe to production release.',
     items: [
@@ -27,6 +30,7 @@ const CORE_SERVICES = [
   },
   {
     icon: BrainCircuit,
+    slug: 'ai-automation',
     title: 'AI & Automation',
     desc: 'Intelligent features and agentic workflows that remove manual work and unlock new product value.',
     items: [
@@ -38,6 +42,7 @@ const CORE_SERVICES = [
   },
   {
     icon: Cloud,
+    slug: 'cloud-devops',
     title: 'Cloud & DevOps',
     desc: 'Resilient infrastructure on AWS, Azure, GCP, Huawei Cloud, DigitalOcean, Alibaba Cloud, and VPS servers.',
     items: [
@@ -101,7 +106,7 @@ function useCardHover(card) {
   return { onMove, onEnter, onLeave }
 }
 
-function CoreServiceCard({ icon: Icon, title, desc, items }) {
+function CoreServiceCard({ icon: Icon, title, desc, items, slug }) {
   const card = useRef(null)
   const { onMove, onEnter, onLeave } = useCardHover(card)
 
@@ -111,7 +116,7 @@ function CoreServiceCard({ icon: Icon, title, desc, items }) {
       onMouseMove={onMove}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      className="service-card spotlight-card group rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
+      className="service-card spotlight-card group flex flex-col rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
     >
       <div className="card-icon mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
         <Icon size={24} />
@@ -126,6 +131,13 @@ function CoreServiceCard({ icon: Icon, title, desc, items }) {
           </li>
         ))}
       </ul>
+      <Link
+        to={`/services/${slug}`}
+        className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cyber transition-colors hover:text-white"
+      >
+        Learn more
+        <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+      </Link>
     </article>
   )
 }

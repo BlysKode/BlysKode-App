@@ -17,7 +17,7 @@
 }
 
 html {
-  scroll-behavior: initial; /* ScrollSmoother owns scrolling */
+  scroll-behavior: smooth;
 }
 
 body {

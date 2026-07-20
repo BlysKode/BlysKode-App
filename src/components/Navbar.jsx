@@ -1,17 +1,15 @@
 import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { Menu, X, Zap } from 'lucide-react'
 import { prefersReducedMotion } from '../lib/motion'
 
 const LINKS = [
-  { label: 'Home', target: '#home' },
-  { label: 'Services', target: '#services' },
-  { label: 'Process', target: '#process' },
-  { label: 'Why Blyskode', target: '#why' },
-  { label: 'FAQ', target: '#faq' },
-  { label: 'Contact', target: '#contact' },
+  { label: 'Home', to: '/' },
+  { label: 'Services', to: '/services' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 export default function Navbar() {
@@ -19,7 +17,6 @@ export default function Navbar() {
 
   useGSAP(() => {
     if (prefersReducedMotion()) return
-
     gsap.from('.nav-item', {
       y: -24,
       opacity: 0,
@@ -30,22 +27,11 @@ export default function Navbar() {
     })
   })
 
-  const scrollTo = (target) => {
-    setOpen(false)
-    const smoother = ScrollSmoother.get()
-    if (smoother) {
-      smoother.scrollTo(target, true, 'top 80px')
-    } else {
-      document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between border-b border-white/5 bg-ink/70 px-5 py-4 backdrop-blur-xl md:px-10">
-        <button
-          type="button"
-          onClick={() => scrollTo('#home')}
+        <Link
+          to="/"
           className="nav-item flex items-center gap-2 font-display text-xl font-bold tracking-tight text-white"
         >
           <span className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-cyber to-neon text-ink">
@@ -54,29 +40,32 @@ export default function Navbar() {
           <span>
             Blys<span className="text-gradient">kode</span>
           </span>
-        </button>
+        </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
           {LINKS.map((link) => (
             <li key={link.label} className="nav-item">
-              <button
-                type="button"
-                onClick={() => scrollTo(link.target)}
-                className="text-sm font-medium text-muted transition-colors hover:text-white"
+              <NavLink
+                to={link.to}
+                end={link.to === '/'}
+                className={({ isActive }) =>
+                  `text-sm font-medium transition-colors hover:text-white ${
+                    isActive ? 'text-white' : 'text-muted'
+                  }`
+                }
               >
                 {link.label}
-              </button>
+              </NavLink>
             </li>
           ))}
         </ul>
 
-        <button
-          type="button"
-          onClick={() => scrollTo('#contact')}
+        <Link
+          to="/contact"
           className="nav-item hidden rounded-full bg-gradient-to-r from-cyber to-neon px-5 py-2 text-sm font-semibold text-ink transition-[filter] hover:brightness-110 md:block"
         >
           Let&apos;s Talk
-        </button>
+        </Link>
 
         <button
           type="button"
@@ -90,26 +79,27 @@ export default function Navbar() {
 
       {open && (
         <div className="border-b border-white/5 bg-ink/95 px-6 py-4 backdrop-blur-xl md:hidden">
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-2">
             {LINKS.map((link) => (
               <li key={link.label}>
-                <button
-                  type="button"
-                  onClick={() => scrollTo(link.target)}
+                <NavLink
+                  to={link.to}
+                  end={link.to === '/'}
+                  onClick={() => setOpen(false)}
                   className="block min-h-11 w-full py-2 text-left text-base font-medium text-slate-200"
                 >
                   {link.label}
-                </button>
+                </NavLink>
               </li>
             ))}
             <li>
-              <button
-                type="button"
-                onClick={() => scrollTo('#contact')}
-                className="w-full rounded-full bg-gradient-to-r from-cyber to-neon px-5 py-2.5 text-sm font-semibold text-ink"
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="mt-2 block w-full rounded-full bg-gradient-to-r from-cyber to-neon px-5 py-2.5 text-center text-sm font-semibold text-ink"
               >
                 Let&apos;s Talk
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ArrowRight, Sparkles } from 'lucide-react'
 
 // Loaded lazily so three.js/R3F never block first paint or LCP
@@ -53,12 +53,6 @@ export default function Hero() {
     { scope: root },
   )
 
-  const scrollTo = (target) => {
-    const smoother = ScrollSmoother.get()
-    if (smoother) smoother.scrollTo(target, true, 'top 80px')
-    else document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <section id="home" ref={root} className="relative flex min-h-svh items-center overflow-hidden">
       {/* 3D background */}
@@ -101,21 +95,19 @@ export default function Hero() {
         </p>
 
         <div className="pointer-events-auto mt-10 flex flex-col gap-4 sm:flex-row">
-          <button
-            type="button"
-            onClick={() => scrollTo('#services')}
+          <Link
+            to="/services"
             className="hero-cta group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter,box-shadow] hover:brightness-110 hover:shadow-[0_0_60px_-8px_rgba(139,92,246,0.7)]"
           >
             Explore Services
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollTo('#contact')}
+          </Link>
+          <Link
+            to="/contact"
             className="hero-cta inline-flex items-center justify-center gap-2 rounded-full border border-edge bg-panel/60 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-cyber/50 hover:bg-panel"
           >
             Let&apos;s Talk
-          </button>
+          </Link>
         </div>
 
         <div className="pointer-events-auto mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-white/5 pt-8">

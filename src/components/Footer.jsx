@@ -1,4 +1,4 @@
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import { Link } from 'react-router-dom'
 import { Mail, MapPin, Phone, Zap } from 'lucide-react'
 
 function BrandIcon({ path }) {
@@ -15,21 +15,17 @@ const BRAND_PATHS = {
 }
 
 const QUICK_LINKS = [
-  { label: 'Home', target: '#home' },
-  { label: 'Services', target: '#services' },
-  { label: 'Process', target: '#process' },
-  { label: 'Why Blyskode', target: '#why' },
-  { label: 'FAQ', target: '#faq' },
-  { label: 'Contact', target: '#contact' },
+  { label: 'Home', to: '/' },
+  { label: 'Services', to: '/services' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 const FOOTER_SERVICES = [
-  'Product Engineering',
-  'AI & Automation',
-  'Cloud & DevOps',
-  'End-to-End Recruitment',
-  'SEO & Digital Marketing',
-  'Content & Blog Writing',
+  { label: 'Product Engineering', to: '/services/product-engineering' },
+  { label: 'AI & Automation', to: '/services/ai-automation' },
+  { label: 'Cloud & DevOps', to: '/services/cloud-devops' },
+  { label: 'All Services', to: '/services' },
 ]
 
 const SOCIALS = [
@@ -37,12 +33,6 @@ const SOCIALS = [
 ]
 
 export default function Footer() {
-  const scrollTo = (target) => {
-    const smoother = ScrollSmoother.get()
-    if (smoother) smoother.scrollTo(target, true, 'top 80px')
-    else document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <footer className="relative border-t border-white/5 bg-surface/60">
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-10">
@@ -81,15 +71,11 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="mt-5 space-y-3">
-              {QUICK_LINKS.map(({ label, target }) => (
+              {QUICK_LINKS.map(({ label, to }) => (
                 <li key={label}>
-                  <button
-                    type="button"
-                    onClick={() => scrollTo(target)}
-                    className="text-sm text-muted transition-colors hover:text-cyber"
-                  >
+                  <Link to={to} className="text-sm text-muted transition-colors hover:text-cyber">
                     {label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,15 +86,11 @@ export default function Footer() {
               Services
             </h4>
             <ul className="mt-5 space-y-3">
-              {FOOTER_SERVICES.map((service) => (
-                <li key={service}>
-                  <button
-                    type="button"
-                    onClick={() => scrollTo('#services')}
-                    className="text-left text-sm text-muted transition-colors hover:text-cyber"
-                  >
-                    {service}
-                  </button>
+              {FOOTER_SERVICES.map(({ label, to }) => (
+                <li key={label}>
+                  <Link to={to} className="text-sm text-muted transition-colors hover:text-cyber">
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>
