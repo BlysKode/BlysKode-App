@@ -106,7 +106,7 @@ export default function CTASection() {
               </h2>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                 Tell us about your project and we&apos;ll get back to you within 24 hours with a
-                clear plan and honest estimate — or book a call directly.
+                clear plan and honest estimate, or book a call directly.
               </p>
 
               <a
@@ -293,7 +293,7 @@ export default function CTASection() {
                   className="mt-4 flex items-center gap-2 rounded-xl border border-cyber/30 bg-cyber/10 px-4 py-3 text-sm text-cyber"
                 >
                   <CheckCircle2 size={16} className="shrink-0" />
-                  Thanks — your inquiry has been sent. We&apos;ll reply within 24 hours.
+                  Thanks! Your inquiry has been sent. We&apos;ll reply within 24 hours.
                 </p>
               )}
               {status === 'error' && (

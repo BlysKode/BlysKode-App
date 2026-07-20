@@ -97,7 +97,7 @@ export default function Hero() {
 
         <p className="hero-sub mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
           We help startups, SaaS companies, and growing enterprises build AI-powered products
-          and scalable cloud platforms — from first commit to global scale.
+          and scalable cloud platforms, from first commit to global scale.
         </p>
 
         <div className="pointer-events-auto mt-10 flex flex-col gap-4 sm:flex-row">

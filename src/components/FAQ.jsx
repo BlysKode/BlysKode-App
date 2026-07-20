@@ -27,8 +27,8 @@ export const FAQS = [
   },
 ]
 
-function FAQItem({ q, a }) {
-  const [open, setOpen] = useState(false)
+function FAQItem({ q, a, defaultOpen = false }) {
+  const [open, setOpen] = useState(defaultOpen)
 
   return (
     <div className="faq-item rounded-2xl border border-edge bg-panel/50 backdrop-blur">
@@ -87,8 +87,8 @@ export default function FAQ() {
           </h2>
         </div>
         <div className="faq-list space-y-4">
-          {FAQS.map((item) => (
-            <FAQItem key={item.q} {...item} />
+          {FAQS.map((item, i) => (
+            <FAQItem key={item.q} {...item} defaultOpen={i === 0} />
           ))}
         </div>
       </div>

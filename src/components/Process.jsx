@@ -15,7 +15,7 @@ const STEPS = [
     icon: DraftingCompass,
     step: '02',
     title: 'Solution Design',
-    desc: 'Architecture, milestones, and a shared project tracker agreed before any code is written — no surprises later.',
+    desc: 'Architecture, milestones, and a shared project tracker agreed before any code is written, so there are no surprises later.',
   },
   {
     icon: ClipboardCheck,

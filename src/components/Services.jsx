@@ -17,7 +17,7 @@ const CORE_SERVICES = [
   {
     icon: Code2,
     title: 'Product Engineering',
-    desc: 'Web, mobile, and custom software built end-to-end — from first wireframe to production release.',
+    desc: 'Web, mobile, and custom software built end-to-end, from first wireframe to production release.',
     items: [
       'Full Stack Development',
       'Mobile Application Development',
