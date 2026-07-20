@@ -140,13 +140,13 @@ function AdditionalServiceCard({ icon: Icon, title, desc }) {
       onMouseMove={onMove}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      className="service-card spotlight-card group rounded-2xl border border-edge bg-panel/40 p-6 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
+      className="service-card spotlight-card group rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
     >
-      <div className="card-icon mb-4 inline-grid size-11 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
-        <Icon size={20} />
+      <div className="card-icon mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
+        <Icon size={24} />
       </div>
-      <h4 className="font-display text-base font-semibold text-white">{title}</h4>
-      <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
+      <h4 className="font-display text-xl font-semibold text-white">{title}</h4>
+      <p className="mt-2 text-sm leading-relaxed text-muted">{desc}</p>
     </article>
   )
 }
