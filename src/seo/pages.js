@@ -1,10 +1,12 @@
 // Plain JS (no JSX) so both the browser bundle and the Node prerender
 // script can import it. Single source of truth for per-page SEO.
 
+import { POSTS, POST_BY_SLUG } from '../data/posts.js'
+
 export const SITE = 'https://blyskode.com'
 const OG_IMAGE = `${SITE}/og.png`
 
-export const PAGES = {
+const STATIC_PAGES = {
   '/': {
     title: 'Blyskode Modern AI & Cloud Solutions | Software Agency',
     description:
@@ -35,11 +37,27 @@ export const PAGES = {
     description:
       'Blyskode is a software and technology agency in Islamabad, Pakistan, helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
   },
+  '/blog': {
+    title: 'Blog | Blyskode — AI, Cloud & Software Insights',
+    description:
+      'Practical guides from the Blyskode team on AI automation, cloud, DevOps, and building scalable software for startups and small businesses.',
+  },
   '/contact': {
     title: 'Contact Blyskode | Start Your Project',
     description:
       'Get in touch with Blyskode. Share your project and we reply within 24 hours with a clear plan and honest estimate, or book a call directly.',
   },
+}
+
+// Merge in one page per blog post
+export const PAGES = {
+  ...STATIC_PAGES,
+  ...Object.fromEntries(
+    POSTS.map((p) => [
+      `/blog/${p.slug}`,
+      { title: `${p.title} | Blyskode`, description: p.description },
+    ]),
+  ),
 }
 
 const ORG = {
@@ -59,6 +77,23 @@ const ORG = {
   },
   description:
     'Blyskode is a software and technology agency helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
+  slogan: 'Transforming Businesses with Modern AI & Cloud Solutions',
+  foundingLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Islamabad', addressCountry: 'PK' } },
+  areaServed: { '@type': 'Place', name: 'Worldwide' },
+  knowsAbout: [
+    'Artificial Intelligence',
+    'AI Automation',
+    'Machine Learning',
+    'Full Stack Development',
+    'Mobile App Development',
+    'Custom Software Development',
+    'Cloud Computing',
+    'DevOps',
+    'AWS',
+    'Azure',
+    'Google Cloud',
+    'Quality Assurance',
+  ],
   sameAs: [],
 }
 
@@ -214,7 +249,52 @@ function pageNodes(path) {
         { '@type': 'ContactPage', '@id': `${canonical}#webpage`, url: canonical, name: PAGES[path].title, isPartOf: { '@id': `${SITE}/#website` } },
         breadcrumb([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]),
       ]
+    case '/blog':
+      return [
+        {
+          '@type': 'Blog',
+          '@id': `${canonical}#blog`,
+          url: canonical,
+          name: 'Blyskode Blog',
+          description: PAGES[path].description,
+          publisher: { '@id': `${SITE}/#organization` },
+          blogPost: POSTS.map((p) => ({
+            '@type': 'BlogPosting',
+            headline: p.title,
+            url: `${SITE}/blog/${p.slug}`,
+            datePublished: p.date,
+            author: { '@type': 'Organization', name: p.author },
+          })),
+        },
+        breadcrumb([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }]),
+      ]
     default: {
+      // blog post detail pages
+      if (path.startsWith('/blog/')) {
+        const post = POST_BY_SLUG[path.replace('/blog/', '')]
+        return [
+          {
+            '@type': 'BlogPosting',
+            '@id': `${canonical}#article`,
+            headline: post.title,
+            description: post.description,
+            url: canonical,
+            image: OG_IMAGE,
+            datePublished: post.date,
+            dateModified: post.date,
+            author: { '@type': 'Organization', name: post.author, url: `${SITE}/` },
+            publisher: { '@id': `${SITE}/#organization` },
+            mainEntityOfPage: canonical,
+            keywords: post.tags.join(', '),
+          },
+          breadcrumb([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: post.title, path },
+          ]),
+        ]
+      }
+
       // service detail pages
       const name = PAGES[path].title.replace(' | Blyskode', '')
       return [
