@@ -5,10 +5,12 @@ import PageCTA from '../components/PageCTA'
 import { POST_BY_SLUG } from '../data/posts'
 import AiAutomation from '../content/ai-automation-for-small-business.jsx'
 import AppCost from '../content/cost-to-build-a-mobile-app.jsx'
+import CloudCosts from '../content/reduce-cloud-costs.jsx'
 
 const BODIES = {
   'ai-automation-for-small-business': AiAutomation,
   'cost-to-build-a-mobile-app': AppCost,
+  'reduce-cloud-costs': CloudCosts,
 }
 
 export default function BlogPost() {

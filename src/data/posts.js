@@ -3,6 +3,19 @@
 
 export const POSTS = [
   {
+    slug: 'reduce-cloud-costs',
+    title: 'How to Reduce Your Cloud Bill: A 2026 Cost Optimization Guide',
+    description:
+      'Nearly a third of cloud spend is wasted. Here are the practical tactics that cut AWS, Azure, and GCP bills in 2026, from rightsizing to commitment discounts, without hurting performance.',
+    excerpt:
+      'Nearly a third of cloud spend is wasted. Here are the practical tactics that cut AWS, Azure, and GCP bills in 2026 without hurting performance or reliability.',
+    date: '2026-07-21',
+    dateLabel: 'July 21, 2026',
+    author: 'Blyskode Team',
+    tags: ['Cloud & DevOps', 'Cost Optimization'],
+    readMins: 7,
+  },
+  {
     slug: 'cost-to-build-a-mobile-app',
     title: 'How Much Does It Cost to Build a Mobile App in 2026?',
     description:
