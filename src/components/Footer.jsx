@@ -126,11 +126,6 @@ export default function Footer() {
           <p className="text-xs text-muted">
             © {new Date().getFullYear()} Blyskode. All rights reserved.
           </p>
-          <p className="text-xs text-muted">
-            Built with <span className="text-cyber">React</span> ·{' '}
-            <span className="text-neon">Three.js</span> ·{' '}
-            <span className="text-magenta">GSAP</span>
-          </p>
         </div>
       </div>
     </footer>

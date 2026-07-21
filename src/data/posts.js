@@ -3,6 +3,19 @@
 
 export const POSTS = [
   {
+    slug: 'cost-to-build-a-mobile-app',
+    title: 'How Much Does It Cost to Build a Mobile App in 2026?',
+    description:
+      'A clear breakdown of mobile app development costs in 2026 by complexity, the factors that drive the price, and practical ways to build for less without cutting corners.',
+    excerpt:
+      'App costs range from a few thousand to several hundred thousand dollars. Here is a clear 2026 breakdown by complexity, what actually drives the price, and how to build for less.',
+    date: '2026-07-21',
+    dateLabel: 'July 21, 2026',
+    author: 'Blyskode Team',
+    tags: ['Mobile Apps', 'Product Engineering'],
+    readMins: 7,
+  },
+  {
     slug: 'ai-automation-for-small-business',
     title: 'AI Automation for Small Business: A Practical 2026 Guide',
     description:
