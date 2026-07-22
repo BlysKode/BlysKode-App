@@ -3,6 +3,19 @@
 
 export const POSTS = [
   {
+    slug: 'what-is-full-stack-development',
+    title: 'What Is Full Stack Development? A 2026 Guide for Businesses',
+    description:
+      'A plain-English guide to full stack development in 2026: what it means, the layers of a modern web app, popular tech stacks, and how to choose the right one for your project.',
+    excerpt:
+      'A plain-English guide to full stack development: what it means, the layers of a modern web app, the popular 2026 stacks, and how to choose the right one for your project.',
+    date: '2026-07-22',
+    dateLabel: 'July 22, 2026',
+    author: 'Blyskode Team',
+    tags: ['Full Stack Development', 'Product Engineering'],
+    readMins: 6,
+  },
+  {
     slug: 'reduce-cloud-costs',
     title: 'How to Reduce Your Cloud Bill: A 2026 Cost Optimization Guide',
     description:
