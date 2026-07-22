@@ -18,11 +18,16 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   @apply bg-ink font-body text-slate-300 antialiased;
   overscroll-behavior: none;
+  /* Clip horizontal overflow from decorative blurs and entrance
+     animations (e.g. x-offset reveals) without creating a scroll
+     container, so ScrollTrigger pinning stays intact. */
+  overflow-x: clip;
 }
 
 /* Visible keyboard focus everywhere */
