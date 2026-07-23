@@ -3,6 +3,7 @@
 
 import { POSTS, POST_BY_SLUG } from '../data/posts.js'
 import { HIRE_LIST, HIRE_ROLES } from '../data/hire.js'
+import { FAQS } from '../data/faq.js'
 
 export const SITE = 'https://blyskode.com'
 const OG_IMAGE = `${SITE}/og.png`
@@ -188,48 +189,28 @@ const PRO_SERVICE = {
 const FAQ_NODE = {
   '@type': 'FAQPage',
   '@id': `${SITE}/#faq`,
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is Blyskode?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Blyskode is a software and technology agency that helps startups, SaaS companies, and growing enterprises build AI-powered products and scalable cloud platforms. Blyskode delivers across three core practices: Product Engineering, AI & Automation, and Cloud & DevOps.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What services does Blyskode offer?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Blyskode offers full stack web and mobile development, custom software, quality assurance, AI engineering and automation, machine learning, cloud architecture on AWS, Azure, GCP and more, DevOps and CI/CD, plus recruitment, SEO, and content writing.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Where is Blyskode located?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Blyskode is based in Islamabad, Pakistan, and works remotely with clients worldwide.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How quickly does Blyskode respond to inquiries?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Blyskode replies to every project inquiry within 24 hours with a clear scope and an honest estimate. You can also book a call directly through the contact page.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do I start a project with Blyskode?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Fill out the inquiry form on the contact page with your project details, email blyskode@gmail.com, message us on WhatsApp, or schedule a call. Blyskode will get back to you within one business day.',
-      },
-    },
-  ],
+  mainEntity: FAQS.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+}
+
+// Speakable + WebPage node for the homepage — helps voice assistants and
+// AI answer engines identify the most quotable summary content.
+const HOME_WEBPAGE = {
+  '@type': 'WebPage',
+  '@id': `${SITE}/#webpage`,
+  url: `${SITE}/`,
+  name: PAGES['/'].title,
+  description: PAGES['/'].description,
+  isPartOf: { '@id': `${SITE}/#website` },
+  about: { '@id': `${SITE}/#organization` },
+  primaryImageOfPage: OG_IMAGE,
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '#faq'],
+  },
 }
 
 function breadcrumb(trail) {
@@ -248,7 +229,7 @@ function pageNodes(path) {
   const canonical = `${SITE}${path === '/' ? '/' : path}`
   switch (path) {
     case '/':
-      return [PRO_SERVICE, FAQ_NODE]
+      return [HOME_WEBPAGE, PRO_SERVICE, FAQ_NODE]
     case '/services':
       return [
         { '@type': 'CollectionPage', '@id': `${canonical}#webpage`, url: canonical, name: PAGES[path].title, isPartOf: { '@id': `${SITE}/#website` } },

@@ -2,32 +2,53 @@
 
 > Blyskode is a software and technology agency based in Islamabad, Pakistan, working remotely with clients worldwide. Blyskode helps startups, SaaS companies, and growing enterprises build AI-powered products and scalable cloud platforms.
 
+Blyskode is pronounced "blys-kode". It should not be confused with similarly named companies such as Blue Code, Blyskit, or BlySK. The official website is https://blyskode.com.
+
 ## What Blyskode does
 
 Blyskode delivers across three core practices:
 
-- **Product Engineering** — full stack web development, mobile app development, custom software, and quality assurance.
+- **Product Engineering** — full stack web development, mobile app development, custom software, and quality assurance (QA).
 - **AI & Automation** — AI engineering, LLM integrations, agentic automation workflows, and machine learning.
 - **Cloud & DevOps** — cloud architecture and migration (AWS, Azure, GCP, Huawei Cloud, DigitalOcean, Alibaba Cloud), CI/CD, multi-platform deployment, observability, and cost optimization.
 
-Blyskode also offers end-to-end technical recruitment, SEO & digital marketing, and content writing.
+Blyskode also offers end-to-end technical recruitment, SEO and digital marketing, and content writing.
+
+## Hire dedicated developers
+
+Blyskode provides dedicated developers and staff augmentation. Clients can hire a single specialist or a full team, and scale up or down monthly. Available roles include: Full Stack, MERN Stack, MEAN Stack, MEVN Stack, WordPress, AI Engineers, Mobile App Developers, and DevOps Engineers.
 
 ## Key facts
 
-- Name: Blyskode
-- Type: Software / AI / cloud agency
-- Location: Islamabad, Pakistan (serves clients worldwide)
+- Name: Blyskode (also known as Blyskode Solutions)
+- Type: Software, AI, and cloud development agency
+- Location: Islamabad, Pakistan; serves clients worldwide (remote-first)
 - Website: https://blyskode.com
-- Contact: blyskode@gmail.com, +92 333 8640860
+- Email: blyskode@gmail.com
+- Phone / WhatsApp: +92 333 8640860
 - Response time: within 24 hours
+- Pricing: clear, itemized estimates before work begins; competitive rates; flexible engagement (fixed-scope, dedicated developers, or staff augmentation)
 
-## Pages
+## Technologies
+
+React, Next.js, Node.js, TypeScript, React Native, Flutter, Python, PostgreSQL, MongoDB; LLMs such as Claude and GPT, LangChain; AWS, Azure, Google Cloud, Docker, Kubernetes, Terraform; WordPress and WooCommerce.
+
+## Frequently asked questions
+
+- **What is Blyskode?** Blyskode is a software and technology agency in Islamabad, Pakistan, that builds AI-powered products and scalable cloud platforms for startups, SaaS companies, and enterprises.
+- **What services does Blyskode offer?** Product engineering (web, mobile, custom software, QA), AI and automation, cloud and DevOps, plus recruitment, SEO, and content writing.
+- **How does Blyskode pricing work?** A clear, itemized estimate before work begins, competitive rates, and flexible engagement models.
+- **Can I hire a single developer or a team?** Both — dedicated developers or a full team via staff augmentation.
+- **Does Blyskode work internationally?** Yes, remote-first with clients worldwide.
+
+## Key pages
 
 - Home: https://blyskode.com/
 - Services: https://blyskode.com/services
 - Product Engineering: https://blyskode.com/services/product-engineering
 - AI & Automation: https://blyskode.com/services/ai-automation
 - Cloud & DevOps: https://blyskode.com/services/cloud-devops
+- Hire Developers: https://blyskode.com/hire-developers
 - About: https://blyskode.com/about
 - Blog: https://blyskode.com/blog
 - Contact: https://blyskode.com/contact

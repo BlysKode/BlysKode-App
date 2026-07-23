@@ -3,29 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { Minus, Plus } from 'lucide-react'
 import { prefersReducedMotion } from '../lib/motion'
-
-export const FAQS = [
-  {
-    q: 'What is Blyskode?',
-    a: 'Blyskode is a software and technology agency that helps startups, SaaS companies, and growing enterprises build AI-powered products and scalable cloud platforms. Blyskode delivers across three core practices: Product Engineering, AI & Automation, and Cloud & DevOps.',
-  },
-  {
-    q: 'What services does Blyskode offer?',
-    a: 'Blyskode offers full stack web and mobile development, custom software, quality assurance, AI engineering and automation, machine learning, cloud architecture on AWS, Azure, GCP and more, DevOps and CI/CD, plus recruitment, SEO, and content writing.',
-  },
-  {
-    q: 'Where is Blyskode located?',
-    a: 'Blyskode is based in Islamabad, Pakistan, and works remotely with clients worldwide.',
-  },
-  {
-    q: 'How quickly does Blyskode respond to inquiries?',
-    a: 'Blyskode replies to every project inquiry within 24 hours with a clear scope and an honest estimate. You can also book a call directly through the contact section.',
-  },
-  {
-    q: 'How do I start a project with Blyskode?',
-    a: 'Fill out the inquiry form in the contact section with your project details, email us at blyskode@gmail.com, message us on WhatsApp, or schedule a call. Blyskode will get back to you within one business day.',
-  },
-]
+import { FAQS } from '../data/faq'
 
 function FAQItem({ q, a, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
