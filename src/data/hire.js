@@ -18,6 +18,70 @@ export const HIRE_ROLES = {
       { title: 'Ship & maintain', desc: 'Deploy, monitor, and iterate on live features.' },
     ],
   },
+  'mern-stack-developers': {
+    slug: 'mern-stack-developers',
+    iconName: 'Atom',
+    role: 'MERN Stack Developers',
+    short: 'MERN Stack',
+    tagline: 'MongoDB, Express, React, and Node experts for full JavaScript apps.',
+    intro:
+      'Hire MERN stack developers who build modern, single-language web apps end to end with MongoDB, Express, React, and Node.js, fast to develop and easy to scale.',
+    skills: ['MongoDB', 'Express.js', 'React', 'Node.js', 'REST APIs', 'TypeScript'],
+    doing: [
+      { title: 'React frontend', desc: 'Fast, interactive user interfaces built with React.' },
+      { title: 'Node & Express backend', desc: 'Robust APIs and server logic on Node.js and Express.' },
+      { title: 'MongoDB data', desc: 'Flexible, scalable data models with MongoDB.' },
+      { title: 'Ship & maintain', desc: 'Deploy, monitor, and iterate on the full stack.' },
+    ],
+  },
+  'mean-stack-developers': {
+    slug: 'mean-stack-developers',
+    iconName: 'Layers',
+    role: 'MEAN Stack Developers',
+    short: 'MEAN Stack',
+    tagline: 'MongoDB, Express, Angular, and Node experts for enterprise-grade apps.',
+    intro:
+      'Hire MEAN stack developers who build robust, structured web apps with MongoDB, Express, Angular, and Node.js, ideal for large, maintainable enterprise applications.',
+    skills: ['MongoDB', 'Express.js', 'Angular', 'Node.js', 'TypeScript', 'RxJS'],
+    doing: [
+      { title: 'Angular frontend', desc: 'Structured, scalable interfaces with Angular and TypeScript.' },
+      { title: 'Node & Express backend', desc: 'Secure APIs and business logic on Node.js.' },
+      { title: 'MongoDB data', desc: 'Model and query data for enterprise workloads.' },
+      { title: 'Enterprise architecture', desc: 'Maintainable structure built to scale with your org.' },
+    ],
+  },
+  'mevn-stack-developers': {
+    slug: 'mevn-stack-developers',
+    iconName: 'Boxes',
+    role: 'MEVN Stack Developers',
+    short: 'MEVN Stack',
+    tagline: 'MongoDB, Express, Vue, and Node experts for fast, elegant apps.',
+    intro:
+      'Hire MEVN stack developers who build lightweight, reactive web apps with MongoDB, Express, Vue.js, and Node.js, a great balance of simplicity, speed, and power.',
+    skills: ['MongoDB', 'Express.js', 'Vue.js', 'Node.js', 'Pinia', 'JavaScript'],
+    doing: [
+      { title: 'Vue frontend', desc: 'Reactive, elegant interfaces built with Vue.js.' },
+      { title: 'Node & Express backend', desc: 'Clean APIs and server logic on Node.js.' },
+      { title: 'MongoDB data', desc: 'Flexible data models with MongoDB.' },
+      { title: 'Ship & maintain', desc: 'Deploy and iterate on the full JavaScript stack.' },
+    ],
+  },
+  'wordpress-developers': {
+    slug: 'wordpress-developers',
+    iconName: 'Newspaper',
+    role: 'WordPress Developers',
+    short: 'WordPress',
+    tagline: 'Custom themes, plugins, and high-performance WordPress sites.',
+    intro:
+      'Hire WordPress developers who build custom themes, plugins, and fast, secure WordPress and WooCommerce sites, from marketing sites to full e-commerce stores.',
+    skills: ['WordPress', 'PHP', 'WooCommerce', 'Custom Themes', 'Custom Plugins', 'Elementor'],
+    doing: [
+      { title: 'Custom themes', desc: 'Bespoke, on-brand themes built for performance.' },
+      { title: 'Custom plugins', desc: 'Tailored plugins that add exactly the features you need.' },
+      { title: 'WooCommerce', desc: 'Full online stores with secure checkout and payments.' },
+      { title: 'Speed & security', desc: 'Optimized, hardened sites that load fast and stay safe.' },
+    ],
+  },
   'ai-engineers': {
     slug: 'ai-engineers',
     iconName: 'BrainCircuit',
@@ -32,38 +96,6 @@ export const HIRE_ROLES = {
       { title: 'Automation', desc: 'Build agentic workflows that remove manual, repetitive work.' },
       { title: 'Machine learning', desc: 'Design data pipelines and models for prediction and insight.' },
       { title: 'Evaluation', desc: 'Add guardrails and evals so AI output stays trustworthy.' },
-    ],
-  },
-  'frontend-developers': {
-    slug: 'frontend-developers',
-    iconName: 'MonitorSmartphone',
-    role: 'Frontend Developers',
-    short: 'Frontend',
-    tagline: 'Craft fast, polished, accessible user interfaces.',
-    intro:
-      'Hire frontend developers who turn designs into fast, pixel-accurate, accessible interfaces with modern frameworks, and who care about performance and user experience.',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Accessibility (WCAG)', 'Performance'],
-    doing: [
-      { title: 'UI development', desc: 'Build responsive, pixel-accurate interfaces from any design.' },
-      { title: 'Performance', desc: 'Optimize load times, rendering, and Core Web Vitals.' },
-      { title: 'Accessibility', desc: 'Ship interfaces that work for every user and pass WCAG.' },
-      { title: 'Design systems', desc: 'Create reusable component libraries that scale.' },
-    ],
-  },
-  'backend-developers': {
-    slug: 'backend-developers',
-    iconName: 'Server',
-    role: 'Backend Developers',
-    short: 'Backend',
-    tagline: 'Build the APIs, logic, and data layers that power your app.',
-    intro:
-      'Hire backend developers who design secure, scalable APIs and data models, handle the business logic, and keep your systems fast and reliable under load.',
-    skills: ['Node.js', 'Python', 'PostgreSQL', 'REST & GraphQL', 'Redis', 'Microservices'],
-    doing: [
-      { title: 'API design', desc: 'Build clean, documented REST and GraphQL APIs.' },
-      { title: 'Databases', desc: 'Model, index, and optimize relational and NoSQL data.' },
-      { title: 'Business logic', desc: 'Implement the rules, auth, payments, and processing.' },
-      { title: 'Scalability', desc: 'Keep systems fast and reliable as traffic grows.' },
     ],
   },
   'mobile-app-developers': {

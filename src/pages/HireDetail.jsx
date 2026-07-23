@@ -1,13 +1,15 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
 import {
   ArrowRight,
+  Atom,
+  Boxes,
   BrainCircuit,
   CalendarDays,
   Check,
   Clock,
   Code2,
-  MonitorSmartphone,
-  Server,
+  Layers,
+  Newspaper,
   ServerCog,
   ShieldCheck,
   Smartphone,
@@ -18,7 +20,7 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import PageCTA from '../components/PageCTA'
 import { HIRE_ROLES, HIRE_BENEFITS } from '../data/hire'
 
-const ICONS = { Code2, BrainCircuit, MonitorSmartphone, Server, Smartphone, ServerCog }
+const ICONS = { Code2, Atom, Layers, Boxes, Newspaper, BrainCircuit, Smartphone, ServerCog }
 const BENEFIT_ICONS = [ShieldCheck, Clock, Wallet, UsersRound]
 
 export default function HireDetail() {
