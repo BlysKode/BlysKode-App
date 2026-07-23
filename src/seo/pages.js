@@ -110,7 +110,7 @@ const ORG = {
     'Google Cloud',
     'Quality Assurance',
   ],
-  sameAs: [],
+  sameAs: ['https://www.linkedin.com/company/blyskode'],
 }
 
 const WEBSITE = {

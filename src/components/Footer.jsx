@@ -32,7 +32,7 @@ const FOOTER_SERVICES = [
 ]
 
 const SOCIALS = [
-  { path: BRAND_PATHS.linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
+  { path: BRAND_PATHS.linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/blyskode' },
 ]
 
 export default function Footer() {
