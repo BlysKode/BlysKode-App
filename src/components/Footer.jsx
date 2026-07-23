@@ -17,6 +17,7 @@ const BRAND_PATHS = {
 const QUICK_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
+  { label: 'Hire Developers', to: '/hire-developers' },
   { label: 'About', to: '/about' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
@@ -26,7 +27,8 @@ const FOOTER_SERVICES = [
   { label: 'Product Engineering', to: '/services/product-engineering' },
   { label: 'AI & Automation', to: '/services/ai-automation' },
   { label: 'Cloud & DevOps', to: '/services/cloud-devops' },
-  { label: 'All Services', to: '/services' },
+  { label: 'Hire Full Stack Developers', to: '/hire-developers/full-stack-developers' },
+  { label: 'Hire AI Engineers', to: '/hire-developers/ai-engineers' },
 ]
 
 const SOCIALS = [

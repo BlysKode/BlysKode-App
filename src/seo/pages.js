@@ -2,6 +2,7 @@
 // script can import it. Single source of truth for per-page SEO.
 
 import { POSTS, POST_BY_SLUG } from '../data/posts.js'
+import { HIRE_LIST, HIRE_ROLES } from '../data/hire.js'
 
 export const SITE = 'https://blyskode.com'
 const OG_IMAGE = `${SITE}/og.png`
@@ -37,6 +38,11 @@ const STATIC_PAGES = {
     description:
       'Blyskode is a software and technology agency in Islamabad, Pakistan, helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
   },
+  '/hire-developers': {
+    title: 'Hire Dedicated Developers | Blyskode',
+    description:
+      'Hire vetted, dedicated developers from Blyskode: full stack, AI, frontend, backend, mobile, and DevOps engineers. Onboard in days and scale flexibly.',
+  },
   '/blog': {
     title: 'Blog | Blyskode — AI, Cloud & Software Insights',
     description:
@@ -49,13 +55,22 @@ const STATIC_PAGES = {
   },
 }
 
-// Merge in one page per blog post
+// Merge in one page per blog post and per hire role
 export const PAGES = {
   ...STATIC_PAGES,
   ...Object.fromEntries(
     POSTS.map((p) => [
       `/blog/${p.slug}`,
       { title: `${p.title} | Blyskode`, description: p.description },
+    ]),
+  ),
+  ...Object.fromEntries(
+    HIRE_LIST.map((r) => [
+      `/hire-developers/${r.slug}`,
+      {
+        title: `Hire ${r.role} | Blyskode`,
+        description: `Hire dedicated ${r.role.toLowerCase()} from Blyskode. ${r.tagline} Vetted talent, fast onboarding, and flexible engagement.`,
+      },
     ]),
   ),
 }
@@ -249,6 +264,11 @@ function pageNodes(path) {
         { '@type': 'ContactPage', '@id': `${canonical}#webpage`, url: canonical, name: PAGES[path].title, isPartOf: { '@id': `${SITE}/#website` } },
         breadcrumb([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]),
       ]
+    case '/hire-developers':
+      return [
+        { '@type': 'CollectionPage', '@id': `${canonical}#webpage`, url: canonical, name: PAGES[path].title, isPartOf: { '@id': `${SITE}/#website` } },
+        breadcrumb([{ name: 'Home', path: '/' }, { name: 'Hire Developers', path: '/hire-developers' }]),
+      ]
     case '/blog':
       return [
         {
@@ -269,6 +289,27 @@ function pageNodes(path) {
         breadcrumb([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }]),
       ]
     default: {
+      // hire role detail pages
+      if (path.startsWith('/hire-developers/')) {
+        const r = HIRE_ROLES[path.replace('/hire-developers/', '')]
+        return [
+          {
+            '@type': 'Service',
+            '@id': `${canonical}#service`,
+            name: `Hire ${r.role}`,
+            serviceType: r.role,
+            url: canonical,
+            description: PAGES[path].description,
+            provider: { '@id': `${SITE}/#organization` },
+            areaServed: 'Worldwide',
+          },
+          breadcrumb([
+            { name: 'Home', path: '/' },
+            { name: 'Hire Developers', path: '/hire-developers' },
+            { name: `Hire ${r.role}`, path },
+          ]),
+        ]
+      }
       // blog post detail pages
       if (path.startsWith('/blog/')) {
         const post = POST_BY_SLUG[path.replace('/blog/', '')]
