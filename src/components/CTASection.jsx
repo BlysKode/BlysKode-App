@@ -119,6 +119,9 @@ export default function CTASection({ titleAs: Title = 'h2' }) {
                 Schedule a Call
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
+              <p className="mt-4 text-xs text-muted">
+                Free 30-minute consultation · No obligation · We reply within 24 hours
+              </p>
 
               <ul className="mt-10 space-y-4 text-sm text-muted">
                 <li className="flex items-center gap-3">

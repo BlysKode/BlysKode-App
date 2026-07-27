@@ -34,6 +34,9 @@ export default function PageCTA({
                 Schedule a Call
               </a>
             </div>
+            <p className="mt-5 text-xs text-muted">
+              Free 30-minute consultation · No obligation · We reply within 24 hours
+            </p>
           </div>
         </div>
       </div>
