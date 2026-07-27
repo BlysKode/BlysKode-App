@@ -34,6 +34,21 @@ const STATIC_PAGES = {
     description:
       'Blyskode designs resilient cloud infrastructure on AWS, Azure, GCP and more, with DevOps, CI/CD, observability, and cost optimization.',
   },
+  '/services/mobile-app-development': {
+    title: 'Mobile App Development Services | Blyskode',
+    description:
+      'Blyskode builds native and cross-platform iOS and Android apps with React Native and Flutter, from MVP to App Store launch. Hire a mobile app development team.',
+  },
+  '/services/custom-software-development': {
+    title: 'Custom Software Development Services | Blyskode',
+    description:
+      'Blyskode builds bespoke custom software and SaaS products, from MVP development to enterprise platforms, engineered around your exact business workflows.',
+  },
+  '/services/quality-assurance': {
+    title: 'QA & Software Testing Services | Blyskode',
+    description:
+      'Blyskode provides automated and manual software testing and QA services that keep every release stable, secure, and regression-free.',
+  },
   '/about': {
     title: 'About Blyskode | Software & AI Agency in Islamabad',
     description:

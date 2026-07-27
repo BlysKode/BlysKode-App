@@ -10,6 +10,9 @@ const SERVICE_CHILDREN = [
   { label: 'Product Engineering', to: '/services/product-engineering' },
   { label: 'AI & Automation', to: '/services/ai-automation' },
   { label: 'Cloud & DevOps', to: '/services/cloud-devops' },
+  { label: 'Mobile App Development', to: '/services/mobile-app-development' },
+  { label: 'Custom Software Development', to: '/services/custom-software-development' },
+  { label: 'Quality Assurance & Testing', to: '/services/quality-assurance' },
   { label: 'All Services', to: '/services' },
 ]
 

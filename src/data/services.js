@@ -84,9 +84,76 @@ export const SERVICE_DETAILS = {
     ],
     tech: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions'],
   },
+  'mobile-app-development': {
+    slug: 'mobile-app-development',
+    icon: Smartphone,
+    title: 'Mobile App Development',
+    tagline: 'Native and cross-platform apps for iOS and Android.',
+    intro:
+      'We design and build fast, polished mobile apps that users love, whether you need a cross-platform app from one codebase or native iOS and Android performance. From concept to App Store launch.',
+    capabilities: [
+      { icon: Smartphone, title: 'Cross-platform apps', desc: 'One codebase for iOS and Android with React Native or Flutter.' },
+      { icon: Layers, title: 'Native iOS & Android', desc: 'Native Swift and Kotlin builds when performance demands it.' },
+      { icon: Rocket, title: 'UI/UX design', desc: 'Intuitive, on-brand mobile experiences that keep users coming back.' },
+      { icon: GaugeCircle, title: 'Launch & maintain', desc: 'App Store and Google Play submission, updates, and ongoing support.' },
+    ],
+    deliverables: [
+      'Published iOS and Android apps',
+      'Clean, tested, documented codebase',
+      'App Store and Google Play submission',
+      'Ongoing updates and support',
+    ],
+    tech: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase', 'TypeScript'],
+  },
+  'custom-software-development': {
+    slug: 'custom-software-development',
+    icon: Blocks,
+    title: 'Custom Software Development',
+    tagline: 'Bespoke software and SaaS built around your business.',
+    intro:
+      'When off-the-shelf tools do not fit, we build custom software and SaaS products engineered around your exact workflows, from an MVP that validates your idea to a full enterprise platform.',
+    capabilities: [
+      { icon: Rocket, title: 'MVP development', desc: 'Launch a focused first version fast to validate with real users.' },
+      { icon: Boxes, title: 'SaaS platforms', desc: 'Multi-tenant, subscription-ready products built to scale.' },
+      { icon: Blocks, title: 'Internal tools', desc: 'Custom dashboards and tools tailored to your operations.' },
+      { icon: Workflow, title: 'Integrations & APIs', desc: 'Connect your systems and third-party services cleanly.' },
+    ],
+    deliverables: [
+      'Production custom software or SaaS product',
+      'Scalable architecture and documentation',
+      'CI/CD and deployment setup',
+      'Handover, training, and support',
+    ],
+    tech: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS', 'TypeScript'],
+  },
+  'quality-assurance': {
+    slug: 'quality-assurance',
+    icon: ShieldCheck,
+    title: 'Quality Assurance & Testing',
+    tagline: 'Automated and manual testing that ships stable releases.',
+    intro:
+      'We keep every release stable, secure, and regression-free with a mix of automated and manual software testing, so you can ship faster with confidence and catch issues before your users do.',
+    capabilities: [
+      { icon: Workflow, title: 'Automation testing', desc: 'Automated test suites that catch regressions on every change.' },
+      { icon: ShieldCheck, title: 'Manual & exploratory', desc: 'Human testing for UX, edge cases, and real-world flows.' },
+      { icon: GaugeCircle, title: 'Performance & security', desc: 'Load, performance, and security testing before you scale.' },
+      { icon: Bot, title: 'QA process setup', desc: 'Test plans, CI integration, and reporting your team can trust.' },
+    ],
+    deliverables: [
+      'Automated and manual test coverage',
+      'Bug reports and test documentation',
+      'CI-integrated test pipeline',
+      'Release sign-off and a repeatable QA process',
+    ],
+    tech: ['Playwright', 'Cypress', 'Jest', 'Selenium', 'Postman', 'k6'],
+  },
 }
 
+const CORE_SLUGS = ['product-engineering', 'ai-automation', 'cloud-devops']
+
 export const SERVICE_LIST = Object.values(SERVICE_DETAILS)
+export const CORE_LIST = CORE_SLUGS.map((s) => SERVICE_DETAILS[s])
+export const SPECIALIZED_LIST = SERVICE_LIST.filter((s) => !CORE_SLUGS.includes(s.slug))
 
 // Extra services surfaced on the overview page.
 export const ADDITIONAL = [

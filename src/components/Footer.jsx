@@ -27,8 +27,9 @@ const FOOTER_SERVICES = [
   { label: 'Product Engineering', to: '/services/product-engineering' },
   { label: 'AI & Automation', to: '/services/ai-automation' },
   { label: 'Cloud & DevOps', to: '/services/cloud-devops' },
-  { label: 'Hire Full Stack Developers', to: '/hire-developers/full-stack-developers' },
-  { label: 'Hire AI Engineers', to: '/hire-developers/ai-engineers' },
+  { label: 'Mobile App Development', to: '/services/mobile-app-development' },
+  { label: 'Custom Software Development', to: '/services/custom-software-development' },
+  { label: 'Hire Developers', to: '/hire-developers' },
 ]
 
 const SOCIALS = [

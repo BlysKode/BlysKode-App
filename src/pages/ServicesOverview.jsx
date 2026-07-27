@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Check } from 'lucide-react'
 import Breadcrumbs from '../components/Breadcrumbs'
 import PageCTA from '../components/PageCTA'
-import { SERVICE_LIST, ADDITIONAL } from '../data/services'
+import { CORE_LIST, SPECIALIZED_LIST, ADDITIONAL } from '../data/services'
 
 export default function ServicesOverview() {
   return (
@@ -26,7 +26,7 @@ export default function ServicesOverview() {
           </p>
 
           <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {SERVICE_LIST.map(({ slug, icon: Icon, title, tagline, capabilities }) => (
+            {CORE_LIST.map(({ slug, icon: Icon, title, tagline, capabilities }) => (
               <Link
                 key={slug}
                 to={`/services/${slug}`}
@@ -45,6 +45,29 @@ export default function ServicesOverview() {
                     </li>
                   ))}
                 </ul>
+                <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-cyber">
+                  Learn more
+                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <p className="mt-14 mb-5 text-xs font-medium tracking-[0.2em] text-muted uppercase">
+            Specialized services
+          </p>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {SPECIALIZED_LIST.map(({ slug, icon: Icon, title, tagline }) => (
+              <Link
+                key={slug}
+                to={`/services/${slug}`}
+                className="spotlight-card group flex flex-col rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors hover:border-cyber/40"
+              >
+                <div className="mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
+                  <Icon size={24} />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{tagline}</p>
                 <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-cyber">
                   Learn more
                   <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
