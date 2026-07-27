@@ -4,6 +4,7 @@
 import { POSTS, POST_BY_SLUG } from '../data/posts.js'
 import { HIRE_LIST, HIRE_ROLES } from '../data/hire.js'
 import { FAQS } from '../data/faq.js'
+import { PROJECTS, PROJECT_BY_SLUG } from '../data/portfolio.js'
 
 export const SITE = 'https://blyskode.com'
 const OG_IMAGE = `${SITE}/og.png`
@@ -59,6 +60,11 @@ const STATIC_PAGES = {
     description:
       'Hire vetted, dedicated developers from Blyskode: full stack, AI, frontend, backend, mobile, and DevOps engineers. Onboard in days and scale flexibly.',
   },
+  '/portfolio': {
+    title: 'Portfolio & Case Studies | Blyskode',
+    description:
+      'Real systems Blyskode has designed and built — the problem, the architecture, and how it works. Explore our AI and cloud engineering case studies.',
+  },
   '/blog': {
     title: 'Blog | Blyskode — AI, Cloud & Software Insights',
     description:
@@ -87,6 +93,12 @@ export const PAGES = {
         title: `Hire ${r.role} | Blyskode`,
         description: `Hire dedicated ${r.role.toLowerCase()} from Blyskode. ${r.tagline} Vetted talent, fast onboarding, and flexible engagement.`,
       },
+    ]),
+  ),
+  ...Object.fromEntries(
+    PROJECTS.map((p) => [
+      `/portfolio/${p.slug}`,
+      { title: `${p.title} — Case Study | Blyskode`, description: p.summary, image: p.ogImage },
     ]),
   ),
 }
@@ -265,6 +277,23 @@ function pageNodes(path) {
         { '@type': 'CollectionPage', '@id': `${canonical}#webpage`, url: canonical, name: PAGES[path].title, isPartOf: { '@id': `${SITE}/#website` } },
         breadcrumb([{ name: 'Home', path: '/' }, { name: 'Hire Developers', path: '/hire-developers' }]),
       ]
+    case '/portfolio':
+      return [
+        {
+          '@type': 'CollectionPage',
+          '@id': `${canonical}#webpage`,
+          url: canonical,
+          name: PAGES[path].title,
+          isPartOf: { '@id': `${SITE}/#website` },
+          hasPart: PROJECTS.map((p) => ({
+            '@type': 'CreativeWork',
+            name: p.title,
+            url: `${SITE}/portfolio/${p.slug}`,
+            image: `${SITE}${p.ogImage}`,
+          })),
+        },
+        breadcrumb([{ name: 'Home', path: '/' }, { name: 'Portfolio', path: '/portfolio' }]),
+      ]
     case '/blog':
       return [
         {
@@ -285,6 +314,30 @@ function pageNodes(path) {
         breadcrumb([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }]),
       ]
     default: {
+      // portfolio case-study pages
+      if (path.startsWith('/portfolio/')) {
+        const pr = PROJECT_BY_SLUG[path.replace('/portfolio/', '')]
+        return [
+          {
+            '@type': ['CreativeWork', 'Article'],
+            '@id': `${canonical}#casestudy`,
+            headline: `${pr.title} — Case Study`,
+            name: pr.title,
+            description: pr.summary,
+            url: canonical,
+            image: `${SITE}${pr.ogImage}`,
+            author: { '@id': `${SITE}/#organization` },
+            publisher: { '@id': `${SITE}/#organization` },
+            keywords: pr.tech.join(', '),
+            mainEntityOfPage: canonical,
+          },
+          breadcrumb([
+            { name: 'Home', path: '/' },
+            { name: 'Portfolio', path: '/portfolio' },
+            { name: pr.title, path },
+          ]),
+        ]
+      }
       // hire role detail pages
       if (path.startsWith('/hire-developers/')) {
         const r = HIRE_ROLES[path.replace('/hire-developers/', '')]
@@ -363,6 +416,7 @@ export function buildHead(path) {
   if (!meta) return ''
   const canonical = `${SITE}${path === '/' ? '/' : path}`
   const graph = { '@context': 'https://schema.org', '@graph': [ORG, WEBSITE, NAV, ...pageNodes(path)] }
+  const ogImage = meta.image ? `${SITE}${meta.image}` : OG_IMAGE
 
   return [
     `<title>${esc(meta.title)}</title>`,
@@ -374,14 +428,14 @@ export function buildHead(path) {
     `<meta property="og:title" content="${esc(meta.title)}" />`,
     `<meta property="og:description" content="${esc(meta.description)}" />`,
     `<meta property="og:url" content="${canonical}" />`,
-    `<meta property="og:image" content="${OG_IMAGE}" />`,
+    `<meta property="og:image" content="${ogImage}" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
     `<meta property="og:locale" content="en_US" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${esc(meta.title)}" />`,
     `<meta name="twitter:description" content="${esc(meta.description)}" />`,
-    `<meta name="twitter:image" content="${OG_IMAGE}" />`,
+    `<meta name="twitter:image" content="${ogImage}" />`,
     `<script type="application/ld+json">${JSON.stringify(graph)}</script>`,
   ].join('\n    ')
 }

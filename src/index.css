@@ -116,6 +116,16 @@ body {
 .article-prose a {
   @apply text-cyber underline underline-offset-2 hover:text-white;
 }
+.article-prose figure {
+  @apply my-7;
+}
+.article-prose img {
+  @apply block w-full rounded-xl border border-edge;
+  height: auto;
+}
+.article-prose figcaption {
+  @apply mt-3 text-center text-sm text-muted;
+}
 
 /* Soft grid backdrop for sections */
 .grid-backdrop {

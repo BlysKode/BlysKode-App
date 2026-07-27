@@ -13,6 +13,8 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import HireHub from './pages/HireHub'
 import HireDetail from './pages/HireDetail'
+import Portfolio from './pages/Portfolio'
+import CaseStudy from './pages/CaseStudy'
 import NotFound from './pages/NotFound'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
@@ -26,6 +28,8 @@ export default function App() {
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/hire-developers" element={<HireHub />} />
         <Route path="/hire-developers/:slug" element={<HireDetail />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/:slug" element={<CaseStudy />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />

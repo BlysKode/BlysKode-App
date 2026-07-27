@@ -25,6 +25,7 @@ const LINKS = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services', children: SERVICE_CHILDREN },
   { label: 'Hire Developers', to: '/hire-developers', children: HIRE_CHILDREN },
+  { label: 'Portfolio', to: '/portfolio' },
   { label: 'About', to: '/about' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
