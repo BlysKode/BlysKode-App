@@ -3,6 +3,19 @@
 
 export const POSTS = [
   {
+    slug: 'react-native-vs-flutter',
+    title: 'React Native vs Flutter: Which Should You Choose in 2026?',
+    description:
+      'A clear, up-to-date comparison of React Native and Flutter in 2026: performance, UI, developer talent, cost, and exactly when to choose each for your mobile app.',
+    excerpt:
+      'React Native and Flutter power most cross-platform apps. Here is a clear 2026 comparison of performance, UI, talent, and cost, and exactly when to choose each.',
+    date: '2026-07-27',
+    dateLabel: 'July 27, 2026',
+    author: 'Blyskode Team',
+    tags: ['Mobile Apps', 'Product Engineering'],
+    readMins: 7,
+  },
+  {
     slug: 'what-is-full-stack-development',
     title: 'What Is Full Stack Development? A 2026 Guide for Businesses',
     description:

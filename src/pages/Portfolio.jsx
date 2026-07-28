@@ -21,7 +21,7 @@ export default function Portfolio() {
             Work we&apos;ve <span className="text-gradient">shipped</span>
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            A look at real systems Blyskode has designed and built — the problem, the architecture,
+            A look at real systems Blyskode has designed and built: the problem, the architecture,
             and how it works.
           </p>
 
