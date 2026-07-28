@@ -8,6 +8,7 @@ import AppCost from '../content/cost-to-build-a-mobile-app.jsx'
 import CloudCosts from '../content/reduce-cloud-costs.jsx'
 import FullStack from '../content/what-is-full-stack-development.jsx'
 import RnVsFlutter from '../content/react-native-vs-flutter.jsx'
+import StaffAug from '../content/staff-augmentation-vs-outsourcing.jsx'
 
 const BODIES = {
   'ai-automation-for-small-business': AiAutomation,
@@ -15,6 +16,7 @@ const BODIES = {
   'reduce-cloud-costs': CloudCosts,
   'what-is-full-stack-development': FullStack,
   'react-native-vs-flutter': RnVsFlutter,
+  'staff-augmentation-vs-outsourcing': StaffAug,
 }
 
 export default function BlogPost() {
