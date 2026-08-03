@@ -51,9 +51,9 @@ const STATIC_PAGES = {
       'Blyskode provides automated and manual software testing and QA services that keep every release stable, secure, and regression-free.',
   },
   '/about': {
-    title: 'About Blyskode | Software & AI Agency in Islamabad',
+    title: 'About Blyskode | Software & AI Agency in New York',
     description:
-      'Blyskode is a software and technology agency in Islamabad, Pakistan, helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
+      'Blyskode is a software and technology agency in Brooklyn, New York, helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
   },
   '/hire-developers': {
     title: 'Hire Dedicated Developers | Blyskode',
@@ -112,16 +112,17 @@ const ORG = {
   logo: `${SITE}/favicon-512.png`,
   image: OG_IMAGE,
   email: 'blyskode@gmail.com',
-  telephone: '+923338640860',
+  telephone: '+13473667437',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Islamabad',
-    addressCountry: 'PK',
+    addressLocality: 'Brooklyn',
+    addressRegion: 'NY',
+    addressCountry: 'US',
   },
   description:
     'Blyskode is a software and technology agency helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
   slogan: 'Transforming Businesses with Modern AI & Cloud Solutions',
-  foundingLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Islamabad', addressCountry: 'PK' } },
+  foundingLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Brooklyn', addressRegion: 'NY', addressCountry: 'US' } },
   areaServed: { '@type': 'Place', name: 'Worldwide' },
   knowsAbout: [
     'Artificial Intelligence',
@@ -208,8 +209,8 @@ const PRO_SERVICE = {
     'Blyskode is a software and technology agency helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
   priceRange: '$$',
   areaServed: 'Worldwide',
-  telephone: '+923338640860',
-  address: { '@type': 'PostalAddress', addressLocality: 'Islamabad', addressCountry: 'PK' },
+  telephone: '+13473667437',
+  address: { '@type': 'PostalAddress', addressLocality: 'Brooklyn', addressRegion: 'NY', addressCountry: 'US' },
   hasOfferCatalog: OFFER_CATALOG,
 }
 

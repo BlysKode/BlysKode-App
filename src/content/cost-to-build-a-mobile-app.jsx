@@ -93,7 +93,7 @@ export default function Post() {
         Blyskode is a software agency that builds web and mobile apps end to end, and we believe
         estimates should be honest, not inflated. We start by understanding your goals, recommend an
         MVP scope when it makes sense, and give you a clear, itemized estimate before any code is
-        written, so there are no surprises. Working remotely from Islamabad with clients worldwide
+        written, so there are no surprises. Working remotely from New York with clients worldwide
         lets us deliver strong engineering at a competitive rate.
       </p>
       <p>

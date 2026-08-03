@@ -5,7 +5,7 @@
 export const FAQS = [
   {
     q: 'What is Blyskode?',
-    a: 'Blyskode is a software and technology agency based in Islamabad, Pakistan, that helps startups, SaaS companies, and growing enterprises build AI-powered products and scalable cloud platforms. Blyskode works across three core practices: Product Engineering, AI & Automation, and Cloud & DevOps.',
+    a: 'Blyskode is a software and technology agency based in Brooklyn, New York, that helps startups, SaaS companies, and growing enterprises build AI-powered products and scalable cloud platforms. Blyskode works across three core practices: Product Engineering, AI & Automation, and Cloud & DevOps.',
   },
   {
     q: 'What services does Blyskode offer?',
@@ -13,11 +13,11 @@ export const FAQS = [
   },
   {
     q: 'Where is Blyskode located?',
-    a: 'Blyskode is based in Islamabad, Pakistan, and works remotely with clients worldwide.',
+    a: 'Blyskode is based in Brooklyn, New York, and works remotely with clients worldwide.',
   },
   {
     q: 'How does Blyskode pricing work?',
-    a: 'Blyskode provides a clear, itemized estimate for every project before any work begins, with no hidden costs. Because the team works remotely from Islamabad, it offers competitive rates, and supports flexible engagement models including fixed-scope projects, dedicated developers, and staff augmentation.',
+    a: 'Blyskode provides a clear, itemized estimate for every project before any work begins, with no hidden costs. Because the team works remotely from New York, it offers competitive rates, and supports flexible engagement models including fixed-scope projects, dedicated developers, and staff augmentation.',
   },
   {
     q: 'What technologies does Blyskode use?',

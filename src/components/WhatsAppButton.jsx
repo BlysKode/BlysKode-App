@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '923338640860'
+const WHATSAPP_NUMBER = '13473667437'
 const PRESET_MESSAGE = "Hi Blyskode, I'd like to discuss a project."
 
 export default function WhatsAppButton() {
