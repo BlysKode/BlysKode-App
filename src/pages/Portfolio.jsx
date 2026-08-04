@@ -35,12 +35,12 @@ export default function Portfolio() {
                 <div className="relative order-2 aspect-[16/9] overflow-hidden border-t border-edge lg:order-1 lg:aspect-auto lg:border-t-0 lg:border-r">
                   <img
                     src={p.image}
-                    alt={`${p.title} architecture diagram`}
+                    alt={`${p.title} preview`}
                     loading="lazy"
-                    className="size-full object-cover object-left transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
-                <div className="order-1 p-7 lg:order-2 lg:p-8">
+                <div className="order-1 flex flex-col p-7 lg:order-2 lg:p-8">
                   <span className="text-xs font-medium tracking-[0.15em] text-cyber uppercase">
                     {p.category}
                   </span>
@@ -48,20 +48,22 @@ export default function Portfolio() {
                     {p.title}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{p.summary}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {p.tech.slice(0, 6).map((t) => (
-                      <span key={t} className="rounded-full border border-edge bg-surface px-3 py-1 text-xs text-slate-300">
-                        {t}
-                      </span>
-                    ))}
-                    {p.tech.length > 6 && (
-                      <span className="rounded-full border border-edge bg-surface px-3 py-1 text-xs text-muted">
-                        +{p.tech.length - 6} more
-                      </span>
-                    )}
-                  </div>
+                  {p.tech && (
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {p.tech.slice(0, 6).map((t) => (
+                        <span key={t} className="rounded-full border border-edge bg-surface px-3 py-1 text-xs text-slate-300">
+                          {t}
+                        </span>
+                      ))}
+                      {p.tech.length > 6 && (
+                        <span className="rounded-full border border-edge bg-surface px-3 py-1 text-xs text-muted">
+                          +{p.tech.length - 6} more
+                        </span>
+                      )}
+                    </div>
+                  )}
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cyber">
-                    Read the case study
+                    {p.kind === 'case-study' ? 'Read the case study' : p.kind === 'sites' ? 'View the websites' : 'View the work'}
                     <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>

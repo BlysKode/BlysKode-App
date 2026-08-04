@@ -98,7 +98,11 @@ export const PAGES = {
   ...Object.fromEntries(
     PROJECTS.map((p) => [
       `/portfolio/${p.slug}`,
-      { title: `${p.title} — Case Study | Blyskode`, description: p.summary, image: p.ogImage },
+      {
+        title: `${p.title}${p.kind === 'case-study' ? ' — Case Study' : ''} | Blyskode`,
+        description: p.summary,
+        image: p.ogImage,
+      },
     ]),
   ),
 }
@@ -343,7 +347,7 @@ function pageNodes(path) {
             image: `${SITE}${pr.ogImage}`,
             author: { '@id': `${SITE}/#organization` },
             publisher: { '@id': `${SITE}/#organization` },
-            keywords: pr.tech.join(', '),
+            keywords: (pr.tech || []).join(', '),
             mainEntityOfPage: canonical,
           },
           breadcrumb([
