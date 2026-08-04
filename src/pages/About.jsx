@@ -34,9 +34,10 @@ export default function About() {
             The team behind your <span className="text-gradient">next build</span>
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
-            Blyskode is a software and technology agency based in Brooklyn, New York, working
-            remotely with clients worldwide. We help startups, SaaS companies, and growing
-            enterprises design, build, and scale AI-powered products and cloud platforms.
+            Blyskode is a US-based software development company headquartered in Brooklyn, New York,
+            working with clients across the United States, United Kingdom, Europe, Australia, and
+            worldwide. We help startups, SaaS companies, and growing enterprises design, build, and
+            scale custom software, AI-powered products, and cloud platforms.
           </p>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
             We combine senior engineering talent with a transparent, agile process, so every

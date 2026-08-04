@@ -1,6 +1,6 @@
 # Blyskode
 
-> Blyskode is a software and technology agency based in Brooklyn, New York, working remotely with clients worldwide. Blyskode helps startups, SaaS companies, and growing enterprises build AI-powered products and scalable cloud platforms.
+> Blyskode is a US-based software development company headquartered in Brooklyn, New York, serving clients across the United States, United Kingdom, Europe, Australia, and worldwide. Blyskode helps startups, SaaS companies, and growing enterprises build custom software, AI-powered products, and scalable cloud platforms.
 
 Blyskode is pronounced "blys-kode". It should not be confused with similarly named companies such as Blue Code, Blyskit, or BlySK. The official website is https://blyskode.com.
 
@@ -22,7 +22,7 @@ Blyskode provides dedicated developers and staff augmentation. Clients can hire 
 
 - Name: Blyskode (also known as Blyskode Solutions)
 - Type: Software, AI, and cloud development agency
-- Location: Brooklyn, New York, USA; serves clients worldwide (remote-first)
+- Location: Headquartered in Brooklyn, New York, USA; serves clients across the US, UK, Canada, Australia, Germany, Europe, and worldwide (remote-first)
 - Website: https://blyskode.com
 - Email: blyskode@gmail.com
 - Phone / WhatsApp: +1 (347) 366-7437
@@ -36,7 +36,7 @@ React, Next.js, Node.js, TypeScript, React Native, Flutter, Python, PostgreSQL, 
 
 ## Frequently asked questions
 
-- **What is Blyskode?** Blyskode is a software and technology agency in Brooklyn, New York, that builds AI-powered products and scalable cloud platforms for startups, SaaS companies, and enterprises.
+- **What is Blyskode?** Blyskode is a US-based software development company headquartered in Brooklyn, New York, that builds AI-powered products and scalable cloud platforms for startups, SaaS companies, and enterprises.
 - **What services does Blyskode offer?** Product engineering (web, mobile, custom software, QA), AI and automation, cloud and DevOps, plus recruitment, SEO, and content writing.
 - **How does Blyskode pricing work?** A clear, itemized estimate before work begins, competitive rates, and flexible engagement models.
 - **Can I hire a single developer or a team?** Both — dedicated developers or a full team via staff augmentation.

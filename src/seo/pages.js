@@ -11,9 +11,9 @@ const OG_IMAGE = `${SITE}/og.png`
 
 const STATIC_PAGES = {
   '/': {
-    title: 'Blyskode Modern AI & Cloud Solutions | Software Agency',
+    title: 'Blyskode | Software Development Company — AI, Cloud & Apps',
     description:
-      'Blyskode transforms businesses with modern AI & cloud solutions: full stack development, AI engineering & automation, DevOps, cloud services (AWS, Azure, GCP), mobile apps, QA and more.',
+      'Blyskode is a US-based software development company building custom software, AI, cloud, web, and mobile apps for startups and enterprises worldwide. Hire dedicated developers or outsource your project.',
   },
   '/services': {
     title: 'Services | Blyskode Software & AI Agency',
@@ -51,9 +51,9 @@ const STATIC_PAGES = {
       'Blyskode provides automated and manual software testing and QA services that keep every release stable, secure, and regression-free.',
   },
   '/about': {
-    title: 'About Blyskode | Software & AI Agency in New York',
+    title: 'About Blyskode | US-Based Software Development Company',
     description:
-      'Blyskode is a software and technology agency in Brooklyn, New York, helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
+      'Blyskode is a US-based software development company headquartered in Brooklyn, New York, serving startups, SaaS companies, and enterprises across the US, UK, Europe, Australia, and worldwide.',
   },
   '/hire-developers': {
     title: 'Hire Dedicated Developers | Blyskode',
@@ -120,10 +120,17 @@ const ORG = {
     addressCountry: 'US',
   },
   description:
-    'Blyskode is a software and technology agency helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
+    'Blyskode is a US-based software development company, headquartered in Brooklyn, New York, helping startups, SaaS companies, and enterprises worldwide build custom software, AI-powered products, and scalable cloud platforms.',
   slogan: 'Transforming Businesses with Modern AI & Cloud Solutions',
   foundingLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Brooklyn', addressRegion: 'NY', addressCountry: 'US' } },
-  areaServed: { '@type': 'Place', name: 'Worldwide' },
+  areaServed: [
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'Country', name: 'Canada' },
+    { '@type': 'Country', name: 'Australia' },
+    { '@type': 'Country', name: 'Germany' },
+    { '@type': 'Place', name: 'Worldwide' },
+  ],
   knowsAbout: [
     'Artificial Intelligence',
     'AI Automation',
@@ -206,9 +213,16 @@ const PRO_SERVICE = {
   url: `${SITE}/`,
   image: OG_IMAGE,
   description:
-    'Blyskode is a software and technology agency helping startups, SaaS companies, and enterprises build AI-powered products and scalable cloud platforms.',
+    'Blyskode is a US-based software development company helping startups, SaaS companies, and enterprises worldwide build custom software, AI-powered products, and scalable cloud platforms.',
   priceRange: '$$',
-  areaServed: 'Worldwide',
+  areaServed: [
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'Country', name: 'Canada' },
+    { '@type': 'Country', name: 'Australia' },
+    { '@type': 'Country', name: 'Germany' },
+    { '@type': 'Place', name: 'Worldwide' },
+  ],
   telephone: '+13473667437',
   address: { '@type': 'PostalAddress', addressLocality: 'Brooklyn', addressRegion: 'NY', addressCountry: 'US' },
   hasOfferCatalog: OFFER_CATALOG,

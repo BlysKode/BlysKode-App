@@ -5,7 +5,7 @@
 export const FAQS = [
   {
     q: 'What is Blyskode?',
-    a: 'Blyskode is a software and technology agency based in Brooklyn, New York, that helps startups, SaaS companies, and growing enterprises build AI-powered products and scalable cloud platforms. Blyskode works across three core practices: Product Engineering, AI & Automation, and Cloud & DevOps.',
+    a: 'Blyskode is a US-based software development company headquartered in Brooklyn, New York, that helps startups, SaaS companies, and growing enterprises build custom software, AI-powered products, and scalable cloud platforms. Blyskode works across three core practices: Product Engineering, AI & Automation, and Cloud & DevOps.',
   },
   {
     q: 'What services does Blyskode offer?',
@@ -13,7 +13,7 @@ export const FAQS = [
   },
   {
     q: 'Where is Blyskode located?',
-    a: 'Blyskode is based in Brooklyn, New York, and works remotely with clients worldwide.',
+    a: 'Blyskode is a US-based company headquartered in Brooklyn, New York, and works with clients across the United States, United Kingdom, Europe, Australia, and worldwide.',
   },
   {
     q: 'How does Blyskode pricing work?',
