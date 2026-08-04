@@ -10,8 +10,13 @@ const SERVICE_CHILDREN = [
   { label: 'Product Engineering', to: '/services/product-engineering' },
   { label: 'AI & Automation', to: '/services/ai-automation' },
   { label: 'Cloud & DevOps', to: '/services/cloud-devops' },
+  { label: 'Web Development', to: '/services/web-development' },
   { label: 'Mobile App Development', to: '/services/mobile-app-development' },
+  { label: 'UI/UX Design', to: '/services/ui-ux-design' },
   { label: 'Custom Software Development', to: '/services/custom-software-development' },
+  { label: 'SaaS Development', to: '/services/saas-development' },
+  { label: 'MVP Development', to: '/services/mvp-development' },
+  { label: 'Ecommerce Development', to: '/services/ecommerce-development' },
   { label: 'Quality Assurance & Testing', to: '/services/quality-assurance' },
   { label: 'All Services', to: '/services' },
 ]
@@ -72,7 +77,7 @@ function DesktopItem({ link }) {
           open ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
-        <ul className="w-60 rounded-2xl border border-edge bg-panel/95 p-2 shadow-2xl backdrop-blur-xl">
+        <ul className="max-h-[70vh] w-60 overflow-y-auto rounded-2xl border border-edge bg-panel/95 p-2 shadow-2xl backdrop-blur-xl">
           {link.children.map((c) => (
             <li key={c.to}>
               <Link

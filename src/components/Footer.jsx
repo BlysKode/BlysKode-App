@@ -25,12 +25,15 @@ const QUICK_LINKS = [
 ]
 
 const FOOTER_SERVICES = [
-  { label: 'Product Engineering', to: '/services/product-engineering' },
+  { label: 'Web Development', to: '/services/web-development' },
+  { label: 'Mobile App Development', to: '/services/mobile-app-development' },
+  { label: 'UI/UX Design', to: '/services/ui-ux-design' },
+  { label: 'SaaS Development', to: '/services/saas-development' },
+  { label: 'MVP Development', to: '/services/mvp-development' },
+  { label: 'Ecommerce Development', to: '/services/ecommerce-development' },
   { label: 'AI & Automation', to: '/services/ai-automation' },
   { label: 'Cloud & DevOps', to: '/services/cloud-devops' },
-  { label: 'Mobile App Development', to: '/services/mobile-app-development' },
   { label: 'Custom Software Development', to: '/services/custom-software-development' },
-  { label: 'Hire Developers', to: '/hire-developers' },
 ]
 
 const SOCIALS = [

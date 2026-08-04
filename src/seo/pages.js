@@ -50,6 +50,31 @@ const STATIC_PAGES = {
     description:
       'Blyskode provides automated and manual software testing and QA services that keep every release stable, secure, and regression-free.',
   },
+  '/services/web-development': {
+    title: 'Web Development Services | Blyskode',
+    description:
+      'Blyskode builds fast, responsive websites and custom web applications with React, Next.js, and WordPress, optimized for speed, SEO, and conversions.',
+  },
+  '/services/ui-ux-design': {
+    title: 'UI/UX Design Services | Blyskode',
+    description:
+      'Blyskode designs intuitive, on-brand UI/UX for web and mobile apps, from user research and wireframes to polished, developer-ready design systems and branding.',
+  },
+  '/services/saas-development': {
+    title: 'SaaS Development Services | Blyskode',
+    description:
+      'Blyskode builds multi-tenant SaaS platforms end-to-end, with subscription billing, dashboards, and scalable architecture, from MVP to enterprise scale.',
+  },
+  '/services/mvp-development': {
+    title: 'MVP Development Services for Startups | Blyskode',
+    description:
+      'Blyskode helps startups launch a focused MVP fast to validate with real users, with a production-ready build and a clear roadmap to scale.',
+  },
+  '/services/ecommerce-development': {
+    title: 'Ecommerce Development Services | Blyskode',
+    description:
+      'Blyskode builds fast, secure online stores on WooCommerce, Shopify, and custom platforms, optimized to convert traffic into sales.',
+  },
   '/about': {
     title: 'About Blyskode | US-Based Software Development Company',
     description:
@@ -191,6 +216,16 @@ const SERVICE_NAMES = {
     'Sourcing, vetting, and onboarding top technical talent tailored to your team.',
   'Mobile Application Development':
     'Native and cross-platform mobile apps with polished UX for iOS and Android.',
+  'Web Development':
+    'Fast, responsive websites and custom web applications built to rank and convert.',
+  'UI/UX Design':
+    'Intuitive, on-brand interface design and branding for web and mobile products.',
+  'SaaS Development':
+    'Multi-tenant SaaS platforms with subscription billing, dashboards, and integrations.',
+  'MVP Development':
+    'Focused, production-ready MVPs that help startups validate and launch fast.',
+  'Ecommerce Development':
+    'Fast, secure online stores on WooCommerce, Shopify, and custom platforms.',
   'Custom Software Development':
     'Bespoke platforms and internal tools engineered around your exact business logic.',
   'SEO & Digital Marketing':

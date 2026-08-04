@@ -7,15 +7,24 @@ import {
   Cloud,
   Code2,
   Cpu,
+  CreditCard,
   GaugeCircle,
   GitBranch,
+  Globe,
   Layers,
+  LayoutTemplate,
   LineChart,
+  Palette,
+  PenTool,
   Rocket,
+  Search,
   ServerCog,
   ShieldCheck,
+  ShoppingCart,
   Smartphone,
+  Target,
   Workflow,
+  Zap,
 } from 'lucide-react'
 
 // Ordered map keyed by URL slug. Used by the /services overview and the
@@ -146,6 +155,111 @@ export const SERVICE_DETAILS = {
       'Release sign-off and a repeatable QA process',
     ],
     tech: ['Playwright', 'Cypress', 'Jest', 'Selenium', 'Postman', 'k6'],
+  },
+  'web-development': {
+    slug: 'web-development',
+    icon: Globe,
+    title: 'Web Development',
+    tagline: 'Fast, responsive websites and web apps that convert.',
+    intro:
+      'We design and build modern websites and web applications that load fast, rank on Google, and turn visitors into customers, from marketing sites to complex, data-driven web apps.',
+    capabilities: [
+      { icon: Globe, title: 'Business & marketing websites', desc: 'Fast, responsive sites built to rank on search and convert visitors into leads.' },
+      { icon: Code2, title: 'Custom web applications', desc: 'Interactive, data-driven web apps with secure APIs and scalable databases.' },
+      { icon: LayoutTemplate, title: 'WordPress & CMS', desc: 'Custom WordPress, Elementor, and headless CMS builds your team can manage.' },
+      { icon: GaugeCircle, title: 'Speed & SEO', desc: 'Core Web Vitals, clean markup, and technical SEO baked in from day one.' },
+    ],
+    deliverables: [
+      'Responsive website or web app, launched',
+      'Fast-loading, SEO-ready pages',
+      'A CMS or admin your team can manage',
+      'Analytics, hosting, and full handover',
+    ],
+    tech: ['React', 'Next.js', 'WordPress', 'Node.js', 'Tailwind CSS', 'TypeScript'],
+  },
+  'ui-ux-design': {
+    slug: 'ui-ux-design',
+    icon: Palette,
+    title: 'UI/UX Design',
+    tagline: 'Interfaces that are intuitive, on-brand, and built to convert.',
+    intro:
+      'We design clean, intuitive interfaces and end-to-end user experiences for web and mobile products, from research and wireframes to polished, developer-ready designs and brand systems.',
+    capabilities: [
+      { icon: Search, title: 'UX research & wireframes', desc: 'User flows, wireframes, and prototypes grounded in how people actually use your product.' },
+      { icon: Palette, title: 'UI & visual design', desc: 'Polished, on-brand interfaces with consistent design systems and components.' },
+      { icon: Smartphone, title: 'Web & mobile app design', desc: 'Responsive designs for web and native iOS and Android apps.' },
+      { icon: PenTool, title: 'Brand & identity', desc: 'Logos, brand systems, and marketing creative that make you look established.' },
+    ],
+    deliverables: [
+      'Wireframes, prototypes, and final UI',
+      'A reusable design system and components',
+      'Developer-ready design handoff',
+      'Brand assets and a style guide',
+    ],
+    tech: ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator'],
+  },
+  'saas-development': {
+    slug: 'saas-development',
+    icon: Boxes,
+    title: 'SaaS Development',
+    tagline: 'Multi-tenant SaaS products built to scale and subscribe.',
+    intro:
+      'We build subscription-ready SaaS platforms end-to-end, from multi-tenant architecture and billing to dashboards and integrations, engineered to scale as your customer base grows.',
+    capabilities: [
+      { icon: Boxes, title: 'Multi-tenant architecture', desc: 'Secure, scalable foundations that serve many customers from one codebase.' },
+      { icon: CreditCard, title: 'Subscriptions & billing', desc: 'Stripe billing, plans, trials, and usage metering built in.' },
+      { icon: LineChart, title: 'Dashboards & analytics', desc: 'Admin panels, user dashboards, and reporting your customers rely on.' },
+      { icon: Workflow, title: 'Integrations & APIs', desc: 'Public APIs, webhooks, and third-party integrations that extend your product.' },
+    ],
+    deliverables: [
+      'A production SaaS platform, launched',
+      'Subscription billing and user management',
+      'Scalable multi-tenant architecture',
+      'Documentation, CI/CD, and support',
+    ],
+    tech: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS'],
+  },
+  'mvp-development': {
+    slug: 'mvp-development',
+    icon: Rocket,
+    title: 'MVP Development',
+    tagline: 'Launch a focused first version fast, and validate with real users.',
+    intro:
+      'We help startups turn an idea into a working product quickly, building a focused MVP that validates your concept with real users without over-building, so you can raise, learn, and iterate.',
+    capabilities: [
+      { icon: Target, title: 'Scope & prioritize', desc: 'We cut to the core feature set that proves your idea, then ship it.' },
+      { icon: Zap, title: 'Rapid build', desc: 'A working, production-grade MVP in weeks, not months.' },
+      { icon: Smartphone, title: 'Web & mobile MVPs', desc: 'Launch on web, iOS, or Android, whichever reaches your users fastest.' },
+      { icon: BarChart3, title: 'Measure & iterate', desc: 'Analytics and feedback loops so you learn exactly what to build next.' },
+    ],
+    deliverables: [
+      'A launched, production-ready MVP',
+      'A clean codebase ready to scale',
+      'Analytics and feedback tooling',
+      'A clear, prioritized roadmap for v2',
+    ],
+    tech: ['React', 'Next.js', 'React Native', 'Node.js', 'Supabase', 'Vercel'],
+  },
+  'ecommerce-development': {
+    slug: 'ecommerce-development',
+    icon: ShoppingCart,
+    title: 'Ecommerce Development',
+    tagline: 'Online stores that load fast and sell more.',
+    intro:
+      'We design and build online stores that are fast, secure, and easy to manage, from WooCommerce and Shopify storefronts to custom ecommerce platforms, optimized to convert browsers into buyers.',
+    capabilities: [
+      { icon: ShoppingCart, title: 'WooCommerce & Shopify', desc: 'Custom storefronts on the platforms you already know, built to convert.' },
+      { icon: CreditCard, title: 'Payments & checkout', desc: 'Secure, frictionless checkout with Stripe, PayPal, and more.' },
+      { icon: Code2, title: 'Custom & headless commerce', desc: 'Bespoke storefronts and headless setups when you need full control.' },
+      { icon: GaugeCircle, title: 'Speed & conversion', desc: 'Fast pages, clean UX, and SEO that turn traffic into sales.' },
+    ],
+    deliverables: [
+      'A launched, conversion-ready online store',
+      'Secure payments and checkout',
+      'Product, inventory, and order management',
+      'Speed, SEO, and analytics setup',
+    ],
+    tech: ['WooCommerce', 'Shopify', 'WordPress', 'Next.js', 'Stripe'],
   },
 }
 
