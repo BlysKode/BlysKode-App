@@ -5,6 +5,7 @@ import { POSTS, POST_BY_SLUG } from '../data/posts.js'
 import { HIRE_LIST, HIRE_ROLES } from '../data/hire.js'
 import { FAQS } from '../data/faq.js'
 import { PROJECTS, PROJECT_BY_SLUG } from '../data/portfolio.js'
+import { TEAM } from '../data/team.js'
 
 export const SITE = 'https://blyskode.com'
 const OG_IMAGE = `${SITE}/og.png`
@@ -175,6 +176,13 @@ const ORG = {
     'Quality Assurance',
   ],
   sameAs: ['https://www.linkedin.com/company/blyskode'],
+  founder: TEAM.map((m) => ({
+    '@type': 'Person',
+    name: m.name,
+    jobTitle: m.role,
+    image: `${SITE}${m.image}`,
+    worksFor: { '@id': `${SITE}/#organization` },
+  })),
 }
 
 const WEBSITE = {

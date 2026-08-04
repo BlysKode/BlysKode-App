@@ -2,6 +2,15 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Eye, Gauge, Heart, ShieldCheck, Target, Users } from 'lucide-react'
 import Breadcrumbs from '../components/Breadcrumbs'
 import PageCTA from '../components/PageCTA'
+import { TEAM } from '../data/team'
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  )
+}
 
 const VALUES = [
   { icon: Gauge, title: 'Velocity', desc: 'Agile sprints and fast turnaround, without cutting corners on quality.' },
@@ -52,6 +61,50 @@ export default function About() {
                 <p className="mt-1 text-xs tracking-wide text-muted uppercase">{label}</p>
               </div>
             ))}
+          </div>
+
+          {/* Founders */}
+          <div className="mt-16 border-t border-white/5 pt-12">
+            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
+              Meet the founders
+            </h2>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">
+              Blyskode is founder-led. You work directly with the people accountable for your
+              project, from the first call through launch and beyond.
+            </p>
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:max-w-3xl">
+              {TEAM.map((m) => (
+                <div
+                  key={m.role}
+                  className="spotlight-card flex items-center gap-5 rounded-2xl border border-edge bg-panel/60 p-5 backdrop-blur"
+                >
+                  <img
+                    src={m.image}
+                    alt={`${m.name}, ${m.role} of Blyskode`}
+                    width="88"
+                    height="88"
+                    loading="lazy"
+                    className="size-22 shrink-0 rounded-xl border border-edge object-cover object-top"
+                  />
+                  <div>
+                    <h3 className="font-display text-lg font-semibold text-white">{m.name}</h3>
+                    <p className="mt-0.5 text-sm font-medium text-cyber">{m.role}</p>
+                    {m.bio && <p className="mt-2 text-sm leading-relaxed text-muted">{m.bio}</p>}
+                    {m.linkedin && (
+                      <a
+                        href={m.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${m.name} on LinkedIn`}
+                        className="mt-3 inline-grid size-8 place-items-center rounded-full border border-edge bg-surface text-muted transition-colors hover:border-cyber/50 hover:text-cyber"
+                      >
+                        <LinkedInIcon />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
