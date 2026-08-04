@@ -8,7 +8,7 @@ export const TEAM = [
     bio: '',
   },
   {
-    name: 'Rana Taimoor',
+    name: 'Taimoor Nasir',
     role: 'Co-Founder',
     image: '/team/cofounder.jpg',
     linkedin: '',

@@ -30,15 +30,14 @@ export default function Leadership() {
               key={m.role}
               className="spotlight-card flex flex-col items-center rounded-2xl border border-edge bg-panel/60 p-7 text-center backdrop-blur"
             >
-              <div className="relative">
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-cyber/40 to-neon/30 blur-md" />
+              <div className="founder-frame mt-2 mb-1">
                 <img
                   src={m.image}
                   alt={`${m.name}, ${m.role} of Blyskode`}
-                  width="128"
-                  height="128"
+                  width="176"
+                  height="216"
                   loading="lazy"
-                  className="relative size-32 rounded-full border border-edge object-cover object-top"
+                  className="h-54 w-44 object-cover object-top"
                 />
               </div>
               <h3 className="mt-5 font-display text-lg font-semibold text-white">{m.name}</h3>

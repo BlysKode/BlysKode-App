@@ -127,6 +127,77 @@ body {
   @apply mt-3 text-center text-sm text-muted;
 }
 
+/* Founder portrait: golden glowing oval frame with a soft shine pulse */
+.founder-frame {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  border-radius: 50%;
+  background: #0a0c13;
+  animation: founderGlow 3.4s ease-in-out infinite;
+}
+.founder-frame > img {
+  border-radius: 50%;
+  display: block;
+}
+/* Rotating light sheen sweeping around the gold ring */
+.founder-frame::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(253, 224, 71, 0.95) 40deg,
+    rgba(251, 191, 36, 0.35) 90deg,
+    transparent 150deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: founderSpin 5.5s linear infinite;
+  pointer-events: none;
+}
+@keyframes founderGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 2px rgba(251, 191, 36, 0.9),
+      0 0 18px 2px rgba(251, 191, 36, 0.5),
+      0 0 46px 8px rgba(245, 158, 11, 0.28);
+  }
+  50% {
+    box-shadow:
+      0 0 0 2px rgba(253, 224, 71, 1),
+      0 0 28px 5px rgba(251, 191, 36, 0.72),
+      0 0 72px 16px rgba(245, 158, 11, 0.42);
+  }
+}
+@keyframes founderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .founder-frame {
+    animation: none;
+    box-shadow:
+      0 0 0 2px rgba(251, 191, 36, 0.9),
+      0 0 24px 4px rgba(251, 191, 36, 0.5);
+  }
+  .founder-frame::after {
+    animation: none;
+  }
+}
+
 /* Soft grid backdrop for sections */
 .grid-backdrop {
   background-image:

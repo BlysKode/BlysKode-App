@@ -78,14 +78,16 @@ export default function About() {
                   key={m.role}
                   className="spotlight-card flex items-center gap-5 rounded-2xl border border-edge bg-panel/60 p-5 backdrop-blur"
                 >
-                  <img
-                    src={m.image}
-                    alt={`${m.name}, ${m.role} of Blyskode`}
-                    width="88"
-                    height="88"
-                    loading="lazy"
-                    className="size-22 shrink-0 rounded-xl border border-edge object-cover object-top"
-                  />
+                  <div className="founder-frame shrink-0">
+                    <img
+                      src={m.image}
+                      alt={`${m.name}, ${m.role} of Blyskode`}
+                      width="96"
+                      height="116"
+                      loading="lazy"
+                      className="h-29 w-24 object-cover object-top"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-display text-lg font-semibold text-white">{m.name}</h3>
                     <p className="mt-0.5 text-sm font-medium text-cyber">{m.role}</p>
