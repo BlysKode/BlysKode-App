@@ -1,126 +1,109 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ArrowRight, Sparkles } from 'lucide-react'
-
-// Loaded lazily so three.js/R3F never block first paint or LCP
-const HeroScene = lazy(() => import('./three/HeroScene'))
-
+import { ArrowRight, CalendarDays, MapPin } from 'lucide-react'
 import { prefersReducedMotion } from '../lib/motion'
-
-const HEADLINE = 'Transforming Businesses with Modern AI & Cloud Solutions'
+import { TEAM } from '../data/team'
 
 export default function Hero() {
   const root = useRef(null)
-  // The canvas mounts after hydration only — it has no SEO content, and
-  // skipping it during SSR keeps server and client markup identical.
-  const [showScene, setShowScene] = useState(false)
-  useEffect(() => {
-    // Static gradient fallback for users who prefer reduced motion
-    if (!prefersReducedMotion()) setShowScene(true)
-  }, [])
 
   useGSAP(
     () => {
       if (prefersReducedMotion()) return
-
-      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
-      tl.from('.hero-word', {
-        yPercent: 120,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.045,
-        delay: 0.1,
-      })
-        .from('.hero-sub', { y: 30, opacity: 0, duration: 0.9 }, '-=0.7')
-        .from('.hero-cta', { y: 24, opacity: 0, duration: 0.8, stagger: 0.12 }, '-=0.6')
-        .from('.hero-stat', { y: 20, opacity: 0, duration: 0.7, stagger: 0.1 }, '-=0.5')
-
-      // Parallax the copy away as the user scrolls off the hero
-      gsap.to('.hero-copy', {
-        yPercent: -18,
-        opacity: 0.15,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: root.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      })
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+      tl.from('.hero-anim', { y: 26, opacity: 0, duration: 0.8, stagger: 0.09, delay: 0.1 })
+        .from('.hero-photo', { y: 30, opacity: 0, scale: 0.97, duration: 0.9 }, '-=0.7')
     },
     { scope: root },
   )
 
   return (
-    <section id="home" ref={root} className="relative flex min-h-svh items-center overflow-hidden">
-      {/* 3D background */}
-      <div className="absolute inset-0">
-        {showScene && (
-          <Suspense fallback={null}>
-            <HeroScene />
-          </Suspense>
-        )}
-      </div>
+    <section
+      id="home"
+      ref={root}
+      className="relative flex min-h-svh items-center overflow-hidden pt-28 pb-16"
+    >
+      {/* Soft, static brand glow (no heavy 3D) */}
+      <div className="grid-backdrop pointer-events-none absolute inset-0" />
+      <div className="pointer-events-none absolute -top-24 right-0 h-[36rem] w-[36rem] rounded-full bg-neon/10 blur-[130px]" />
+      <div className="pointer-events-none absolute bottom-0 -left-24 h-[28rem] w-[28rem] rounded-full bg-cyber/10 blur-[120px]" />
 
-      {/* Soft vignettes so text stays readable over the canvas */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/60 via-transparent to-ink" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_45%,transparent_20%,rgba(5,6,10,0.55)_100%)]" />
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-5 md:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        {/* Copy */}
+        <div>
+          <p className="hero-anim inline-flex items-center gap-2 rounded-full border border-edge bg-panel/70 px-4 py-1.5 text-xs font-medium tracking-[0.2em] text-cyber uppercase backdrop-blur">
+            <MapPin size={13} />
+            US-based · Founder-led software studio
+          </p>
 
-      <div className="hero-copy pointer-events-none relative z-10 mx-auto w-full max-w-7xl px-5 pt-28 pb-16 md:px-10">
-        <p className="hero-sub pointer-events-auto mb-6 inline-flex items-center gap-2 rounded-full border border-edge bg-panel/70 px-4 py-1.5 text-xs font-medium tracking-[0.25em] text-cyber uppercase backdrop-blur">
-          <Sparkles size={14} />
-          Welcome to Blyskode.
-        </p>
+          <h1 className="hero-anim mt-6 max-w-2xl font-display text-4xl leading-[1.08] font-bold text-white sm:text-5xl lg:text-6xl">
+            Software that <span className="text-gradient">ships</span>. Built by people you can
+            actually talk to.
+          </h1>
 
-        <h1 className="max-w-5xl font-display text-4xl leading-[1.06] font-bold text-white sm:text-6xl lg:text-7xl">
-          {HEADLINE.split(' ').map((word, i) => (
-            <span key={i} className="inline-block overflow-hidden pb-1 align-top">
-              <span
-                className={`hero-word inline-block ${
-                  ['AI', '&', 'Cloud', 'Solutions'].includes(word) ? 'text-gradient' : ''
-                }`}
-              >
-                {word}
-              </span>
-              <span className="inline-block">&nbsp;</span>
-            </span>
-          ))}
-        </h1>
+          <p className="hero-anim mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+            Blyskode is a small, senior team building web, mobile, AI, and cloud software. No account
+            managers, no runaround, you work directly with the founders who write your code.
+          </p>
 
-        <p className="hero-sub mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          We help startups, SaaS companies, and growing enterprises build AI-powered products
-          and scalable cloud platforms, from first commit to global scale.
-        </p>
+          <div className="hero-anim mt-9 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="https://calendly.com/blyskode/30min"
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter] hover:brightness-110"
+            >
+              <CalendarDays size={16} />
+              Book a free call
+            </a>
+            <Link
+              to="/portfolio"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-edge bg-panel/60 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-cyber/50 hover:bg-panel"
+            >
+              See our work
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
 
-        <div className="pointer-events-auto mt-10 flex flex-col gap-4 sm:flex-row">
-          <Link
-            to="/services"
-            className="hero-cta group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter,box-shadow] hover:brightness-110 hover:shadow-[0_0_60px_-8px_rgba(139,92,246,0.7)]"
-          >
-            Explore Services
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link
-            to="/contact"
-            className="hero-cta inline-flex items-center justify-center gap-2 rounded-full border border-edge bg-panel/60 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-cyber/50 hover:bg-panel"
-          >
-            Let&apos;s Talk
-          </Link>
+          <div className="hero-anim mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/5 pt-7 text-sm text-muted">
+            <span>Brooklyn, New York</span>
+            <span className="text-white/20">·</span>
+            <span>Web, Mobile, AI &amp; Cloud</span>
+            <span className="text-white/20">·</span>
+            <span>We reply within 24 hours</span>
+          </div>
         </div>
 
-        <div className="pointer-events-auto mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-white/5 pt-8">
-          {[
-            ['<24h', 'Response Time'],
-            ['24/7', 'Support Coverage'],
-            ['3', 'Core Practice Areas'],
-          ].map(([value, label]) => (
-            <div key={label} className="hero-stat">
-              <p className="font-display text-2xl font-bold text-white sm:text-3xl">{value}</p>
-              <p className="mt-1 text-xs tracking-wide text-muted uppercase">{label}</p>
+        {/* Real founder photos */}
+        <div className="hero-photo relative mx-auto w-full max-w-md">
+          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-cyber/15 via-neon/20 to-magenta/15 blur-2xl" />
+          <div className="relative overflow-hidden rounded-3xl border border-edge bg-panel/60 p-3 backdrop-blur">
+            <div className="grid grid-cols-2 gap-3">
+              {TEAM.map((m) => (
+                <img
+                  key={m.role}
+                  src={m.image}
+                  alt={`${m.name}, ${m.role} of Blyskode`}
+                  width="240"
+                  height="300"
+                  className="aspect-[4/5] w-full rounded-2xl object-cover object-top"
+                />
+              ))}
             </div>
-          ))}
+            <div className="flex items-end justify-between px-2 pt-3 pb-1">
+              <div>
+                <p className="font-display text-sm font-semibold text-white">
+                  Muhammad Adeel &amp; Taimoor Nasir
+                </p>
+                <p className="text-xs text-muted">Founders, Blyskode</p>
+              </div>
+              <span className="rounded-full border border-cyber/30 bg-cyber/10 px-3 py-1 text-xs font-medium text-cyber">
+                Founder-led
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
