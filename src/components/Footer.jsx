@@ -55,8 +55,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              Transforming businesses with modern AI &amp; cloud solutions. We design, build, and
-              scale the technology behind ambitious companies.
+              A small, senior team building web, mobile, AI, and cloud software. You work directly
+              with the founders, from the first call through launch and beyond.
             </p>
             <div className="mt-6 flex gap-3">
               {SOCIALS.map(({ path, label, href }) => (
