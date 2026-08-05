@@ -101,7 +101,19 @@ const STATIC_PAGES = {
     description:
       'Get in touch with Blyskode. Share your project and we reply within 24 hours with a clear plan and honest estimate, or book a call directly.',
   },
+  '/woocommerce-development': {
+    title: 'WooCommerce Development Company | Blyskode',
+    description:
+      'Blyskode designs, builds, and speeds up WooCommerce stores for US and worldwide brands. Fast, mobile-first stores built to convert. Book a free store audit.',
+  },
 }
+
+// FAQ shown on the WooCommerce landing page (kept in sync with the component).
+const WOO_FAQS = [
+  ['How much does a WooCommerce store cost?', 'It depends on scope. After a free audit we send a clear fixed price so you know the cost up front, with no hidden fees.'],
+  ['Can you fix or speed up my existing store?', 'Yes. We do redesigns, speed optimization, and migrations, not only new builds. The free audit shows exactly what we would improve.'],
+  ['Are you really US-based?', 'Yes, Blyskode is a US-based company headquartered in Brooklyn, New York, working with clients worldwide. You work directly with the founders.'],
+]
 
 // Merge in one page per blog post and per hire role
 export const PAGES = {
@@ -355,6 +367,30 @@ function pageNodes(path) {
           })),
         },
         breadcrumb([{ name: 'Home', path: '/' }, { name: 'Portfolio', path: '/portfolio' }]),
+      ]
+    case '/woocommerce-development':
+      return [
+        { '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: PAGES[path].title, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#organization` } },
+        {
+          '@type': 'Service',
+          '@id': `${canonical}#service`,
+          name: 'WooCommerce Development',
+          serviceType: 'WooCommerce & E-commerce Development',
+          url: canonical,
+          description: PAGES[path].description,
+          provider: { '@id': `${SITE}/#organization` },
+          areaServed: 'Worldwide',
+        },
+        {
+          '@type': 'FAQPage',
+          '@id': `${canonical}#faq`,
+          mainEntity: WOO_FAQS.map(([q, a]) => ({
+            '@type': 'Question',
+            name: q,
+            acceptedAnswer: { '@type': 'Answer', text: a },
+          })),
+        },
+        breadcrumb([{ name: 'Home', path: '/' }, { name: 'WooCommerce Development', path: '/woocommerce-development' }]),
       ]
     case '/blog':
       return [

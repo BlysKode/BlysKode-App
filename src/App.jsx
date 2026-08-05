@@ -15,6 +15,7 @@ import HireHub from './pages/HireHub'
 import HireDetail from './pages/HireDetail'
 import Portfolio from './pages/Portfolio'
 import CaseStudy from './pages/CaseStudy'
+import WooCommerceLanding from './pages/WooCommerceLanding'
 import NotFound from './pages/NotFound'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/hire-developers/:slug" element={<HireDetail />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:slug" element={<CaseStudy />} />
+        <Route path="/woocommerce-development" element={<WooCommerceLanding />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
