@@ -12,7 +12,7 @@ const OG_IMAGE = `${SITE}/og.png`
 
 const STATIC_PAGES = {
   '/': {
-    title: 'Blyskode | Software Development Company — AI, Cloud & Apps',
+    title: 'Blyskode | US Software Development Company: Web, Mobile & AI',
     description:
       'Blyskode is a US-based software development company building custom software, AI, cloud, web, and mobile apps for startups and enterprises worldwide. Hire dedicated developers or outsource your project.',
   },
@@ -92,7 +92,7 @@ const STATIC_PAGES = {
       'Real systems Blyskode has designed and built — the problem, the architecture, and how it works. Explore our AI and cloud engineering case studies.',
   },
   '/blog': {
-    title: 'Blog | Blyskode — AI, Cloud & Software Insights',
+    title: 'Blyskode Blog | Software, AI & Cloud Development Guides',
     description:
       'Practical guides from the Blyskode team on AI automation, cloud, DevOps, and building scalable software for startups and small businesses.',
   },
@@ -137,7 +137,7 @@ export const PAGES = {
     PROJECTS.map((p) => [
       `/portfolio/${p.slug}`,
       {
-        title: `${p.title}${p.kind === 'case-study' ? ' — Case Study' : ''} | Blyskode`,
+        title: `${p.title}${p.kind === 'case-study' ? ': Case Study' : ''} | Blyskode`,
         description: p.summary,
         image: p.ogImage,
       },
