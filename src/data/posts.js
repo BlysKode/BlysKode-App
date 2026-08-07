@@ -3,6 +3,45 @@
 
 export const POSTS = [
   {
+    slug: 'how-to-hire-a-software-development-company',
+    title: 'How to Hire a Software Development Company in 2026: A Buyer’s Checklist',
+    description:
+      'A practical 2026 checklist for hiring a software development company: how to scope your project, pick an engagement model, vet a firm, spot red flags, and the questions to ask.',
+    excerpt:
+      'Hiring the wrong software company is expensive. Here is a practical 2026 checklist: how to scope the work, choose an engagement model, vet a firm, and the exact questions to ask.',
+    date: '2026-08-06',
+    dateLabel: 'August 6, 2026',
+    author: 'Blyskode Team',
+    tags: ['Hiring', 'Software Development'],
+    readMins: 9,
+  },
+  {
+    slug: 'cost-to-build-a-saas-mvp',
+    title: 'How Much Does It Cost to Build a SaaS MVP in 2026?',
+    description:
+      'A clear 2026 breakdown of SaaS MVP development costs by complexity, what actually drives the price, realistic timelines, and practical ways to launch for less.',
+    excerpt:
+      'A SaaS MVP can cost anywhere from $30k to well over $150k. Here is a clear 2026 breakdown by complexity, what drives the price, and how to launch for less without cutting corners.',
+    date: '2026-08-05',
+    dateLabel: 'August 5, 2026',
+    author: 'Blyskode Team',
+    tags: ['SaaS Development', 'Startups'],
+    readMins: 8,
+  },
+  {
+    slug: 'offshore-vs-us-software-development',
+    title: 'Offshore vs US Software Development: What US Startups Should Know',
+    description:
+      'Offshore, nearshore, or US-based development? A clear 2026 guide to the real trade-offs in cost, communication, quality, and risk, and how to choose the right model for your startup.',
+    excerpt:
+      'Offshore development can fund three developers for the price of one, but the real trade-off is not just cost. Here is what US startups should weigh before deciding in 2026.',
+    date: '2026-08-04',
+    dateLabel: 'August 4, 2026',
+    author: 'Blyskode Team',
+    tags: ['Outsourcing', 'Startups'],
+    readMins: 8,
+  },
+  {
     slug: 'staff-augmentation-vs-outsourcing',
     title: 'Staff Augmentation vs Outsourcing: Which to Choose in 2026?',
     description:

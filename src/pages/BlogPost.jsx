@@ -9,6 +9,9 @@ import CloudCosts from '../content/reduce-cloud-costs.jsx'
 import FullStack from '../content/what-is-full-stack-development.jsx'
 import RnVsFlutter from '../content/react-native-vs-flutter.jsx'
 import StaffAug from '../content/staff-augmentation-vs-outsourcing.jsx'
+import HireCompany from '../content/how-to-hire-a-software-development-company.jsx'
+import SaasMvpCost from '../content/cost-to-build-a-saas-mvp.jsx'
+import OffshoreVsUs from '../content/offshore-vs-us-software-development.jsx'
 
 const BODIES = {
   'ai-automation-for-small-business': AiAutomation,
@@ -17,6 +20,9 @@ const BODIES = {
   'what-is-full-stack-development': FullStack,
   'react-native-vs-flutter': RnVsFlutter,
   'staff-augmentation-vs-outsourcing': StaffAug,
+  'how-to-hire-a-software-development-company': HireCompany,
+  'cost-to-build-a-saas-mvp': SaasMvpCost,
+  'offshore-vs-us-software-development': OffshoreVsUs,
 }
 
 export default function BlogPost() {
