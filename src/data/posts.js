@@ -39,7 +39,7 @@ export const POSTS = [
     dateLabel: 'August 4, 2026',
     author: 'Blyskode Team',
     tags: ['Outsourcing', 'Startups'],
-    readMins: 8,
+    readMins: 5,
   },
   {
     slug: 'staff-augmentation-vs-outsourcing',

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Post() {
   return (
     <>
@@ -20,8 +22,8 @@ export default function Post() {
 
       <h2>Offshore development: the honest pros and cons</h2>
       <p>
-        Offshore usually means a team many timezones away, often in South Asia or parts of Eastern
-        Europe and Asia.
+        Offshore usually means a team many timezones away, often in regions like South Asia, Eastern
+        Europe, or Latin America.
       </p>
       <ul>
         <li>
@@ -49,10 +51,10 @@ export default function Post() {
       <h2>Nearshore and hybrid: the middle path</h2>
       <p>
         Nearshore means a team in a nearby timezone, which keeps most of the communication benefits of
-        US-based work at a lower cost. A hybrid model is increasingly common and often the smartest
-        choice: a US-based lead or founder who owns strategy, communication, and quality, working with
-        a vetted team to deliver. You get the accountability and overlap of US-based work with better
-        economics.
+        US-based work at a lower cost. A hybrid model is increasingly common and works well for many
+        teams: a US-based lead or founder who owns strategy, communication, and quality, working with a
+        vetted team to deliver. You get the accountability and overlap of a US point of contact with
+        better economics.
       </p>
 
       <h2>What actually matters: the team, not the map</h2>
@@ -78,11 +80,16 @@ export default function Post() {
 
       <h2>Working with Blyskode</h2>
       <p>
-        Blyskode is a US-based, founder-led software company serving clients worldwide. You get the
-        communication, timezone overlap, and accountability of a US partner, you work directly with the
-        founders, and you can see our live client work before you commit. If you are weighing your
-        options, tell us what you are building and we will reply within 24 hours with a clear plan and
-        an honest estimate.
+        Blyskode is a US-based, founder-led software company serving clients worldwide. You work
+        directly with the founders in Brooklyn, New York, so you get a US point of contact,
+        full communication and timezone overlap, and clear accountability, and you can see our live
+        client work in our <Link to="/portfolio">portfolio</Link> before you commit. If you are
+        weighing your options, <Link to="/contact">tell us what you are building</Link> and we will
+        reply within 24 hours with a clear plan and an honest estimate.
+      </p>
+      <p>
+        <strong>Sources:</strong> 2026 offshore, nearshore, and remote development market reports and
+        developer hiring cost data, compiled August 2026.
       </p>
     </>
   )

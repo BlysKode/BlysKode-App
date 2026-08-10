@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Post() {
   return (
     <>
@@ -101,11 +103,17 @@ export default function Post() {
 
       <h2>Working with Blyskode</h2>
       <p>
-        Blyskode is a US-based, founder-led team that builds SaaS products and MVPs end to end. We help
-        you cut to the core feature set that proves your idea, then design, build, and launch a
-        production-ready first version with a clear, fixed scope and no hidden costs. If you are
-        planning a SaaS product, tell us what you are building and we will reply within 24 hours with a
-        practical plan and an honest estimate.
+        Blyskode is a US-based, founder-led team that builds{' '}
+        <Link to="/services/saas-development">SaaS products</Link> and{' '}
+        <Link to="/services/mvp-development">MVPs</Link> end to end. We help you cut to the core
+        feature set that proves your idea, then design, build, and launch a production-ready first
+        version with a clear, fixed scope and no hidden costs. If you are planning a SaaS product,{' '}
+        <Link to="/contact">tell us what you are building</Link> and we will reply within 24 hours
+        with a practical plan and an honest estimate.
+      </p>
+      <p>
+        <strong>Sources:</strong> Industry SaaS and MVP development pricing guides and cost
+        benchmarks, compiled August 2026.
       </p>
     </>
   )

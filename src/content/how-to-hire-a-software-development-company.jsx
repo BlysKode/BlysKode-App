@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Post() {
   return (
     <>
@@ -126,9 +128,13 @@ export default function Post() {
       <p>
         Blyskode is a US-based, founder-led software company. You work directly with the founders and
         the engineers building your product, not a sales layer, and you can see our live client work
-        in our portfolio before you commit. If you are choosing a software partner, tell us what you
-        are building and we will reply within 24 hours with an honest plan, a clear scope, and a fair
-        estimate.
+        in our <Link to="/portfolio">portfolio</Link> before you commit. If you are choosing a
+        software partner, <Link to="/contact">tell us what you are building</Link> and we will reply
+        within 24 hours with an honest plan, a clear scope, and a fair estimate.
+      </p>
+      <p>
+        <strong>Sources:</strong> 2026 software agency hiring and vendor-selection guides; B2B
+        services buyer research, compiled August 2026.
       </p>
     </>
   )
