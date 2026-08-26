@@ -129,7 +129,7 @@ export default function WooCommerceLanding() {
 
       <div ref={root}>
         {/* Pain */}
-        <section className="py-20 lg:py-24">
+        <section className="section">
           <div className="shell">
             <h2 data-reveal className="max-w-[22ch] text-[1.8rem] sm:text-[2.2rem]">
               Is your store quietly losing sales?
@@ -148,12 +148,12 @@ export default function WooCommerceLanding() {
         </section>
 
         {/* Capabilities */}
-        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+        <section className="border-y border-line bg-paper-soft section">
           <div className="shell">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
               What we build for you
             </h2>
-            <div className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="stack-top grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
               {CAPABILITIES.map(({ icon: Icon, title, desc }) => (
                 <div key={title} data-reveal>
                   <Icon size={20} strokeWidth={1.8} className="text-signal" />
@@ -166,7 +166,7 @@ export default function WooCommerceLanding() {
         </section>
 
         {/* Proof */}
-        <section className="py-20 lg:py-28">
+        <section className="section">
           <div className="shell grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div data-reveal className="card overflow-hidden">
               <img
@@ -211,7 +211,7 @@ export default function WooCommerceLanding() {
         </section>
 
         {/* Free audit */}
-        <section className="pb-20 lg:pb-28">
+        <section className="pb-14 sm:pb-20 lg:pb-28">
           <div className="shell">
             <div data-reveal className="band-dark rounded-2xl px-6 py-12 sm:px-12 lg:px-16">
               <div className="relative grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:items-center">
@@ -254,12 +254,12 @@ export default function WooCommerceLanding() {
         </section>
 
         {/* Process */}
-        <section className="border-y border-line bg-paper-soft py-20 lg:py-24">
+        <section className="border-y border-line bg-paper-soft section">
           <div className="shell">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
               How it works
             </h2>
-            <ol className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <ol className="stack-top grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
               {STEPS.map(([title, desc], i) => (
                 <li key={title} data-reveal>
                   <span className="font-mono text-[0.76rem] font-semibold text-faint">
@@ -274,7 +274,7 @@ export default function WooCommerceLanding() {
         </section>
 
         {/* FAQ */}
-        <section className="py-20 lg:py-24">
+        <section className="section">
           <div className="mx-auto w-full max-w-[760px] px-5 sm:px-7">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
               Common questions
@@ -291,7 +291,7 @@ export default function WooCommerceLanding() {
         </section>
 
         {/* Final CTA */}
-        <section className="pb-24 lg:pb-32">
+        <section className="pb-16 sm:pb-24 lg:pb-32">
           <div className="shell">
             <div data-reveal className="band-dark rounded-2xl px-6 py-14 sm:px-12 lg:px-16">
               <div className="relative max-w-2xl">

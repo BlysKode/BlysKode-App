@@ -50,7 +50,7 @@ export default function ServiceDetail() {
 
       <div ref={root}>
         {/* Capabilities */}
-        <section className="py-20 lg:py-28">
+        <section className="section">
           <div className="shell grid gap-12 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
@@ -77,7 +77,7 @@ export default function ServiceDetail() {
         </section>
 
         {/* Deliverables and stack */}
-        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+        <section className="border-y border-line bg-paper-soft section">
           <div className="shell grid gap-14 lg:grid-cols-2 lg:gap-20">
             <div>
               <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
@@ -118,7 +118,7 @@ export default function ServiceDetail() {
         </section>
 
         {/* Related */}
-        <section className="py-20 lg:py-24">
+        <section className="section">
           <div className="shell">
             <h2 data-reveal className="text-[1.4rem]">
               Often paired with

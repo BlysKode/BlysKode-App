@@ -30,7 +30,7 @@ export default function Portfolio() {
       />
 
       <div ref={root}>
-        <section className="py-16 lg:py-24">
+        <section className="section">
           <div className="shell space-y-6">
             {PROJECTS.map((project, i) => (
               <article key={project.slug} data-reveal className="card card-hoverable group overflow-hidden">

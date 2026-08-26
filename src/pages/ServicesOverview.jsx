@@ -35,7 +35,7 @@ export default function ServicesOverview() {
 
       <div ref={root}>
         {/* Core practices */}
-        <section className="py-20 lg:py-28">
+        <section className="section">
           <div className="shell">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
               Core practices
@@ -45,7 +45,7 @@ export default function ServicesOverview() {
               when a deal closes.
             </p>
 
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
+            <div className="stack-top grid gap-5 md:grid-cols-3">
               {CORE_LIST.map(({ slug, icon: Icon, title, tagline, capabilities, tech }) => (
                 <article key={slug} data-reveal className="card card-hoverable group flex flex-col p-7">
                   <Link to={`/services/${slug}`} className="flex h-full flex-col">
@@ -93,7 +93,7 @@ export default function ServicesOverview() {
         </section>
 
         {/* Specialisms */}
-        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+        <section className="border-y border-line bg-paper-soft section">
           <div className="shell">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
               Specialisms
@@ -102,7 +102,7 @@ export default function ServicesOverview() {
               Scoped engagements when you know exactly what you need building.
             </p>
 
-            <ul className="mt-12 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="stack-top grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
               {SPECIALIZED_LIST.map(({ slug, icon: Icon, title, tagline }) => (
                 <li key={slug} data-reveal>
                   <Link
@@ -126,7 +126,7 @@ export default function ServicesOverview() {
         </section>
 
         {/* Around the build */}
-        <section className="py-20 lg:py-28">
+        <section className="section">
           <div className="shell">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
               Around the build
@@ -135,7 +135,7 @@ export default function ServicesOverview() {
               The work that decides whether a good product finds anyone.
             </p>
 
-            <div className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="stack-top grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
               {ADDITIONAL.map(({ icon: Icon, title, desc }) => (
                 <div key={title} data-reveal>
                   <Icon size={20} strokeWidth={1.8} className="text-signal" />

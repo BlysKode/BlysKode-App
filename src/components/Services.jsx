@@ -10,7 +10,7 @@ export default function Services() {
   useGSAP(() => revealIn(root.current), { scope: root })
 
   return (
-    <section id="services" ref={root} className="border-y border-line bg-paper-soft py-24 lg:py-32">
+    <section id="services" ref={root} className="border-y border-line bg-paper-soft section-lg">
       <div className="shell">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
@@ -28,7 +28,7 @@ export default function Services() {
         </div>
 
         {/* Core practices */}
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="stack-top grid gap-5 md:grid-cols-3">
           {CORE_LIST.map((service) => {
             const Icon = service.icon
             return (

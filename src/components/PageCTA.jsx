@@ -7,11 +7,11 @@ export default function PageCTA({
   sub = 'Send us the brief, however rough. You get a scope, a timeline and an honest estimate inside one business day.',
 }) {
   return (
-    <section className="pb-24 lg:pb-32">
+    <section className="pb-16 sm:pb-24 lg:pb-32">
       <div className="shell">
-        <div className="band-dark rounded-2xl px-6 py-14 sm:px-12 lg:px-16">
+        <div className="band-dark rounded-2xl px-5 py-11 sm:px-12 sm:py-14 lg:px-16">
           <div className="relative max-w-2xl">
-            <h2 className="text-[1.9rem] text-white sm:text-[2.3rem]">{heading}</h2>
+            <h2 className="text-[1.7rem] text-white sm:text-[2.3rem]">{heading}</h2>
             <p className="mt-4 max-w-[52ch] text-[1rem] leading-[1.68] text-white/65">{sub}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/contact" className="btn btn-onDark">

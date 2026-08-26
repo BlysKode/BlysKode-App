@@ -84,7 +84,7 @@ export default function FAQ() {
   useGSAP(() => revealIn(root.current, { stagger: 0.05 }), { scope: root })
 
   return (
-    <section id="faq" ref={root} className="border-t border-line bg-paper-soft py-24 lg:py-32">
+    <section id="faq" ref={root} className="border-t border-line bg-paper-soft section-lg">
       <div className="shell grid gap-12 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p data-reveal className="eyebrow">

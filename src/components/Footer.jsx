@@ -46,33 +46,36 @@ const COLUMNS = [
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-paper-soft">
-      <div className="shell py-16 lg:py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1fr]">
-          <div>
+      <div className="shell section-tight">
+        {/* Two columns of links on a phone rather than one long ladder: the
+            brand block spans the full width, then Services and Hire sit side
+            by side with Company beneath them. */}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-[1.35fr_1fr_1fr_1fr]">
+          <div className="col-span-2 lg:col-span-1">
             <Brand size={30} />
             <p className="mt-5 max-w-[38ch] text-[0.92rem] leading-relaxed text-body">
               A software engineering partner in Brooklyn, New York. We design, build and run web,
               mobile, AI and cloud software for founders and product teams.
             </p>
 
-            <ul className="mt-7 space-y-3 text-[0.9rem]">
+            <ul className="mt-7 space-y-1 text-[0.9rem]">
               <li className="flex items-start gap-3 text-body">
                 <Mail size={16} className="mt-1 shrink-0 text-faint" />
                 <a
                   href="mailto:blyskode@gmail.com"
-                  className="transition-colors hover:text-signal"
+                  className="inline-block py-1.5 transition-colors hover:text-signal"
                 >
                   blyskode@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-body">
                 <Phone size={16} className="mt-1 shrink-0 text-faint" />
-                <a href="tel:+13473667437" className="transition-colors hover:text-signal">
+                <a href="tel:+13473667437" className="inline-block py-1.5 transition-colors hover:text-signal">
                   +1 (347) 366 7437
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-body">
-                <MapPin size={16} className="mt-1 shrink-0 text-faint" />
+              <li className="flex items-start gap-3 py-1.5 text-body">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-faint" />
                 Brooklyn, New York
               </li>
             </ul>
@@ -90,17 +93,23 @@ export default function Footer() {
             </a>
           </div>
 
-          {COLUMNS.map((column) => (
-            <nav key={column.heading} aria-label={column.heading}>
+          {COLUMNS.map((column, i) => (
+            <nav
+              key={column.heading}
+              aria-label={column.heading}
+              // The third column has no partner on a two-column row, so it
+              // takes the full width instead of leaving a hole beside it.
+              className={i === COLUMNS.length - 1 ? 'col-span-2 lg:col-span-1' : ''}
+            >
               <h2 className="font-display text-[0.72rem] font-semibold tracking-[0.14em] text-ink uppercase">
                 {column.heading}
               </h2>
-              <ul className="mt-5 space-y-2.5">
+              <ul className="mt-4 sm:mt-5">
                 {column.links.map((link) => (
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-[0.89rem] text-body transition-colors hover:text-signal"
+                      className="inline-block py-1.5 text-[0.89rem] text-body transition-colors hover:text-signal"
                     >
                       {link.label}
                     </Link>

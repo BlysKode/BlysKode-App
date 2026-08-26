@@ -26,7 +26,7 @@ export default function Blog() {
       />
 
       <div ref={root}>
-        <section className="py-16 lg:py-20">
+        <section className="section-tight">
           <div className="shell">
             {/* Lead article */}
             {lead && (

@@ -16,13 +16,13 @@ export default function Leadership() {
   useGSAP(() => revealIn(root.current), { scope: root })
 
   return (
-    <section ref={root} className="py-24 lg:py-32">
+    <section ref={root} className="section-lg">
       <div className="shell grid gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-20">
         <div>
           <p data-reveal className="eyebrow">
             Who you deal with
           </p>
-          <h2 data-reveal className="mt-5 text-[2.1rem] sm:text-[2.6rem]">
+          <h2 data-reveal className="mt-4 text-[1.85rem] sm:mt-5 sm:text-[2.6rem]">
             Founder led, and it stays that way.
           </h2>
           <p data-reveal className="lede mt-5">
@@ -36,7 +36,7 @@ export default function Leadership() {
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3.5 sm:gap-5">
           {TEAM.map((member) => (
             <figure key={member.role} data-reveal className="card card-hoverable overflow-hidden">
               <div className="aspect-[4/5] overflow-hidden bg-paper-mute">
@@ -49,7 +49,7 @@ export default function Leadership() {
                   className="size-full object-cover object-top"
                 />
               </div>
-              <figcaption className="flex items-start justify-between gap-3 border-t border-line p-5">
+              <figcaption className="flex items-start justify-between gap-2 border-t border-line p-4 sm:p-5">
                 <div>
                   <p className="font-display text-[1.02rem] font-semibold text-ink">
                     {member.name}

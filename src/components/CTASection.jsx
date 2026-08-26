@@ -82,10 +82,10 @@ export default function CTASection({ titleAs: Title = 'h2' }) {
   useGSAP(() => revealIn(root.current, { stagger: 0.06 }), { scope: root })
 
   return (
-    <section id="contact" ref={root} className="band-dark py-24 lg:py-32">
+    <section id="contact" ref={root} className="band-dark section-lg">
       <div className="grid-faint-dark pointer-events-none absolute inset-0" aria-hidden="true" />
 
-      <div className="shell relative grid gap-14 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:gap-20">
+      <div className="shell relative grid gap-10 sm:gap-14 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:gap-20">
         {/* Pitch */}
         <div>
           <p data-reveal className="eyebrow eyebrow-onDark">
@@ -93,7 +93,7 @@ export default function CTASection({ titleAs: Title = 'h2' }) {
           </p>
           <Title
             data-reveal
-            className="mt-5 max-w-[16ch] text-[2.1rem] text-white sm:text-[2.6rem]"
+            className="mt-4 max-w-[16ch] text-[1.85rem] text-white sm:mt-5 sm:text-[2.6rem]"
           >
             Tell us what you are building.
           </Title>
@@ -147,7 +147,7 @@ export default function CTASection({ titleAs: Title = 'h2' }) {
         <form
           data-reveal
           onSubmit={handleSubmit}
-          className="rounded-xl border border-white/12 bg-white/[0.04] p-6 backdrop-blur-sm sm:p-8"
+          className="rounded-xl border border-white/12 bg-white/[0.04] p-5 backdrop-blur-sm sm:p-8"
         >
           {/* Honeypot. Humans never see it, bots fill it and get rejected. */}
           <input

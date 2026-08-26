@@ -223,6 +223,32 @@
       0 18px 36px -20px rgba(10, 33, 26, 0.3);
   }
 
+  /* Vertical rhythm ------------------------------------------------------- */
+
+  /* Section padding is defined once, mobile first. Left to per-component
+     `py-24 lg:py-32`, a phone got the desktop's 96px gutters on a 390px
+     screen, which stretched the home page to nearly twice its desktop
+     height and left the content marooned between empty bands. */
+  .section {
+    @apply py-14 sm:py-20 lg:py-28;
+  }
+  .section-lg {
+    @apply py-16 sm:py-24 lg:py-32;
+  }
+  .section-tight {
+    @apply py-11 sm:py-16 lg:py-20;
+  }
+
+  /* The opening block of an inner page, clearing the fixed header. */
+  .page-head {
+    @apply pt-[100px] pb-10 sm:pt-[124px] sm:pb-14 lg:pt-[148px] lg:pb-20;
+  }
+
+  /* Gap between a section heading and the grid or list beneath it. */
+  .stack-top {
+    @apply mt-9 sm:mt-12 lg:mt-14;
+  }
+
   /* A hairline that fades out rather than butting into the container edge */
   .rule-fade {
     height: 1px;

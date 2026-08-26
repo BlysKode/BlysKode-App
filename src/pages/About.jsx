@@ -92,7 +92,7 @@ export default function About() {
         </section>
 
         {/* Story */}
-        <section className="py-20 lg:py-28">
+        <section className="section">
           <div className="shell grid gap-14 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-20">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <p data-reveal className="eyebrow">
@@ -126,7 +126,7 @@ export default function About() {
         </section>
 
         {/* Founders */}
-        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+        <section className="border-y border-line bg-paper-soft section">
           <div className="shell">
             <p data-reveal className="eyebrow">
               Leadership
@@ -139,7 +139,7 @@ export default function About() {
               through launch and whatever comes after it.
             </p>
 
-            <div className="mt-12 grid max-w-3xl gap-5 sm:grid-cols-2">
+            <div className="stack-top grid max-w-3xl grid-cols-2 gap-3.5 sm:gap-5">
               {TEAM.map((member) => (
                 <figure key={member.role} data-reveal className="card card-hoverable overflow-hidden">
                   <div className="aspect-[4/5] overflow-hidden bg-paper-mute">
@@ -152,7 +152,7 @@ export default function About() {
                       className="size-full object-cover object-top"
                     />
                   </div>
-                  <figcaption className="flex items-start justify-between gap-3 border-t border-line p-5">
+                  <figcaption className="flex items-start justify-between gap-2 border-t border-line p-4 sm:p-5">
                     <div>
                       <p className="font-display text-[1.02rem] font-semibold text-ink">
                         {member.name}
@@ -183,7 +183,7 @@ export default function About() {
         </section>
 
         {/* Where we work */}
-        <section className="py-20 lg:py-24">
+        <section className="section">
           <div className="shell grid gap-12 lg:grid-cols-2 lg:gap-20">
             <div data-reveal>
               <h2 className="text-[1.6rem] sm:text-[1.9rem]">Where we work</h2>

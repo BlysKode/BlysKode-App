@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
   }, { scope: root })
 
   return (
-    <section id="why" ref={root} className="band-dark py-24 lg:py-32">
+    <section id="why" ref={root} className="band-dark section-lg">
       <div className="grid-faint-dark pointer-events-none absolute inset-0" aria-hidden="true" />
 
       <div className="shell relative">
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
           <p data-reveal className="eyebrow eyebrow-onDark">
             Why teams stay
           </p>
-          <h2 data-reveal className="mt-5 text-[2.1rem] text-white sm:text-[2.6rem]">
+          <h2 data-reveal className="mt-4 text-[1.85rem] text-white sm:mt-5 sm:text-[2.6rem]">
             The parts of an agency people usually complain about, removed.
           </h2>
           <p data-reveal className="mt-5 max-w-[54ch] text-[1.02rem] leading-[1.68] text-white/65 sm:text-[1.08rem]">
@@ -66,19 +66,19 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Metrics */}
-        <dl className="mt-14 grid gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="stack-top grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 lg:grid-cols-4">
           {METRICS.map((metric, i) => (
-            <div key={metric.label} data-reveal className="bg-ink/95 px-6 py-7">
+            <div key={metric.label} data-reveal className="bg-ink/95 px-5 py-6 sm:px-6 sm:py-7">
               <dt className="sr-only">{metric.label}</dt>
               <dd>
                 <span
                   data-metric={i}
-                  className="tnum block font-display text-[2.1rem] leading-none font-semibold text-white"
+                  className="tnum block font-display text-[1.7rem] leading-none font-semibold text-white sm:text-[2.1rem]"
                 >
                   {metric.to}
                   {metric.suffix}
                 </span>
-                <span className="mt-3 block text-[0.84rem] leading-snug text-white/55">
+                <span className="mt-2.5 block text-[0.8rem] leading-snug text-white/55 sm:mt-3 sm:text-[0.84rem]">
                   {metric.label}
                 </span>
               </dd>
@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
         </dl>
 
         {/* Reasons */}
-        <div className="mt-16 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-x-12 gap-y-9 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
           {REASONS.map((reason, i) => (
             <div key={reason.title} data-reveal>
               <span

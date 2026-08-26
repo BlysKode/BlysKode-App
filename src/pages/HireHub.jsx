@@ -53,7 +53,7 @@ export default function HireHub() {
 
       <div ref={root}>
         {/* Roles */}
-        <section className="py-20 lg:py-28">
+        <section className="section">
           <div className="shell">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
               Roles you can hire
@@ -63,7 +63,7 @@ export default function HireHub() {
               front of you.
             </p>
 
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="stack-top grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {HIRE_LIST.map(({ slug, iconName, role, tagline }) => {
                 const Icon = ICONS[iconName]
                 return (
@@ -92,12 +92,12 @@ export default function HireHub() {
         </section>
 
         {/* How it works */}
-        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+        <section className="border-y border-line bg-paper-soft section">
           <div className="shell">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
               How hiring works
             </h2>
-            <ol className="mt-12 grid gap-10 sm:grid-cols-3">
+            <ol className="stack-top grid gap-10 sm:grid-cols-3">
               {HOW.map(([title, desc], i) => (
                 <li key={title} data-reveal>
                   <span className="font-mono text-[0.76rem] font-semibold text-faint">
@@ -112,12 +112,12 @@ export default function HireHub() {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 lg:py-24">
+        <section className="section">
           <div className="shell">
             <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
               What comes with them
             </h2>
-            <div className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="stack-top grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
               {HIRE_BENEFITS.map(({ title, desc }, i) => {
                 const Icon = BENEFIT_ICONS[i]
                 return (

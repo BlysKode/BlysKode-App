@@ -38,7 +38,7 @@ export default function PageHeader({
   )
 
   return (
-    <header ref={root} className="relative overflow-hidden border-b border-line pt-[120px] pb-14 lg:pt-[148px] lg:pb-20">
+    <header ref={root} className="page-head relative overflow-hidden border-b border-line">
       <div className="grid-faint pointer-events-none absolute inset-0" aria-hidden="true" />
 
       <div className={`shell relative ${align === 'center' ? 'text-center' : ''}`}>
@@ -55,7 +55,7 @@ export default function PageHeader({
         )}
 
         <h1
-          className={`ph-item mt-5 max-w-[20ch] text-[2.2rem] leading-[1.1] tracking-[-0.03em] sm:text-[2.8rem] lg:text-[3.1rem] ${
+          className={`ph-item mt-4 max-w-[20ch] text-[1.95rem] leading-[1.12] tracking-[-0.03em] sm:mt-5 sm:text-[2.6rem] lg:text-[3.1rem] ${
             align === 'center' ? 'mx-auto' : ''
           }`}
         >
@@ -78,7 +78,7 @@ export default function PageHeader({
           <p className={`ph-item lede mt-4 ${align === 'center' ? 'mx-auto' : ''}`}>{lede}</p>
         )}
 
-        {children && <div className="ph-item mt-9">{children}</div>}
+        {children && <div className="ph-item mt-7 sm:mt-9">{children}</div>}
       </div>
     </header>
   )

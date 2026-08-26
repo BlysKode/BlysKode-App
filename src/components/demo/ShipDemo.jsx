@@ -185,10 +185,10 @@ export default function ShipDemo() {
       ref={root}
       role="img"
       aria-label="A deployment pipeline running: install, typecheck, tests, build and deploy, all passing in 24.1 seconds with no downtime."
-      className="overflow-hidden rounded-xl border border-line bg-white shadow-[0_2px_6px_rgba(11,27,43,0.05),0_28px_60px_-24px_rgba(11,27,43,0.32)]"
+      className="overflow-hidden rounded-xl border border-line bg-white shadow-[0_2px_6px_rgba(10,33,26,0.05),0_28px_60px_-24px_rgba(10,33,26,0.32)]"
     >
       {/* Chrome */}
-      <div className="flex items-center gap-3 border-b border-line-soft bg-paper-soft px-4 py-2.5">
+      <div className="flex items-center gap-2.5 border-b border-line-soft bg-paper-soft px-3.5 py-2.5 sm:gap-3 sm:px-4">
         <div className="flex gap-1.5" aria-hidden="true">
           <span className="size-2.5 rounded-full bg-[#e0e6ec]" />
           <span className="size-2.5 rounded-full bg-[#e0e6ec]" />
@@ -212,7 +212,7 @@ export default function ShipDemo() {
       </div>
 
       {/* Command */}
-      <div className="flex items-center gap-2 border-b border-line-soft px-4 py-3 font-mono text-[0.8rem]">
+      <div className="flex items-center gap-2 border-b border-line-soft px-3.5 py-3 font-mono text-[0.76rem] sm:px-4 sm:text-[0.8rem]">
         <span className="text-signal" aria-hidden="true">
           $
         </span>
@@ -225,7 +225,7 @@ export default function ShipDemo() {
       {/* Stages */}
       <ol className="divide-y divide-line-soft">
         {STEPS.map((step) => (
-          <li key={step.label} className="step flex items-center gap-3 px-4 py-[0.7rem]">
+          <li key={step.label} className="step flex items-center gap-2.5 px-3.5 py-[0.65rem] sm:gap-3 sm:px-4 sm:py-[0.7rem]">
             <span className="relative grid size-5 shrink-0 place-items-center" aria-hidden="true">
               <span className="step-spin absolute size-4 rounded-full border-[1.5px] border-line border-t-signal motion-safe:animate-spin" />
               <span className="step-mark grid size-5 place-items-center rounded-full bg-jade-wash text-jade">
@@ -233,9 +233,9 @@ export default function ShipDemo() {
               </span>
             </span>
 
-            <span className="text-[0.86rem] font-medium text-ink">{step.label}</span>
+            <span className="text-[0.82rem] font-medium text-ink sm:text-[0.86rem]">{step.label}</span>
 
-            <span className="ml-auto flex items-center gap-3 font-mono text-[0.75rem]">
+            <span className="ml-auto flex items-center gap-2 font-mono text-[0.7rem] sm:gap-3 sm:text-[0.75rem]">
               <span className="text-muted">
                 {step.count ? (
                   <>
@@ -245,7 +245,7 @@ export default function ShipDemo() {
                   step.meta
                 )}
               </span>
-              <span className="step-time tnum w-11 text-right text-faint">
+              <span className="step-time tnum w-9 text-right text-faint sm:w-11">
                 {step.seconds.toFixed(1)}s
               </span>
             </span>
@@ -261,7 +261,7 @@ export default function ShipDemo() {
           aria-hidden="true"
           className="absolute inset-x-0 top-0 h-0.5 origin-left bg-signal"
         />
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 bg-paper-soft px-4 py-3">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 bg-paper-soft px-3.5 py-3 sm:gap-x-5 sm:px-4">
           <span className="font-mono text-[0.75rem] font-semibold text-ink">
             <span ref={clock} className="tnum">
               {TOTAL.toFixed(1)}s

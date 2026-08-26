@@ -68,7 +68,7 @@ function MegaMenu({ link }) {
             : 'pointer-events-none -translate-y-1 opacity-0'
         }`}
       >
-        <div className="w-[620px] overflow-hidden rounded-xl border border-line bg-white shadow-[0_4px_10px_rgba(11,27,43,0.05),0_24px_50px_-16px_rgba(11,27,43,0.25)]">
+        <div className="w-[620px] overflow-hidden rounded-xl border border-line bg-white shadow-[0_4px_10px_rgba(10,33,26,0.05),0_24px_50px_-16px_rgba(10,33,26,0.25)]">
           <ul className="grid max-h-[62vh] grid-cols-2 gap-0.5 overflow-y-auto p-2.5">
             {link.menu.map((item) => (
               <li key={item.to}>
@@ -207,7 +207,7 @@ export default function Navbar() {
          is not punctured by it. */
       className={`fixed inset-x-0 top-0 z-[70] transition-[background-color,box-shadow,border-color] duration-300 ${
         stuck
-          ? 'border-b border-line bg-white/85 shadow-[0_1px_3px_rgba(11,27,43,0.04)] backdrop-blur-xl backdrop-saturate-150'
+          ? 'border-b border-line bg-white/85 shadow-[0_1px_3px_rgba(10,33,26,0.04)] backdrop-blur-xl backdrop-saturate-150'
           : 'border-b border-transparent bg-transparent'
       }`}
     >

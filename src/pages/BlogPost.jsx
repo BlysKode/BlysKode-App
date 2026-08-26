@@ -36,7 +36,7 @@ export default function BlogPost() {
   return (
     <>
       <article>
-        <header className="border-b border-line pt-[120px] pb-12 lg:pt-[148px] lg:pb-16">
+        <header className="page-head border-b border-line">
           <div className="mx-auto w-full max-w-[720px] px-5 sm:px-7">
             <Breadcrumbs
               trail={[
@@ -55,7 +55,7 @@ export default function BlogPost() {
                 </span>
               ))}
             </div>
-            <h1 className="mt-5 text-[2rem] leading-[1.12] tracking-[-0.03em] sm:text-[2.6rem]">
+            <h1 className="mt-4 text-[1.9rem] leading-[1.14] tracking-[-0.03em] sm:mt-5 sm:text-[2.6rem]">
               {post.title}
             </h1>
             <p className="mt-5 max-w-[62ch] text-[1.06rem] leading-[1.65] text-body">

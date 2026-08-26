@@ -45,7 +45,7 @@ export default function Hero() {
   )
 
   return (
-    <section ref={root} className="relative overflow-hidden pt-[136px] pb-20 lg:pt-[168px] lg:pb-28">
+    <section ref={root} className="relative overflow-hidden pt-[104px] pb-14 sm:pt-[136px] sm:pb-20 lg:pt-[168px] lg:pb-28">
       <div className="grid-faint pointer-events-none absolute inset-x-0 top-0 h-[760px]" aria-hidden="true" />
       <div
         className="pointer-events-none absolute -top-40 -right-40 size-[640px] rounded-full bg-signal/[0.05] blur-[120px]"
@@ -53,25 +53,25 @@ export default function Hero() {
       />
 
       <div className="shell relative">
-        <div className="hero-parallax grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] lg:gap-16">
+        <div className="hero-parallax grid items-center gap-11 sm:gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] lg:gap-16">
           {/* Copy */}
           <div>
             <p className="hero-lift eyebrow">Software engineering partner</p>
 
             <h1
               ref={headline}
-              className="mt-6 max-w-[16ch] text-[2.7rem] leading-[1.06] font-semibold tracking-[-0.035em] sm:text-[3.4rem] lg:text-[3.9rem]"
+              className="mt-5 max-w-[16ch] text-[2.5rem] leading-[1.06] font-semibold tracking-[-0.035em] sm:mt-6 sm:text-[3.4rem] lg:text-[3.9rem]"
             >
               Custom software, shipped weekly.
             </h1>
 
-            <p className="hero-lift lede mt-6">
+            <p className="hero-lift lede mt-5 sm:mt-6">
               Blyskode is the engineering team founders bring in when a product has to exist.
               Web, mobile, AI and cloud, designed and built in increments you can see running
               from the first week.
             </p>
 
-            <div className="hero-lift mt-9 flex flex-wrap gap-3">
+            <div className="hero-lift mt-8 flex flex-wrap gap-3 sm:mt-9">
               <Link to="/contact" className="btn btn-primary">
                 Start a project
                 <ArrowRight size={16} className="arrow" />
@@ -88,7 +88,7 @@ export default function Hero() {
 
             {/* Stacked as label-beside-value on narrow screens: three columns
                 at 390px leaves a word like "infrastructure" nowhere to go. */}
-            <dl className="mt-12 grid max-w-lg gap-x-6 gap-y-3.5 border-t border-line pt-7 sm:grid-cols-3">
+            <dl className="stack-top grid max-w-lg gap-x-6 gap-y-3.5 border-t border-line pt-7 sm:grid-cols-3">
               {PROOF.map(([value, label]) => (
                 <div key={label} className="hero-proof flex items-baseline gap-3 sm:block">
                   <dt className="sr-only">{label}</dt>

@@ -30,7 +30,7 @@ export default function Results() {
   if (!projects.length) return null
 
   return (
-    <section ref={root} className="border-b border-line bg-paper-soft py-24 lg:py-32">
+    <section ref={root} className="border-b border-line bg-paper-soft section-lg">
       <div className="shell">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
@@ -44,14 +44,14 @@ export default function Results() {
           <Link
             data-reveal
             to="/portfolio"
-            className="inline-flex items-center gap-2 text-[0.92rem] font-semibold text-signal md:pb-2"
+            className="inline-flex items-center gap-2 text-[0.92rem] font-semibold whitespace-nowrap text-signal md:pb-2"
           >
             Browse every project
             <ArrowRight size={16} />
           </Link>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="stack-top grid gap-5 md:grid-cols-3">
           {projects.map((project) => {
             const [metric, metricLabel] = HEADLINE_METRIC[project.slug] ?? ['', '']
             return (

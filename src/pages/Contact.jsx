@@ -4,7 +4,7 @@ import CTASection from '../components/CTASection'
 export default function Contact() {
   return (
     <>
-      <div className="shell pt-[104px] pb-2 lg:pt-[128px]">
+      <div className="shell pt-[92px] pb-2 sm:pt-[108px] lg:pt-[128px]">
         <Breadcrumbs
           trail={[
             { name: 'Home', path: '/' },

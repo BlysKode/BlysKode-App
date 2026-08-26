@@ -19,7 +19,7 @@ export default function CaseStudy() {
   return (
     <>
       {/* Header */}
-      <header className="relative overflow-hidden border-b border-line pt-[120px] pb-14 lg:pt-[148px] lg:pb-20">
+      <header className="page-head relative overflow-hidden border-b border-line">
         <div className="grid-faint pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto w-full max-w-[820px] px-5 sm:px-7">
           <Breadcrumbs
@@ -30,7 +30,7 @@ export default function CaseStudy() {
             ]}
           />
           <p className="eyebrow">{project.category}</p>
-          <h1 className="mt-5 text-[2rem] leading-[1.1] tracking-[-0.03em] sm:text-[2.6rem]">
+          <h1 className="mt-4 text-[1.9rem] leading-[1.12] tracking-[-0.03em] sm:mt-5 sm:text-[2.6rem]">
             {project.title}
           </h1>
           <p className="mt-4 max-w-[58ch] text-[1.1rem] leading-snug font-medium text-ink-soft">
@@ -73,7 +73,7 @@ export default function CaseStudy() {
 
       {/* Case study body */}
       {project.kind === 'case-study' && Body && (
-        <section className="py-16 lg:py-20">
+        <section className="section-tight">
           <div className="mx-auto w-full max-w-[820px] px-5 sm:px-7">
             <div className="article-prose">
               <Body project={project} />
@@ -98,7 +98,7 @@ export default function CaseStudy() {
 
       {/* Image gallery */}
       {project.kind === 'gallery' && (
-        <section className="py-16 lg:py-20">
+        <section className="section-tight">
           <div className="mx-auto w-full max-w-[900px] space-y-8 px-5 sm:px-7">
             {project.images.map((img) => (
               <figure key={img.src} className="card overflow-hidden">
@@ -114,7 +114,7 @@ export default function CaseStudy() {
 
       {/* Live sites */}
       {project.kind === 'sites' && (
-        <section className="py-16 lg:py-20">
+        <section className="section-tight">
           <div className="shell">
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {project.sites.map((site) => (
