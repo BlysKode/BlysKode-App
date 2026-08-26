@@ -12,7 +12,7 @@ export default function CaseStudyBody({ project }) {
       <h2>The challenge</h2>
       <ul>
         <li>Detect fraudulent transactions in real time, at scale, without adding latency to good payments.</li>
-        <li>Stay resilient — no single cloud provider should be a single point of failure.</li>
+        <li>Stay resilient, because no single cloud provider should be a single point of failure.</li>
         <li>Keep every transaction encrypted and produce an auditable record for compliance.</li>
         <li>Scale elastically with unpredictable transaction volume while controlling cost.</li>
       </ul>
@@ -80,7 +80,7 @@ export default function CaseStudyBody({ project }) {
 
       <h2>The outcome</h2>
       <p>
-        The result is a production-grade blueprint for catching fraud the instant it happens — one
+        The result is a production-grade blueprint for catching fraud the instant it happens, one
         that scales elastically with transaction volume, stays resilient across two clouds, and
         keeps a complete, encrypted, auditable record of every decision. It is the kind of
         AI-and-cloud system Blyskode builds end to end, from architecture to deployment.

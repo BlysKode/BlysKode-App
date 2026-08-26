@@ -1,46 +1,37 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import ShipDemo from './demo/ShipDemo'
+import { EASE, prefersReducedMotion, splitWords } from '../lib/motion'
 
-// Loaded lazily so three.js/R3F never block first paint or LCP
-const HeroScene = lazy(() => import('./three/HeroScene'))
-
-import { prefersReducedMotion } from '../lib/motion'
-
-const HEADLINE = 'Transforming Businesses with Modern AI & Cloud Solutions'
+const PROOF = [
+  ['1 day', 'To a scoped estimate'],
+  ['Weekly', 'Working software, demoed'],
+  ['100%', 'Code and infrastructure you own'],
+]
 
 export default function Hero() {
   const root = useRef(null)
-  // The canvas mounts after hydration only — it has no SEO content, and
-  // skipping it during SSR keeps server and client markup identical.
-  const [showScene, setShowScene] = useState(false)
-  useEffect(() => {
-    // Static gradient fallback for users who prefer reduced motion
-    if (!prefersReducedMotion()) setShowScene(true)
-  }, [])
+  const headline = useRef(null)
 
   useGSAP(
     () => {
       if (prefersReducedMotion()) return
 
-      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
-      tl.from('.hero-word', {
-        yPercent: 120,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.045,
-        delay: 0.1,
-      })
-        .from('.hero-sub', { y: 30, opacity: 0, duration: 0.9 }, '-=0.7')
-        .from('.hero-cta', { y: 24, opacity: 0, duration: 0.8, stagger: 0.12 }, '-=0.6')
-        .from('.hero-stat', { y: 20, opacity: 0, duration: 0.7, stagger: 0.1 }, '-=0.5')
+      const words = splitWords(headline.current)
+      const tl = gsap.timeline({ defaults: { ease: EASE } })
 
-      // Parallax the copy away as the user scrolls off the hero
-      gsap.to('.hero-copy', {
-        yPercent: -18,
-        opacity: 0.15,
+      tl.from(words, { yPercent: 115, duration: 0.9, stagger: 0.035 }, 0.15)
+        .from('.hero-lift', { y: 18, opacity: 0, duration: 0.8, stagger: 0.09 }, 0.5)
+        .from('.hero-demo', { y: 28, opacity: 0, duration: 1 }, 0.55)
+        .from('.hero-proof', { y: 14, opacity: 0, duration: 0.7, stagger: 0.08 }, 0.85)
+
+      // The copy drifts up a little faster than the page, so the fold has
+      // depth without anything moving far enough to be distracting.
+      gsap.to('.hero-parallax', {
+        yPercent: -9,
         ease: 'none',
         scrollTrigger: {
           trigger: root.current,
@@ -54,73 +45,73 @@ export default function Hero() {
   )
 
   return (
-    <section id="home" ref={root} className="relative flex min-h-svh items-center overflow-hidden">
-      {/* 3D background */}
-      <div className="absolute inset-0">
-        {showScene && (
-          <Suspense fallback={null}>
-            <HeroScene />
-          </Suspense>
-        )}
-      </div>
+    <section ref={root} className="relative overflow-hidden pt-[136px] pb-20 lg:pt-[168px] lg:pb-28">
+      <div className="grid-faint pointer-events-none absolute inset-x-0 top-0 h-[760px]" aria-hidden="true" />
+      <div
+        className="pointer-events-none absolute -top-40 -right-40 size-[640px] rounded-full bg-signal/[0.05] blur-[120px]"
+        aria-hidden="true"
+      />
 
-      {/* Soft vignettes so text stays readable over the canvas */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/60 via-transparent to-ink" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_45%,transparent_20%,rgba(5,6,10,0.55)_100%)]" />
+      <div className="shell relative">
+        <div className="hero-parallax grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] lg:gap-16">
+          {/* Copy */}
+          <div>
+            <p className="hero-lift eyebrow">Software engineering partner</p>
 
-      <div className="hero-copy pointer-events-none relative z-10 mx-auto w-full max-w-7xl px-5 pt-28 pb-16 md:px-10">
-        <p className="hero-sub pointer-events-auto mb-6 inline-flex items-center gap-2 rounded-full border border-edge bg-panel/70 px-4 py-1.5 text-xs font-medium tracking-[0.25em] text-cyber uppercase backdrop-blur">
-          <Sparkles size={14} />
-          Welcome to Blyskode.
-        </p>
+            <h1
+              ref={headline}
+              className="mt-6 max-w-[16ch] text-[2.7rem] leading-[1.06] font-semibold tracking-[-0.035em] sm:text-[3.4rem] lg:text-[3.9rem]"
+            >
+              Custom software, shipped weekly.
+            </h1>
 
-        <h1 className="max-w-5xl font-display text-4xl leading-[1.06] font-bold text-white sm:text-6xl lg:text-7xl">
-          {HEADLINE.split(' ').map((word, i) => (
-            <span key={i} className="inline-block overflow-hidden pb-1 align-top">
-              <span
-                className={`hero-word inline-block ${
-                  ['AI', '&', 'Cloud', 'Solutions'].includes(word) ? 'text-gradient' : ''
-                }`}
-              >
-                {word}
-              </span>
-              <span className="inline-block">&nbsp;</span>
-            </span>
-          ))}
-        </h1>
+            <p className="hero-lift lede mt-6">
+              Blyskode is the engineering team founders bring in when a product has to exist.
+              Web, mobile, AI and cloud, designed and built in increments you can see running
+              from the first week.
+            </p>
 
-        <p className="hero-sub mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          We help startups, SaaS companies, and growing enterprises build AI-powered products
-          and scalable cloud platforms, from first commit to global scale.
-        </p>
-
-        <div className="pointer-events-auto mt-10 flex flex-col gap-4 sm:flex-row">
-          <Link
-            to="/services"
-            className="hero-cta group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter,box-shadow] hover:brightness-110 hover:shadow-[0_0_60px_-8px_rgba(139,92,246,0.7)]"
-          >
-            Explore Services
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link
-            to="/contact"
-            className="hero-cta inline-flex items-center justify-center gap-2 rounded-full border border-edge bg-panel/60 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-cyber/50 hover:bg-panel"
-          >
-            Let&apos;s Talk
-          </Link>
-        </div>
-
-        <div className="pointer-events-auto mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-white/5 pt-8">
-          {[
-            ['<24h', 'Response Time'],
-            ['24/7', 'Support Coverage'],
-            ['3', 'Core Practice Areas'],
-          ].map(([value, label]) => (
-            <div key={label} className="hero-stat">
-              <p className="font-display text-2xl font-bold text-white sm:text-3xl">{value}</p>
-              <p className="mt-1 text-xs tracking-wide text-muted uppercase">{label}</p>
+            <div className="hero-lift mt-9 flex flex-wrap gap-3">
+              <Link to="/contact" className="btn btn-primary">
+                Start a project
+                <ArrowRight size={16} className="arrow" />
+              </Link>
+              <Link to="/portfolio" className="btn btn-secondary">
+                See the work
+              </Link>
             </div>
-          ))}
+
+            <p className="hero-lift mt-5 text-[0.87rem] text-muted">
+              Tell us what you need and you get a scope, a timeline and an honest estimate
+              within one business day.
+            </p>
+
+            {/* Stacked as label-beside-value on narrow screens: three columns
+                at 390px leaves a word like "infrastructure" nowhere to go. */}
+            <dl className="mt-12 grid max-w-lg gap-x-6 gap-y-3.5 border-t border-line pt-7 sm:grid-cols-3">
+              {PROOF.map(([value, label]) => (
+                <div key={label} className="hero-proof flex items-baseline gap-3 sm:block">
+                  <dt className="sr-only">{label}</dt>
+                  <dd className="contents sm:block">
+                    <span className="w-20 shrink-0 font-display text-[1.45rem] font-semibold text-ink sm:w-auto">
+                      {value}
+                    </span>
+                    <span className="text-[0.85rem] leading-snug text-muted sm:mt-1 sm:block sm:text-[0.8rem]">
+                      {label}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {/* Proof, running */}
+          <div className="hero-demo lg:pl-4">
+            <ShipDemo />
+            <p className="mt-4 text-center text-[0.8rem] text-muted lg:text-left">
+              Our own delivery pipeline. Every project we run gets one.
+            </p>
+          </div>
         </div>
       </div>
     </section>

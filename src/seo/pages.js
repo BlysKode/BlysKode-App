@@ -24,7 +24,7 @@ const STATIC_PAGES = {
   '/services/product-engineering': {
     title: 'Product Engineering Services | Blyskode',
     description:
-      'Blyskode builds web apps, mobile apps, custom software, and QA end-to-end — from first wireframe to production release, engineered for scale.',
+      'Blyskode builds web apps, mobile apps, custom software, and QA end to end, from first wireframe to production release, engineered for scale.',
   },
   '/services/ai-automation': {
     title: 'AI & Automation Services | Blyskode',
@@ -89,7 +89,7 @@ const STATIC_PAGES = {
   '/portfolio': {
     title: 'Portfolio & Case Studies | Blyskode',
     description:
-      'Real systems Blyskode has designed and built — the problem, the architecture, and how it works. Explore our AI and cloud engineering case studies.',
+      'Real systems Blyskode has designed and built: the problem, the architecture, and how it works. Explore our AI and cloud engineering case studies.',
   },
   '/blog': {
     title: 'Blyskode Blog | Software, AI & Cloud Development Guides',
@@ -297,7 +297,7 @@ const FAQ_NODE = {
   })),
 }
 
-// Speakable + WebPage node for the homepage — helps voice assistants and
+// Speakable + WebPage node for the homepage, which helps voice assistants and
 // AI answer engines identify the most quotable summary content.
 const HOME_WEBPAGE = {
   '@type': 'WebPage',
@@ -419,7 +419,7 @@ function pageNodes(path) {
           {
             '@type': ['CreativeWork', 'Article'],
             '@id': `${canonical}#casestudy`,
-            headline: `${pr.title} — Case Study`,
+            headline: `${pr.title}: Case Study`,
             name: pr.title,
             description: pr.summary,
             url: canonical,
@@ -542,7 +542,7 @@ export const ROUTES = Object.keys(PAGES)
 
 // Head for the prerendered dist/404.html (served by Vercel on unknown
 // URLs). Rendered from an unmatched location so the client hydrates the
-// same NotFound markup — no hydration mismatch. noindex so it never ranks.
+// same NotFound markup, so no hydration mismatch. noindex so it never ranks.
 export function buildNotFoundHead() {
   return [
     `<title>Page not found | Blyskode</title>`,

@@ -1,132 +1,170 @@
+import { useRef } from 'react'
 import { useParams, Navigate, Link } from 'react-router-dom'
+import { useGSAP } from '@gsap/react'
 import {
   ArrowRight,
-  Atom,
-  Boxes,
-  BrainCircuit,
+  ArrowUpRight,
   CalendarDays,
   Check,
   Clock,
-  Code2,
-  Layers,
-  Newspaper,
-  ServerCog,
   ShieldCheck,
-  Smartphone,
   UsersRound,
   Wallet,
 } from 'lucide-react'
-import Breadcrumbs from '../components/Breadcrumbs'
+import PageHeader from '../components/PageHeader'
 import PageCTA from '../components/PageCTA'
-import { HIRE_ROLES, HIRE_BENEFITS } from '../data/hire'
+import { HIRE_ROLES, HIRE_LIST, HIRE_BENEFITS } from '../data/hire'
+import { revealIn } from '../lib/motion'
 
-const ICONS = { Code2, Atom, Layers, Boxes, Newspaper, BrainCircuit, Smartphone, ServerCog }
 const BENEFIT_ICONS = [ShieldCheck, Clock, Wallet, UsersRound]
 
 export default function HireDetail() {
   const { slug } = useParams()
+  const root = useRef(null)
+  useGSAP(() => revealIn(root.current), { scope: root, dependencies: [slug] })
+
   const data = HIRE_ROLES[slug]
   if (!data) return <Navigate to="/hire-developers" replace />
 
-  const { iconName, role, tagline, intro, skills, doing } = data
-  const Icon = ICONS[iconName]
+  const { role, tagline, intro, skills, doing } = data
+  const others = HIRE_LIST.filter((r) => r.slug !== slug).slice(0, 4)
 
   return (
-    <div className="pt-28">
-      <section className="relative py-14 md:py-20">
-        <div className="grid-backdrop pointer-events-none absolute inset-0" />
-        <div className="pointer-events-none absolute top-1/4 -left-32 size-[420px] rounded-full bg-neon/10 blur-[130px]" />
-        <div className="relative mx-auto max-w-7xl px-5 md:px-10">
-          <Breadcrumbs
-            trail={[
-              { name: 'Home', path: '/' },
-              { name: 'Hire Developers', path: '/hire-developers' },
-              { name: `Hire ${role}`, path: `/hire-developers/${slug}` },
-            ]}
-          />
-          <div className="mb-6 inline-grid size-14 place-items-center rounded-2xl border border-edge bg-surface text-cyber">
-            <Icon size={26} />
-          </div>
-          <h1 className="max-w-3xl font-display text-4xl font-bold text-white sm:text-5xl">
-            Hire {role}
-          </h1>
-          <p className="mt-3 max-w-2xl font-display text-lg text-cyber">{tagline}</p>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">{intro}</p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link
-              to="/contact"
-              className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter] hover:brightness-110"
-            >
-              Start Hiring
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-            <a
-              href="https://calendly.com/blyskode/30min"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-edge bg-surface px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:border-cyber/50"
-            >
-              <CalendarDays size={16} />
-              Book a Call
-            </a>
-          </div>
+    <>
+      <PageHeader
+        trail={[
+          { name: 'Home', path: '/' },
+          { name: 'Hire Developers', path: '/hire-developers' },
+          { name: `Hire ${role}`, path: `/hire-developers/${slug}` },
+        ]}
+        eyebrow="Dedicated developers"
+        title={`Hire ${role}`}
+        deck={tagline}
+        lede={intro}
+      >
+        <div className="flex flex-wrap gap-3">
+          <Link to="/contact" className="btn btn-primary">
+            Start hiring
+            <ArrowRight size={16} className="arrow" />
+          </Link>
+          <a
+            href="https://calendly.com/blyskode/30min"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-secondary"
+          >
+            <CalendarDays size={16} />
+            Book a call
+          </a>
         </div>
-      </section>
+      </PageHeader>
 
-      {/* What they do */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-7xl px-5 md:px-10">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
-            What our {role.toLowerCase()} do
-          </h2>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {doing.map(({ title, desc }) => (
-              <div key={title} className="spotlight-card rounded-2xl border border-edge bg-panel/60 p-6 backdrop-blur">
-                <h3 className="flex items-center gap-2 font-display text-lg font-semibold text-white">
-                  <Check size={18} className="text-cyber" />
-                  {title}
-                </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div ref={root}>
+        {/* What they do */}
+        <section className="py-20 lg:py-28">
+          <div className="shell grid gap-12 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
+                What they take on
+              </h2>
+              <p data-reveal className="mt-4 text-[0.98rem] leading-relaxed text-body">
+                Owned end to end, in your codebase, reviewed by your team the same way any other
+                engineer would be.
+              </p>
+            </div>
 
-      {/* Skills + why hire */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-10 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">Skills &amp; expertise</h2>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {skills.map((s) => (
-                <span key={s} className="rounded-full border border-edge bg-panel/60 px-4 py-2 text-sm text-slate-300">
-                  {s}
-                </span>
+            <div className="grid gap-x-10 gap-y-9 sm:grid-cols-2">
+              {doing.map(({ title, desc }) => (
+                <div key={title} data-reveal>
+                  <h3 className="flex items-start gap-2.5 text-[1.04rem]">
+                    <span className="mt-1 grid size-5 shrink-0 place-items-center rounded-full bg-jade-wash text-jade">
+                      <Check size={12} strokeWidth={3} />
+                    </span>
+                    {title}
+                  </h3>
+                  <p className="mt-2.5 pl-7.5 text-[0.91rem] leading-relaxed text-body">{desc}</p>
+                </div>
               ))}
             </div>
           </div>
-          <div>
-            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">Why hire from Blyskode</h2>
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {HIRE_BENEFITS.map(({ title, desc }, i) => {
-                const B = BENEFIT_ICONS[i]
-                return (
-                  <div key={title} className="rounded-2xl border border-edge bg-panel/50 p-5 backdrop-blur">
-                    <div className="mb-3 inline-grid size-10 place-items-center rounded-lg border border-edge bg-surface text-cyber">
-                      <B size={18} />
+        </section>
+
+        {/* Skills and benefits */}
+        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+          <div className="shell grid gap-14 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
+                Skills you can expect
+              </h2>
+              <div data-reveal className="mt-7 flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-md border border-line bg-white px-3 py-1.5 font-mono text-[0.8rem] text-body"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
+                Why hire through us
+              </h2>
+              <div className="mt-8 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+                {HIRE_BENEFITS.map(({ title, desc }, i) => {
+                  const Icon = BENEFIT_ICONS[i]
+                  return (
+                    <div key={title} data-reveal>
+                      {Icon && <Icon size={19} strokeWidth={1.8} className="text-signal" />}
+                      <h3 className="mt-3 text-[0.98rem]">{title}</h3>
+                      <p className="mt-1.5 text-[0.88rem] leading-relaxed text-body">{desc}</p>
                     </div>
-                    <h3 className="font-display text-base font-semibold text-white">{title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <PageCTA heading={`Hire ${role.toLowerCase()} with Blyskode`} sub="Tell us your requirements and we'll match you with vetted engineers within 24 hours." />
-    </div>
+        {/* Other roles */}
+        <section className="py-20 lg:py-24">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.4rem]">
+              Other roles
+            </h2>
+            <ul className="mt-7 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+              {others.map((other) => (
+                <li key={other.slug} data-reveal>
+                  <Link
+                    to={`/hire-developers/${other.slug}`}
+                    className="group flex h-full flex-col bg-white p-5 transition-colors hover:bg-paper-soft"
+                  >
+                    <span className="flex items-start justify-between gap-3">
+                      <span className="text-[0.92rem] font-semibold text-ink group-hover:text-signal">
+                        {other.role}
+                      </span>
+                      <ArrowUpRight
+                        size={15}
+                        className="mt-0.5 shrink-0 text-faint transition-colors group-hover:text-signal"
+                      />
+                    </span>
+                    <span className="mt-1.5 text-[0.82rem] leading-snug text-muted">
+                      {other.tagline}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <PageCTA
+        heading={`Need ${role.toLowerCase()}?`}
+        sub="Send us the requirements and we will come back with a shortlist inside one business day."
+      />
+    </>
   )
 }

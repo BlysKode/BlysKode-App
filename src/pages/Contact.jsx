@@ -3,8 +3,8 @@ import CTASection from '../components/CTASection'
 
 export default function Contact() {
   return (
-    <div className="pt-28">
-      <div className="mx-auto max-w-7xl px-5 md:px-10">
+    <>
+      <div className="shell pt-[104px] pb-2 lg:pt-[128px]">
         <Breadcrumbs
           trail={[
             { name: 'Home', path: '/' },
@@ -13,6 +13,6 @@ export default function Contact() {
         />
       </div>
       <CTASection titleAs="h1" />
-    </div>
+    </>
   )
 }

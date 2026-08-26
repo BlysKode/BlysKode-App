@@ -1,4 +1,6 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { useGSAP } from '@gsap/react'
 import {
   ArrowRight,
   Atom,
@@ -14,75 +16,127 @@ import {
   UsersRound,
   Wallet,
 } from 'lucide-react'
-import Breadcrumbs from '../components/Breadcrumbs'
+import PageHeader from '../components/PageHeader'
 import PageCTA from '../components/PageCTA'
 import { HIRE_LIST, HIRE_BENEFITS } from '../data/hire'
+import { revealIn } from '../lib/motion'
 
 const ICONS = { Code2, Atom, Layers, Boxes, Newspaper, BrainCircuit, Smartphone, ServerCog }
 const BENEFIT_ICONS = [ShieldCheck, Clock, Wallet, UsersRound]
 
+const HOW = [
+  ['Tell us the role', 'Stack, seniority, hours of overlap and how long you need them.'],
+  ['Meet the shortlist', 'Two or three engineers, with the work they have actually shipped.'],
+  ['Start inside a week', 'They join your standups, your tracker and your repositories.'],
+]
+
 export default function HireHub() {
+  const root = useRef(null)
+  useGSAP(() => revealIn(root.current), { scope: root })
+
   return (
-    <div className="pt-28">
-      <section className="relative py-14 md:py-20">
-        <div className="grid-backdrop pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl px-5 md:px-10">
-          <Breadcrumbs
-            trail={[
-              { name: 'Home', path: '/' },
-              { name: 'Hire Developers', path: '/hire-developers' },
-            ]}
-          />
-          <span className="section-pill">Hire Developers</span>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl font-bold text-white sm:text-5xl">
-            Hire dedicated <span className="text-gradient">developers</span> for your team
-          </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            Extend your team with vetted engineers from Blyskode. Hire one specialist or a full
-            team, onboard in days, and scale up or down as you need.
-          </p>
+    <>
+      <PageHeader
+        trail={[
+          { name: 'Home', path: '/' },
+          { name: 'Hire Developers', path: '/hire-developers' },
+        ]}
+        eyebrow="Hire developers"
+        title="Add engineers to your team, not to your headcount."
+        lede="Vetted developers who work your hours, in your tools, on your repositories. One specialist or a full team, and you can scale it back whenever the work changes."
+      >
+        <Link to="/contact" className="btn btn-primary">
+          Tell us the role
+          <ArrowRight size={16} className="arrow" />
+        </Link>
+      </PageHeader>
 
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {HIRE_LIST.map(({ slug, iconName, role, tagline }) => {
-              const Icon = ICONS[iconName]
-              return (
-              <Link
-                key={slug}
-                to={`/hire-developers/${slug}`}
-                className="spotlight-card group flex flex-col rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors hover:border-cyber/40"
-              >
-                <div className="mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
-                  <Icon size={24} />
-                </div>
-                <h2 className="font-display text-xl font-semibold text-white">Hire {role}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{tagline}</p>
-                <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-cyber">
-                  View role
-                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
-              )
-            })}
+      <div ref={root}>
+        {/* Roles */}
+        <section className="py-20 lg:py-28">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
+              Roles you can hire
+            </h2>
+            <p data-reveal className="lede mt-4">
+              Every one of them has shipped production software with us before they are put in
+              front of you.
+            </p>
+
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {HIRE_LIST.map(({ slug, iconName, role, tagline }) => {
+                const Icon = ICONS[iconName]
+                return (
+                  <article key={slug} data-reveal className="card card-hoverable group">
+                    <Link to={`/hire-developers/${slug}`} className="flex h-full flex-col p-6">
+                      <span className="grid size-10 place-items-center rounded-lg border border-line bg-paper-soft text-signal transition-colors group-hover:border-signal/30 group-hover:bg-signal-wash">
+                        <Icon size={19} strokeWidth={1.8} />
+                      </span>
+                      <h3 className="mt-5 text-[1.02rem] leading-snug group-hover:text-signal">
+                        {role}
+                      </h3>
+                      <p className="mt-2 text-[0.86rem] leading-relaxed text-body">{tagline}</p>
+                      <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-[0.85rem] font-semibold text-signal">
+                        View role
+                        <ArrowRight
+                          size={14}
+                          className="transition-transform duration-200 group-hover:translate-x-1"
+                        />
+                      </span>
+                    </Link>
+                  </article>
+                )
+              })}
+            </div>
           </div>
+        </section>
 
-          <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {HIRE_BENEFITS.map(({ title, desc }, i) => {
-              const Icon = BENEFIT_ICONS[i]
-              return (
-                <div key={title} className="rounded-2xl border border-edge bg-panel/40 p-6 backdrop-blur">
-                  <div className="mb-4 inline-grid size-11 place-items-center rounded-xl border border-edge bg-surface text-cyber">
-                    <Icon size={20} />
+        {/* How it works */}
+        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
+              How hiring works
+            </h2>
+            <ol className="mt-12 grid gap-10 sm:grid-cols-3">
+              {HOW.map(([title, desc], i) => (
+                <li key={title} data-reveal>
+                  <span className="font-mono text-[0.76rem] font-semibold text-faint">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="mt-3 text-[1.1rem]">{title}</h3>
+                  <p className="mt-2.5 text-[0.93rem] leading-relaxed text-body">{desc}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* Benefits */}
+        <section className="py-20 lg:py-24">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
+              What comes with them
+            </h2>
+            <div className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
+              {HIRE_BENEFITS.map(({ title, desc }, i) => {
+                const Icon = BENEFIT_ICONS[i]
+                return (
+                  <div key={title} data-reveal>
+                    {Icon && <Icon size={20} strokeWidth={1.8} className="text-signal" />}
+                    <h3 className="mt-4 text-[1rem]">{title}</h3>
+                    <p className="mt-2 text-[0.89rem] leading-relaxed text-body">{desc}</p>
                   </div>
-                  <h3 className="font-display text-base font-semibold text-white">{title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
-      <PageCTA heading="Ready to hire?" sub="Tell us the role and skills you need and we'll match you with vetted engineers within 24 hours." />
-    </div>
+      <PageCTA
+        heading="Which role do you need filled?"
+        sub="Send us the stack, the seniority and the hours you need covered. We will come back with a shortlist inside one business day."
+      />
+    </>
   )
 }

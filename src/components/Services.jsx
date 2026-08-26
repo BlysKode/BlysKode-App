@@ -1,227 +1,115 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import {
-  ArrowRight,
-  BrainCircuit,
-  Check,
-  Cloud,
-  Code2,
-  PenLine,
-  TrendingUp,
-  Users,
-} from 'lucide-react'
-import { prefersReducedMotion } from '../lib/motion'
-
-const CORE_SERVICES = [
-  {
-    icon: Code2,
-    slug: 'product-engineering',
-    title: 'Product Engineering',
-    desc: 'Web, mobile, and custom software built end-to-end, from first wireframe to production release.',
-    items: [
-      'Full Stack Development',
-      'Mobile Application Development',
-      'Custom Software Development',
-      'Quality Assurance (QA)',
-    ],
-  },
-  {
-    icon: BrainCircuit,
-    slug: 'ai-automation',
-    title: 'AI & Automation',
-    desc: 'Intelligent features and agentic workflows that remove manual work and unlock new product value.',
-    items: [
-      'AI Engineering & LLM Integrations',
-      'AI Automation & Agentic Workflows',
-      'Machine Learning Pipelines',
-      'AI Product Strategy',
-    ],
-  },
-  {
-    icon: Cloud,
-    slug: 'cloud-devops',
-    title: 'Cloud & DevOps',
-    desc: 'Resilient infrastructure on AWS, Azure, GCP, Huawei Cloud, DigitalOcean, Alibaba Cloud, and VPS servers.',
-    items: [
-      'Cloud Architecture & Migration',
-      'DevOps & CI/CD Engineering',
-      'Multi-Platform Deployment',
-      'Observability & Cost Optimization',
-    ],
-  },
-]
-
-const ADDITIONAL_SERVICES = [
-  {
-    icon: Users,
-    title: 'End-to-End Recruitment',
-    desc: 'Sourcing, vetting, and onboarding top technical talent tailored to your team.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'SEO & Digital Marketing',
-    desc: 'Data-driven growth strategies that increase visibility and convert traffic into revenue.',
-  },
-  {
-    icon: PenLine,
-    title: 'Content & Blog Writing',
-    desc: 'Technical and marketing content that builds authority and engages your audience.',
-  },
-]
-
-function useCardHover(card) {
-  const { contextSafe } = useGSAP({ scope: card })
-
-  const onMove = (e) => {
-    const rect = card.current.getBoundingClientRect()
-    card.current.style.setProperty('--mx', `${e.clientX - rect.left}px`)
-    card.current.style.setProperty('--my', `${e.clientY - rect.top}px`)
-  }
-
-  const onEnter = contextSafe(() => {
-    if (prefersReducedMotion()) return
-    gsap.to(card.current, { y: -6, duration: 0.4, ease: 'power3.out' })
-    gsap.to(card.current.querySelector('.card-icon'), {
-      rotate: -8,
-      scale: 1.15,
-      duration: 0.4,
-      ease: 'back.out(2.5)',
-    })
-  })
-
-  const onLeave = contextSafe(() => {
-    if (prefersReducedMotion()) return
-    gsap.to(card.current, { y: 0, duration: 0.5, ease: 'power3.out' })
-    gsap.to(card.current.querySelector('.card-icon'), {
-      rotate: 0,
-      scale: 1,
-      duration: 0.5,
-      ease: 'power3.out',
-    })
-  })
-
-  return { onMove, onEnter, onLeave }
-}
-
-function CoreServiceCard({ icon: Icon, title, desc, items, slug }) {
-  const card = useRef(null)
-  const { onMove, onEnter, onLeave } = useCardHover(card)
-
-  return (
-    <article
-      ref={card}
-      onMouseMove={onMove}
-      onMouseEnter={onEnter}
-      onMouseLeave={onLeave}
-      className="service-card spotlight-card group flex flex-col rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
-    >
-      <div className="card-icon mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
-        <Icon size={24} />
-      </div>
-      <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{desc}</p>
-      <ul className="mt-5 space-y-2.5 border-t border-white/5 pt-5">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300">
-            <Check size={15} className="mt-0.5 shrink-0 text-cyber" />
-            {item}
-          </li>
-        ))}
-      </ul>
-      <Link
-        to={`/services/${slug}`}
-        className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-cyber transition-colors hover:text-white"
-      >
-        Learn more
-        <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-      </Link>
-    </article>
-  )
-}
-
-function AdditionalServiceCard({ icon: Icon, title, desc }) {
-  const card = useRef(null)
-  const { onMove, onEnter, onLeave } = useCardHover(card)
-
-  return (
-    <article
-      ref={card}
-      onMouseMove={onMove}
-      onMouseEnter={onEnter}
-      onMouseLeave={onLeave}
-      className="service-card spotlight-card group rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors duration-300 hover:border-cyber/40"
-    >
-      <div className="card-icon mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
-        <Icon size={24} />
-      </div>
-      <h4 className="font-display text-xl font-semibold text-white">{title}</h4>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{desc}</p>
-    </article>
-  )
-}
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { CORE_LIST, SPECIALIZED_LIST } from '../data/services'
+import { revealIn } from '../lib/motion'
 
 export default function Services() {
   const root = useRef(null)
-
-  useGSAP(
-    () => {
-      if (prefersReducedMotion()) return
-
-      gsap.from('.services-heading > *', {
-        y: 40,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.12,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '.services-heading', start: 'top 80%' },
-      })
-
-      gsap.set('.service-card', { opacity: 0 })
-      ScrollTrigger.batch('.service-card', {
-        start: 'top 88%',
-        once: true,
-        onEnter: (batch) =>
-          gsap.fromTo(
-            batch,
-            { y: 60, opacity: 0, scale: 0.96 },
-            { y: 0, opacity: 1, scale: 1, duration: 0.8, stagger: 0.09, ease: 'power3.out' },
-          ),
-      })
-    },
-    { scope: root },
-  )
+  useGSAP(() => revealIn(root.current), { scope: root })
 
   return (
-    <section id="services" ref={root} className="relative py-24 md:py-32">
-      <div className="grid-backdrop pointer-events-none absolute inset-0" />
-      <div className="relative mx-auto max-w-7xl px-5 md:px-10">
-        <div className="services-heading mb-14 max-w-3xl">
-          <span className="section-pill">Our Services</span>
-          <h2 className="mt-6 font-display text-3xl font-bold text-white sm:text-5xl">
-            Three practices. <span className="text-gradient">One engineering partner.</span>
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-            We help startups, SaaS companies, and growing enterprises build AI-powered products
-            and scalable cloud platforms.
+    <section id="services" ref={root} className="border-y border-line bg-paper-soft py-24 lg:py-32">
+      <div className="shell">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p data-reveal className="eyebrow">
+              What we do
+            </p>
+            <h2 data-reveal className="mt-5 max-w-[18ch] text-[2.1rem] sm:text-[2.7rem]">
+              Three practices, one accountable team.
+            </h2>
+          </div>
+          <p data-reveal className="lede max-w-[46ch] md:pb-1.5">
+            Most of our work sits where product engineering, applied AI and cloud meet. You get
+            one team across all three, so nothing falls between contractors.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {CORE_SERVICES.map((service) => (
-            <CoreServiceCard key={service.title} {...service} />
-          ))}
+        {/* Core practices */}
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {CORE_LIST.map((service) => {
+            const Icon = service.icon
+            return (
+              <article
+                key={service.slug}
+                data-reveal
+                className="card card-hoverable group flex flex-col p-7"
+              >
+                <span className="grid size-11 place-items-center rounded-lg border border-line bg-paper-soft text-signal transition-colors group-hover:border-signal/30 group-hover:bg-signal-wash">
+                  <Icon size={21} strokeWidth={1.8} />
+                </span>
+
+                <h3 className="mt-6 text-[1.18rem]">{service.title}</h3>
+                <p className="mt-2.5 text-[0.93rem] leading-relaxed text-body">{service.tagline}</p>
+
+                <ul className="mt-6 space-y-3 border-t border-line-soft pt-6">
+                  {service.capabilities.map((c) => (
+                    <li key={c.title} className="flex gap-3 text-[0.88rem] text-body">
+                      <span
+                        aria-hidden="true"
+                        className="mt-[0.55em] size-1 shrink-0 rounded-full bg-faint"
+                      />
+                      {c.title}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-7 flex flex-wrap gap-1.5 pt-0">
+                  {service.tech.slice(0, 4).map((t) => (
+                    <span
+                      key={t}
+                      className="rounded border border-line bg-paper-soft px-2 py-0.5 font-mono text-[0.7rem] text-muted"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="mt-auto inline-flex items-center gap-1.5 pt-7 text-[0.88rem] font-semibold text-signal"
+                >
+                  How we run it
+                  <ArrowRight
+                    size={15}
+                    className="transition-transform duration-200 group-hover:translate-x-1"
+                  />
+                </Link>
+              </article>
+            )
+          })}
         </div>
 
-        <p className="mt-14 mb-5 text-xs font-medium tracking-[0.2em] text-muted uppercase">
-          Also available
-        </p>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {ADDITIONAL_SERVICES.map((service) => (
-            <AdditionalServiceCard key={service.title} {...service} />
-          ))}
+        {/* Everything else, as a dense index rather than eight more cards */}
+        <div data-reveal className="mt-8 rounded-xl border border-line bg-white p-2">
+          <p className="px-5 pt-4 pb-3 font-display text-[0.72rem] font-semibold tracking-[0.14em] text-muted uppercase">
+            Also delivered as standalone engagements
+          </p>
+          <ul className="grid gap-px overflow-hidden rounded-lg bg-line sm:grid-cols-2 lg:grid-cols-4">
+            {SPECIALIZED_LIST.map((service) => (
+              <li key={service.slug}>
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="group flex h-full flex-col bg-white p-5 transition-colors hover:bg-paper-soft"
+                >
+                  <span className="flex items-start justify-between gap-3">
+                    <span className="text-[0.92rem] font-semibold text-ink group-hover:text-signal">
+                      {service.title}
+                    </span>
+                    <ArrowUpRight
+                      size={15}
+                      className="mt-0.5 shrink-0 text-faint transition-colors group-hover:text-signal"
+                    />
+                  </span>
+                  <span className="mt-1.5 text-[0.82rem] leading-snug text-muted">
+                    {service.tagline}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

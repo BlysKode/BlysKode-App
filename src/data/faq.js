@@ -1,4 +1,4 @@
-// Single source of truth for FAQ content — used by the on-page FAQ
+// Single source of truth for FAQ content, used by the on-page FAQ
 // section and the FAQPage structured data. Concise, factual, answer-first
 // entries are what AI answer engines (AIO/GEO) quote most reliably.
 

@@ -1,11 +1,16 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
-import { fileURLToPath } from 'node:url'
-import { resolve, dirname } from 'node:path'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import { resolve, dirname, relative, sep } from 'node:path'
 
 const root = resolve(fileURLToPath(import.meta.url), '../..')
 
-const { render } = await import(resolve(root, 'dist-ssr/entry-server.js'))
-const { ROUTES, SITE, buildHead, buildNotFoundHead } = await import(resolve(root, 'src/seo/pages.js'))
+// Dynamic import() needs a file:// URL, not a bare path. On Windows a bare
+// absolute path starts with a drive letter, which Node reads as a URL scheme
+// and rejects, so the conversion is required rather than cosmetic.
+const importLocal = (path) => import(pathToFileURL(resolve(root, path)).href)
+
+const { render } = await importLocal('dist-ssr/entry-server.js')
+const { ROUTES, SITE, buildHead, buildNotFoundHead } = await importLocal('src/seo/pages.js')
 
 const template = readFileSync(resolve(root, 'dist/index.html'), 'utf-8')
 if (!template.includes('<!--app-head-->') || !template.includes('<!--app-html-->')) {
@@ -23,7 +28,8 @@ for (const path of ROUTES) {
       : resolve(root, `dist${path}/index.html`)
   mkdirSync(dirname(outFile), { recursive: true })
   writeFileSync(outFile, page)
-  console.log(`Prerendered ${path} -> ${outFile.replace(root + '/', '')} (${appHtml.length} bytes)`)
+  const shown = relative(root, outFile).split(sep).join('/')
+  console.log(`Prerendered ${path} -> ${shown} (${appHtml.length} bytes)`)
 }
 
 // 404 page: render an unmatched location so it hydrates cleanly, and

@@ -1,4 +1,6 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { useGSAP } from '@gsap/react'
 import {
   ArrowRight,
   CalendarDays,
@@ -11,135 +13,162 @@ import {
   ShieldCheck,
   ShoppingCart,
   Smartphone,
+  X,
 } from 'lucide-react'
-import Breadcrumbs from '../components/Breadcrumbs'
+import PageHeader from '../components/PageHeader'
+import { revealIn } from '../lib/motion'
 
 const PAINS = [
-  'Your store loads slowly, and every extra second drops sales.',
-  'Checkout is clunky on mobile, so carts get abandoned.',
-  'The design looks dated and buyers do not trust it.',
-  'You are not ranking, so no new traffic finds the store.',
+  'The store loads slowly, and every extra second costs you sales.',
+  'Checkout is awkward on a phone, so carts get abandoned there.',
+  'The design looks dated, and buyers read that as risk.',
+  'Nothing ranks, so no new traffic finds the store at all.',
 ]
 
 const CAPABILITIES = [
-  { icon: ShoppingCart, title: 'Custom WooCommerce builds', desc: 'Storefronts designed around your products and brand, not a generic template.' },
-  { icon: Gauge, title: 'Speed optimization', desc: 'Fast Core Web Vitals so pages load quick and Google ranks you higher.' },
-  { icon: CreditCard, title: 'Payments & checkout', desc: 'Smooth, secure checkout with Stripe, PayPal, and the gateways you need.' },
-  { icon: Smartphone, title: 'Mobile-first design', desc: 'Most shoppers are on phones. Your store will look and sell great there.' },
-  { icon: RefreshCw, title: 'Migrations & redesigns', desc: 'Move from Shopify, Wix, or an old site to WooCommerce with no lost sales.' },
-  { icon: ShieldCheck, title: 'Security & support', desc: 'Backups, updates, and ongoing support that keep the store safe and online.' },
+  {
+    icon: ShoppingCart,
+    title: 'Custom WooCommerce builds',
+    desc: 'Storefronts designed around your products and your brand, not a template with your logo dropped in.',
+  },
+  {
+    icon: Gauge,
+    title: 'Speed and Core Web Vitals',
+    desc: 'Pages that load fast on a mid range phone on mobile data, which is what Google actually measures.',
+  },
+  {
+    icon: CreditCard,
+    title: 'Payments and checkout',
+    desc: 'Secure, low friction checkout with Stripe, PayPal and whichever gateways your market expects.',
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile first design',
+    desc: 'Most of your shoppers are on a phone. That is where the design starts, not where it gets adapted to.',
+  },
+  {
+    icon: RefreshCw,
+    title: 'Migrations and redesigns',
+    desc: 'Move from Shopify, Wix or an ageing build onto WooCommerce with redirects mapped and rankings intact.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Security and support',
+    desc: 'Backups, updates and monitoring, so the store stays online and stays yours.',
+  },
 ]
 
 const STEPS = [
-  ['01', 'Free audit', 'We review your current store and send a short video with 3 concrete fixes.'],
-  ['02', 'Plan & quote', 'You get a clear scope, timeline, and honest fixed price. No surprises.'],
-  ['03', 'Design & build', 'We design and build in fast sprints, sharing progress you can see.'],
-  ['04', 'Launch & grow', 'We launch, monitor, and support, and can drive traffic with SEO after.'],
+  ['Free audit', 'Send us the store. You get a short video pointing out three concrete fixes.'],
+  ['Plan and quote', 'A clear scope, a timeline and a fixed price, before anyone starts.'],
+  ['Design and build', 'Built in short sprints with progress you can click through, not read about.'],
+  ['Launch and grow', 'We launch, monitor and support it, and can drive traffic with SEO afterwards.'],
+]
+
+const PROOF_POINTS = [
+  'Custom WooCommerce design, not a template',
+  'Fast and fully responsive on any screen',
+  'Live, and in front of real customers',
+]
+
+const AUDIT_INCLUDES = [
+  'A three minute video, recorded for your store',
+  'Three prioritised fixes, most valuable first',
+  'A speed and mobile review with numbers',
+  'A plan and price, only if you want one',
 ]
 
 const FAQS = [
-  ['How much does a WooCommerce store cost?', 'It depends on scope. After the free audit we send a clear fixed price so you know the cost up front, with no hidden fees.'],
-  ['Can you fix or speed up my existing store?', 'Yes. We do redesigns, speed optimization, and migrations, not only new builds. The free audit shows exactly what we would improve.'],
-  ['Are you really US-based?', 'Yes, Blyskode is a US-based company headquartered in Brooklyn, New York, working with clients worldwide. You work directly with the founders.'],
+  [
+    'How much does a WooCommerce store cost?',
+    'It depends on scope. After the free audit you get a fixed price for the work we have agreed, so the number you see is the number you pay.',
+  ],
+  [
+    'Can you fix or speed up my existing store?',
+    'Yes. Redesigns, speed work and migrations are most of what we do here, not just new builds. The free audit shows exactly what we would change.',
+  ],
+  [
+    'Are you really US based?',
+    'Yes. Blyskode is headquartered in Brooklyn, New York, working with clients worldwide, and you deal with the founders directly.',
+  ],
 ]
 
 export default function WooCommerceLanding() {
+  const root = useRef(null)
+  useGSAP(() => revealIn(root.current), { scope: root })
+
   return (
-    <div className="pt-28">
-      {/* Hero */}
-      <section className="relative py-14 md:py-20">
-        <div className="grid-backdrop pointer-events-none absolute inset-0" />
-        <div className="pointer-events-none absolute top-1/4 -left-32 size-[420px] rounded-full bg-neon/10 blur-[130px]" />
-        <div className="relative mx-auto max-w-6xl px-5 md:px-10">
-          <Breadcrumbs
-            trail={[
-              { name: 'Home', path: '/' },
-              { name: 'WooCommerce Development', path: '/woocommerce-development' },
-            ]}
-          />
-          <span className="section-pill">WooCommerce &amp; E-commerce</span>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl font-bold text-white sm:text-5xl">
-            WooCommerce stores that load fast and{' '}
-            <span className="text-gradient">sell more</span>
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            We design, build, and speed up WooCommerce stores for US and worldwide brands, fast,
-            mobile-first, and built to turn visitors into buyers. US-based team in Brooklyn, working
-            directly with the founders.
-          </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="https://calendly.com/blyskode/30min"
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter] hover:brightness-110"
-            >
-              Book a free store audit
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <Link
-              to="/portfolio/web-development-wordpress"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-edge bg-surface px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:border-cyber/50"
-            >
-              See live stores
-            </Link>
-          </div>
-          <p className="mt-5 text-xs text-muted">
-            Free store audit · No obligation · We reply within 24 hours
-          </p>
+    <>
+      <PageHeader
+        trail={[
+          { name: 'Home', path: '/' },
+          { name: 'WooCommerce Development', path: '/woocommerce-development' },
+        ]}
+        eyebrow="WooCommerce development"
+        title="WooCommerce stores that load fast and sell more."
+        lede="We design, build and speed up WooCommerce stores for brands in the US, UK and beyond. Mobile first, measurably quick, and built to turn visitors into buyers."
+      >
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="https://calendly.com/blyskode/30min"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-primary"
+          >
+            Book a free store audit
+            <ArrowRight size={16} className="arrow" />
+          </a>
+          <Link to="/portfolio/web-development-wordpress" className="btn btn-secondary">
+            See live stores
+          </Link>
         </div>
-      </section>
+        <p className="mt-5 text-[0.85rem] text-muted">
+          Free audit, no obligation, and a reply within one business day.
+        </p>
+      </PageHeader>
 
-      {/* Pain */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-6xl px-5 md:px-10">
-          <h2 className="max-w-2xl font-display text-2xl font-bold text-white sm:text-3xl">
-            Is your store quietly losing sales?
-          </h2>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {PAINS.map((p) => (
-              <div
-                key={p}
-                className="flex items-start gap-3 rounded-2xl border border-edge bg-panel/60 p-5 text-slate-300"
-              >
-                <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full border border-magenta/40 bg-magenta/10 text-magenta">
-                  ✕
-                </span>
-                <span className="leading-relaxed">{p}</span>
-              </div>
-            ))}
+      <div ref={root}>
+        {/* Pain */}
+        <section className="py-20 lg:py-24">
+          <div className="shell">
+            <h2 data-reveal className="max-w-[22ch] text-[1.8rem] sm:text-[2.2rem]">
+              Is your store quietly losing sales?
+            </h2>
+            <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+              {PAINS.map((pain) => (
+                <li key={pain} data-reveal className="card flex items-start gap-3.5 p-5">
+                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-[#fdf0f2] text-rose">
+                    <X size={13} strokeWidth={3} />
+                  </span>
+                  <span className="text-[0.94rem] leading-relaxed text-body">{pain}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Capabilities */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-6xl px-5 md:px-10">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
-            What we build for you
-          </h2>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {CAPABILITIES.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="spotlight-card rounded-2xl border border-edge bg-panel/60 p-6 backdrop-blur"
-              >
-                <div className="mb-4 inline-grid size-11 place-items-center rounded-xl border border-edge bg-surface text-cyber">
-                  <Icon size={20} />
+        {/* Capabilities */}
+        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
+              What we build for you
+            </h2>
+            <div className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+              {CAPABILITIES.map(({ icon: Icon, title, desc }) => (
+                <div key={title} data-reveal>
+                  <Icon size={20} strokeWidth={1.8} className="text-signal" />
+                  <h3 className="mt-4 text-[1.04rem]">{title}</h3>
+                  <p className="mt-2 text-[0.9rem] leading-relaxed text-body">{desc}</p>
                 </div>
-                <h3 className="font-display text-lg font-semibold text-white">{title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Proof */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-6xl px-5 md:px-10">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-            <div className="overflow-hidden rounded-2xl border border-edge bg-panel/60">
+        {/* Proof */}
+        <section className="py-20 lg:py-28">
+          <div className="shell grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div data-reveal className="card overflow-hidden">
               <img
                 src="/portfolio/webdev/harperreece.png"
                 alt="Harper Reece, a live WooCommerce store built by Blyskode"
@@ -148,155 +177,148 @@ export default function WooCommerceLanding() {
               />
             </div>
             <div>
-              <span className="text-xs font-medium tracking-[0.15em] text-cyber uppercase">
+              <p data-reveal className="eyebrow">
                 Live client store
-              </span>
-              <h2 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
-                Real stores, really shipped
+              </p>
+              <h2 data-reveal className="mt-5 text-[1.8rem] sm:text-[2.1rem]">
+                Real stores, really shipped.
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted">
-                Harper Reece is one of the live WooCommerce stores we designed and built, a custom,
-                mobile-friendly storefront made to convert. It is one of several live sites in our
+              <p data-reveal className="mt-4 text-[0.98rem] leading-relaxed text-body">
+                Harper Reece is one of the WooCommerce stores we designed and built: a custom,
+                mobile friendly storefront made to convert. It is one of several live sites in our
                 portfolio across the US and UK.
               </p>
-              <ul className="mt-6 space-y-3">
-                {['Custom WooCommerce design, not a template', 'Fast and fully mobile-responsive', 'Real, live, and in front of customers'].map((h) => (
-                  <li key={h} className="flex items-start gap-3 text-slate-300">
-                    <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full border border-cyber/40 bg-cyber/10 text-cyber">
-                      <Check size={14} />
+              <ul className="mt-7 space-y-3">
+                {PROOF_POINTS.map((point) => (
+                  <li key={point} data-reveal className="flex items-start gap-3 text-[0.94rem] text-body">
+                    <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-jade-wash text-jade">
+                      <Check size={12} strokeWidth={3} />
                     </span>
-                    <span className="leading-relaxed">{h}</span>
+                    {point}
                   </li>
                 ))}
               </ul>
               <Link
+                data-reveal
                 to="/portfolio/web-development-wordpress"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyber transition-colors hover:text-white"
+                className="mt-7 inline-flex items-center gap-2 text-[0.92rem] font-semibold text-signal"
               >
                 View the live stores
                 <ExternalLink size={14} />
               </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Free audit offer */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-5xl px-5 md:px-10">
-          <div className="relative overflow-hidden rounded-3xl border border-edge bg-panel/60 p-8 backdrop-blur md:p-12">
-            <div className="pointer-events-none absolute -top-24 right-0 h-48 w-2/3 rounded-full bg-gradient-to-r from-cyber/15 via-neon/15 to-magenta/15 blur-[90px]" />
-            <div className="relative grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center">
-              <div>
-                <div className="mb-4 inline-grid size-12 place-items-center rounded-xl border border-edge bg-surface text-cyber">
-                  <Search size={22} />
+        {/* Free audit */}
+        <section className="pb-20 lg:pb-28">
+          <div className="shell">
+            <div data-reveal className="band-dark rounded-2xl px-6 py-12 sm:px-12 lg:px-16">
+              <div className="relative grid gap-10 lg:grid-cols-[1.35fr_1fr] lg:items-center">
+                <div>
+                  <Search size={22} className="text-white/50" />
+                  <h2 className="mt-5 text-[1.8rem] text-white sm:text-[2.1rem]">
+                    Get a free store audit
+                  </h2>
+                  <p className="mt-4 max-w-[56ch] text-[1rem] leading-[1.68] text-white/65">
+                    Send us your store and we will record a short video naming the three things
+                    costing you the most sales, plus how we would fix each one. No cost, and no
+                    obligation to hire us afterwards.
+                  </p>
+                  <ul className="mt-7 grid gap-2.5 sm:grid-cols-2">
+                    {AUDIT_INCLUDES.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-[0.9rem] text-white/75">
+                        <Check size={15} className="mt-1 shrink-0 text-white/60" strokeWidth={2.5} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
-                  Get a free store audit
-                </h2>
-                <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
-                  Send us your store and we will record a short video pointing out the top 3 things
-                  hurting your sales, speed, mobile, checkout, and SEO, plus how we would fix them.
-                  No cost, no obligation.
-                </p>
-                <ul className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                  {['A 3-minute personalized video', '3 concrete, prioritized fixes', 'Speed and mobile review', 'A clear plan if you want help'].map((h) => (
-                    <li key={h} className="flex items-start gap-2.5 text-sm text-slate-300">
-                      <Check size={16} className="mt-0.5 shrink-0 text-cyber" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="flex flex-col gap-4">
-                <a
-                  href="https://calendly.com/blyskode/30min"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter] hover:brightness-110"
-                >
-                  <CalendarDays size={16} />
-                  Book my free audit
-                </a>
-                <Link
-                  to="/contact"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-edge bg-surface px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:border-cyber/50"
-                >
-                  Or send us a message
-                </Link>
+                <div className="relative flex flex-col gap-3">
+                  <a
+                    href="https://calendly.com/blyskode/30min"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-onDark w-full"
+                  >
+                    <CalendarDays size={16} />
+                    Book my free audit
+                  </a>
+                  <Link to="/contact" className="btn btn-ghostDark w-full">
+                    Or send us a message
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Process */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-6xl px-5 md:px-10">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">How it works</h2>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {STEPS.map(([num, title, desc]) => (
-              <div
-                key={num}
-                className="rounded-2xl border border-edge bg-panel/60 p-6 backdrop-blur"
-              >
-                <span className="font-display text-2xl font-bold text-gradient">{num}</span>
-                <h3 className="mt-3 font-display text-base font-semibold text-white">{title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
-              </div>
-            ))}
+        {/* Process */}
+        <section className="border-y border-line bg-paper-soft py-20 lg:py-24">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
+              How it works
+            </h2>
+            <ol className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {STEPS.map(([title, desc], i) => (
+                <li key={title} data-reveal>
+                  <span className="font-mono text-[0.76rem] font-semibold text-faint">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="mt-3 text-[1.06rem]">{title}</h3>
+                  <p className="mt-2.5 text-[0.91rem] leading-relaxed text-body">{desc}</p>
+                </li>
+              ))}
+            </ol>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ */}
-      <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-3xl px-5 md:px-10">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
-            Common questions
-          </h2>
-          <div className="mt-8 space-y-4">
-            {FAQS.map(([q, a]) => (
-              <div key={q} className="rounded-2xl border border-edge bg-panel/60 p-6">
-                <h3 className="font-display text-base font-semibold text-white">{q}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{a}</p>
-              </div>
-            ))}
+        {/* FAQ */}
+        <section className="py-20 lg:py-24">
+          <div className="mx-auto w-full max-w-[760px] px-5 sm:px-7">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
+              Common questions
+            </h2>
+            <dl className="mt-10">
+              {FAQS.map(([q, a]) => (
+                <div key={q} data-reveal className="border-b border-line py-6 first:pt-0">
+                  <dt className="font-display text-[1.04rem] font-semibold text-ink">{q}</dt>
+                  <dd className="mt-2.5 text-[0.95rem] leading-relaxed text-body">{a}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Final CTA */}
-      <section className="pb-20 md:pb-28">
-        <div className="mx-auto max-w-5xl px-5 md:px-10">
-          <div className="relative overflow-hidden rounded-3xl border border-edge bg-panel/60 px-6 py-14 text-center backdrop-blur md:px-16">
-            <div className="pointer-events-none absolute -top-24 left-1/2 h-48 w-[80%] -translate-x-1/2 rounded-full bg-gradient-to-r from-cyber/20 via-neon/20 to-magenta/20 blur-[90px]" />
-            <div className="relative">
-              <h2 className="mx-auto max-w-2xl font-display text-3xl font-bold text-white sm:text-4xl">
-                Ready for a store that actually sells?
-              </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
-                Book a free audit and we will show you exactly what to fix, whether or not you work
-                with us.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        {/* Final CTA */}
+        <section className="pb-24 lg:pb-32">
+          <div className="shell">
+            <div data-reveal className="band-dark rounded-2xl px-6 py-14 sm:px-12 lg:px-16">
+              <div className="relative max-w-2xl">
+                <h2 className="text-[1.9rem] text-white sm:text-[2.3rem]">
+                  Ready for a store that actually sells?
+                </h2>
+                <p className="mt-4 max-w-[52ch] text-[1rem] leading-[1.68] text-white/65">
+                  Book the free audit and we will show you exactly what to fix, whether or not you
+                  end up working with us.
+                </p>
                 <a
                   href="https://calendly.com/blyskode/30min"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-to-r from-cyber to-neon px-8 py-3.5 text-sm font-semibold text-ink shadow-[0_0_40px_-8px_rgba(56,225,255,0.6)] transition-[filter] hover:brightness-110"
+                  className="btn btn-onDark mt-8"
                 >
                   Book a free store audit
-                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                  <ArrowRight size={16} className="arrow" />
                 </a>
+                <p className="mt-6 text-[0.82rem] text-white/60">
+                  Free audit, no obligation, US based team in Brooklyn, New York.
+                </p>
               </div>
-              <p className="mt-5 text-xs text-muted">
-                Free audit · No obligation · US-based team in Brooklyn, NY
-              </p>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   )
 }

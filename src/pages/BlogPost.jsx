@@ -1,8 +1,8 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
-import { ArrowRight, ArrowLeft, Clock } from 'lucide-react'
+import { ArrowRight, ArrowLeft } from 'lucide-react'
 import Breadcrumbs from '../components/Breadcrumbs'
 import PageCTA from '../components/PageCTA'
-import { POST_BY_SLUG } from '../data/posts'
+import { POSTS, POST_BY_SLUG } from '../data/posts'
 import AiAutomation from '../content/ai-automation-for-small-business.jsx'
 import AppCost from '../content/cost-to-build-a-mobile-app.jsx'
 import CloudCosts from '../content/reduce-cloud-costs.jsx'
@@ -31,53 +31,58 @@ export default function BlogPost() {
   const Body = BODIES[slug]
   if (!post || !Body) return <Navigate to="/blog" replace />
 
-  return (
-    <div className="pt-28">
-      <article className="relative py-14 md:py-20">
-        <div className="grid-backdrop pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto max-w-3xl px-5 md:px-10">
-          <Breadcrumbs
-            trail={[
-              { name: 'Home', path: '/' },
-              { name: 'Blog', path: '/blog' },
-              { name: post.title, path: `/blog/${post.slug}` },
-            ]}
-          />
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            {post.tags.map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-edge bg-surface px-3 py-1 text-xs text-cyber"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-          <h1 className="font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-            {post.title}
-          </h1>
-          <div className="mt-4 flex flex-wrap items-center gap-4 border-b border-white/5 pb-8 text-sm text-muted">
-            <span>By {post.author}</span>
-            <span>{post.dateLabel}</span>
-            <span className="inline-flex items-center gap-1">
-              <Clock size={14} /> {post.readMins} min read
-            </span>
-          </div>
+  const more = POSTS.filter((p) => p.slug !== slug).slice(0, 3)
 
-          <div className="article-prose mt-8">
+  return (
+    <>
+      <article>
+        <header className="border-b border-line pt-[120px] pb-12 lg:pt-[148px] lg:pb-16">
+          <div className="mx-auto w-full max-w-[720px] px-5 sm:px-7">
+            <Breadcrumbs
+              trail={[
+                { name: 'Home', path: '/' },
+                { name: 'Blog', path: '/blog' },
+                { name: post.title, path: `/blog/${post.slug}` },
+              ]}
+            />
+            <div className="flex flex-wrap gap-1.5">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded border border-line bg-paper-soft px-2 py-0.5 font-mono text-[0.7rem] text-muted"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h1 className="mt-5 text-[2rem] leading-[1.12] tracking-[-0.03em] sm:text-[2.6rem]">
+              {post.title}
+            </h1>
+            <p className="mt-5 max-w-[62ch] text-[1.06rem] leading-[1.65] text-body">
+              {post.excerpt}
+            </p>
+            <p className="mt-7 font-mono text-[0.78rem] text-muted">
+              {post.author} · {post.dateLabel} · {post.readMins} min read
+            </p>
+          </div>
+        </header>
+
+        <div className="mx-auto w-full max-w-[720px] px-5 py-14 sm:px-7 lg:py-20">
+          <div className="article-prose">
             <Body />
           </div>
 
-          <div className="mt-12 flex items-center justify-between border-t border-white/5 pt-8">
+          <div className="mt-14 flex items-center justify-between border-t border-line pt-8">
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-muted transition-colors hover:text-cyber"
+              className="inline-flex items-center gap-2 text-[0.9rem] font-semibold text-body transition-colors hover:text-signal"
             >
-              <ArrowLeft size={15} /> All articles
+              <ArrowLeft size={15} />
+              All articles
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-cyber transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-[0.9rem] font-semibold text-signal"
             >
               Work with us
               <ArrowRight size={15} />
@@ -86,7 +91,32 @@ export default function BlogPost() {
         </div>
       </article>
 
-      <PageCTA />
-    </div>
+      {more.length > 0 && (
+        <section className="border-y border-line bg-paper-soft py-16">
+          <div className="shell">
+            <h2 className="text-[1.3rem]">Keep reading</h2>
+            <ul className="mt-6 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
+              {more.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    to={`/blog/${p.slug}`}
+                    className="group flex h-full flex-col bg-white p-6 transition-colors hover:bg-paper-soft"
+                  >
+                    <h3 className="text-[1rem] leading-snug group-hover:text-signal">{p.title}</h3>
+                    <p className="mt-auto pt-5 font-mono text-[0.73rem] text-muted">
+                      {p.readMins} min read
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <div className="pt-20">
+        <PageCTA />
+      </div>
+    </>
   )
 }

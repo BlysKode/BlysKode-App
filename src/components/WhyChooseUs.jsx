@@ -1,160 +1,105 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import {
-  Cpu,
-  Eye,
-  Expand,
-  GitPullRequestArrow,
-  LifeBuoy,
-  Lock,
-  UsersRound,
-  Zap,
-} from 'lucide-react'
-import { prefersReducedMotion } from '../lib/motion'
+import { countUp, revealIn } from '../lib/motion'
+
+const METRICS = [
+  { to: 24, suffix: 'h', label: 'From first message to a scoped estimate' },
+  { to: 2, suffix: ' wk', label: 'Sprint cadence, with a demo at the end of each' },
+  { to: 100, suffix: '%', label: 'Of the code and cloud accounts are in your name' },
+  { to: 24, suffix: '/7', label: 'Support coverage once you are live' },
+]
 
 const REASONS = [
   {
-    icon: Zap,
-    title: 'Fast Turnaround',
-    desc: 'Agile methodology ensures rapid development without compromising quality.',
+    title: 'You talk to the people building it',
+    body: 'No account manager relaying messages to a team you never meet. The engineers writing your code are in your channel, answering your questions.',
   },
   {
-    icon: UsersRound,
-    title: 'Expert Team',
-    desc: 'Senior engineers with hands-on expertise in modern stacks, cloud platforms, and AI.',
+    title: 'We turn down work we cannot estimate',
+    body: 'If the brief is too vague to price honestly, we say so and help you tighten it first. A number we invent to win the deal costs you more later.',
   },
   {
-    icon: GitPullRequestArrow,
-    title: 'Quality-First Delivery',
-    desc: 'Every release ships through code review, automated testing, and staging gates.',
+    title: 'You own it all from day one',
+    body: 'Repositories, cloud accounts, domains and CI live under your organisation. Ending the engagement is a permissions change, not a migration project.',
   },
   {
-    icon: Expand,
-    title: 'Scalable Solutions',
-    desc: 'Build systems that grow with your business needs.',
+    title: 'Review and tests are not an upsell',
+    body: 'Every change is peer reviewed and covered by tests before it merges, because that is how the work gets done, not a line item you can decline.',
   },
   {
-    icon: LifeBuoy,
-    title: 'Dedicated Support',
-    desc: '24/7 support and maintenance to keep your systems running smoothly.',
+    title: 'The handover is written down',
+    body: 'Architecture decisions, runbooks and onboarding notes ship alongside the code, so your next hire is productive without booking time with us.',
   },
   {
-    icon: Lock,
-    title: 'Enterprise-Grade Security',
-    desc: 'Strict compliance and security protocols to keep your infrastructure safe.',
-  },
-  {
-    icon: Eye,
-    title: 'Transparent Execution',
-    desc: 'Clear project scoping and real-time tracking with zero hidden costs.',
-  },
-  {
-    icon: Cpu,
-    title: 'Future-Proof Architecture',
-    desc: 'We build using modern stacks that easily integrate with your next phase of growth.',
+    title: 'One contract across the stack',
+    body: 'Design, frontend, backend, mobile, infrastructure and QA sit on the same team. Nothing gets dropped in the gap between two vendors.',
   },
 ]
 
 export default function WhyChooseUs() {
   const root = useRef(null)
 
-  useGSAP(
-    () => {
-      if (prefersReducedMotion()) return
-
-      const mm = gsap.matchMedia()
-
-      // Pin the intro column on desktop while the reasons scroll past it
-      mm.add('(min-width: 1024px)', () => {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: root.current,
-            start: 'top 96px',
-            end: 'bottom bottom-=120',
-            pin: '.why-intro',
-            pinSpacing: false,
-          },
-        })
-      })
-
-      gsap.from('.why-intro > *', {
-        y: 40,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.12,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: root.current, start: 'top 75%' },
-      })
-
-      // Staggered reveal of each reason as it scrolls into view
-      gsap.utils.toArray('.why-item').forEach((item, i) => {
-        gsap.from(item, {
-          x: i % 2 === 0 ? -50 : 50,
-          opacity: 0,
-          duration: 0.9,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: item, start: 'top 88%' },
-        })
-      })
-
-      // Animate the connecting line as the list scrolls
-      gsap.from('.why-line', {
-        scaleY: 0,
-        transformOrigin: 'top center',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.why-list',
-          start: 'top 80%',
-          end: 'bottom 60%',
-          scrub: 0.6,
-        },
-      })
-    },
-    { scope: root },
-  )
+  useGSAP(() => {
+    revealIn(root.current)
+    METRICS.forEach((metric, i) => {
+      const el = root.current.querySelector(`[data-metric="${i}"]`)
+      countUp(el, metric.to, { format: (n) => `${Math.round(n)}${metric.suffix}` })
+    })
+  }, { scope: root })
 
   return (
-    <section id="why" ref={root} className="relative py-24 md:py-32">
-      <div className="pointer-events-none absolute top-1/3 -left-40 size-[480px] rounded-full bg-neon/10 blur-[140px]" />
-      <div className="pointer-events-none absolute right-0 bottom-0 size-[420px] rounded-full bg-cyber/8 blur-[140px]" />
+    <section id="why" ref={root} className="band-dark py-24 lg:py-32">
+      <div className="grid-faint-dark pointer-events-none absolute inset-0" aria-hidden="true" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-14 px-5 md:px-10 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
-        <div>
-          <div className="why-intro lg:max-w-md">
-            <span className="section-pill">Why Choose Blyskode</span>
-            <h2 className="mt-6 font-display text-3xl font-bold text-white sm:text-5xl">
-              Engineered for <span className="text-gradient">trust & velocity</span>
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-              We combine deep technical expertise with transparent delivery, so every engagement
-              ships faster, scales further, and stays secure.
-            </p>
-            <div className="mt-8 rounded-2xl border border-edge bg-panel/60 p-6 backdrop-blur">
-              <p className="font-display text-4xl font-bold text-gradient">&lt;24h</p>
-              <p className="mt-2 text-sm text-muted">
-                Every inquiry gets a clear next step and an honest estimate within one business
-                day.
-              </p>
-            </div>
-          </div>
+      <div className="shell relative">
+        <div className="max-w-2xl">
+          <p data-reveal className="eyebrow eyebrow-onDark">
+            Why teams stay
+          </p>
+          <h2 data-reveal className="mt-5 text-[2.1rem] text-white sm:text-[2.6rem]">
+            The parts of an agency people usually complain about, removed.
+          </h2>
+          <p data-reveal className="mt-5 max-w-[54ch] text-[1.02rem] leading-[1.68] text-white/65 sm:text-[1.08rem]">
+            Most of what follows is not clever engineering. It is the operational discipline that
+            decides whether a project ends well.
+          </p>
         </div>
 
-        <div className="why-list relative">
-          <div className="why-line absolute top-2 bottom-2 left-[23px] hidden w-px bg-gradient-to-b from-cyber via-neon to-magenta sm:block" />
-          <ul className="space-y-8">
-            {REASONS.map(({ icon: Icon, title, desc }) => (
-              <li key={title} className="why-item relative flex gap-5 sm:pl-0">
-                <span className="relative z-10 mt-0.5 grid size-12 shrink-0 place-items-center rounded-xl border border-edge bg-surface text-cyber shadow-[0_0_24px_-6px_rgba(56,225,255,0.4)]">
-                  <Icon size={20} />
+        {/* Metrics */}
+        <dl className="mt-14 grid gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          {METRICS.map((metric, i) => (
+            <div key={metric.label} data-reveal className="bg-ink/95 px-6 py-7">
+              <dt className="sr-only">{metric.label}</dt>
+              <dd>
+                <span
+                  data-metric={i}
+                  className="tnum block font-display text-[2.1rem] leading-none font-semibold text-white"
+                >
+                  {metric.to}
+                  {metric.suffix}
                 </span>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-white">{title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+                <span className="mt-3 block text-[0.84rem] leading-snug text-white/55">
+                  {metric.label}
+                </span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        {/* Reasons */}
+        <div className="mt-16 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {REASONS.map((reason, i) => (
+            <div key={reason.title} data-reveal>
+              <span
+                aria-hidden="true"
+                className="font-mono text-[0.74rem] font-semibold text-white/45"
+              >
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3 className="mt-3 text-[1.06rem] text-white">{reason.title}</h3>
+              <p className="mt-2.5 text-[0.92rem] leading-relaxed text-white/60">{reason.body}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

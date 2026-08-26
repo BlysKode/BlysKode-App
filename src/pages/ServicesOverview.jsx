@@ -1,102 +1,154 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Check } from 'lucide-react'
-import Breadcrumbs from '../components/Breadcrumbs'
+import { useGSAP } from '@gsap/react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import PageHeader from '../components/PageHeader'
 import PageCTA from '../components/PageCTA'
 import { CORE_LIST, SPECIALIZED_LIST, ADDITIONAL } from '../data/services'
+import { revealIn } from '../lib/motion'
 
 export default function ServicesOverview() {
+  const root = useRef(null)
+  useGSAP(() => revealIn(root.current), { scope: root })
+
   return (
-    <div className="pt-28">
-      <section className="relative py-14 md:py-20">
-        <div className="grid-backdrop pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl px-5 md:px-10">
-          <Breadcrumbs
-            trail={[
-              { name: 'Home', path: '/' },
-              { name: 'Services', path: '/services' },
-            ]}
-          />
-          <span className="section-pill">Our Services</span>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl font-bold text-white sm:text-5xl">
-            Three practices. <span className="text-gradient">One engineering partner.</span>
-          </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            Blyskode helps startups, SaaS companies, and growing enterprises build AI-powered
-            products and scalable cloud platforms. Explore each practice below.
-          </p>
-
-          <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {CORE_LIST.map(({ slug, icon: Icon, title, tagline, capabilities }) => (
-              <Link
-                key={slug}
-                to={`/services/${slug}`}
-                className="spotlight-card group flex flex-col rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors hover:border-cyber/40"
-              >
-                <div className="mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
-                  <Icon size={24} />
-                </div>
-                <h2 className="font-display text-xl font-semibold text-white">{title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{tagline}</p>
-                <ul className="mt-5 space-y-2.5 border-t border-white/5 pt-5">
-                  {capabilities.map((c) => (
-                    <li key={c.title} className="flex items-start gap-2.5 text-sm text-slate-300">
-                      <Check size={15} className="mt-0.5 shrink-0 text-cyber" />
-                      {c.title}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-cyber">
-                  Learn more
-                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          <p className="mt-14 mb-5 text-xs font-medium tracking-[0.2em] text-muted uppercase">
-            Specialized services
-          </p>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {SPECIALIZED_LIST.map(({ slug, icon: Icon, title, tagline }) => (
-              <Link
-                key={slug}
-                to={`/services/${slug}`}
-                className="spotlight-card group flex flex-col rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors hover:border-cyber/40"
-              >
-                <div className="mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber transition-colors group-hover:border-cyber/40">
-                  <Icon size={24} />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{tagline}</p>
-                <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-cyber">
-                  Learn more
-                  <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          <p className="mt-14 mb-5 text-xs font-medium tracking-[0.2em] text-muted uppercase">
-            Also available
-          </p>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {ADDITIONAL.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="spotlight-card rounded-2xl border border-edge bg-panel/60 p-7 backdrop-blur transition-colors hover:border-cyber/40"
-              >
-                <div className="mb-5 inline-grid size-13 place-items-center rounded-xl border border-edge bg-surface text-cyber">
-                  <Icon size={24} />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-white">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{desc}</p>
-              </div>
-            ))}
-          </div>
+    <>
+      <PageHeader
+        trail={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+        ]}
+        eyebrow="Services"
+        title="Everything it takes to get a product live."
+        lede="Three core practices we run end to end, plus eight specialisms you can bring us in for on their own. One team, one contract, whichever you need."
+      >
+        <div className="flex flex-wrap gap-3">
+          <Link to="/contact" className="btn btn-primary">
+            Start a project
+            <ArrowRight size={16} className="arrow" />
+          </Link>
+          <Link to="/portfolio" className="btn btn-secondary">
+            See the work
+          </Link>
         </div>
-      </section>
+      </PageHeader>
+
+      <div ref={root}>
+        {/* Core practices */}
+        <section className="py-20 lg:py-28">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
+              Core practices
+            </h2>
+            <p data-reveal className="lede mt-4">
+              Most engagements start here. Each one is a standing team, not a role we staff up
+              when a deal closes.
+            </p>
+
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {CORE_LIST.map(({ slug, icon: Icon, title, tagline, capabilities, tech }) => (
+                <article key={slug} data-reveal className="card card-hoverable group flex flex-col p-7">
+                  <Link to={`/services/${slug}`} className="flex h-full flex-col">
+                    <span className="grid size-11 place-items-center rounded-lg border border-line bg-paper-soft text-signal transition-colors group-hover:border-signal/30 group-hover:bg-signal-wash">
+                      <Icon size={21} strokeWidth={1.8} />
+                    </span>
+                    <h3 className="mt-6 text-[1.18rem] group-hover:text-signal">{title}</h3>
+                    <p className="mt-2.5 text-[0.93rem] leading-relaxed text-body">{tagline}</p>
+
+                    <ul className="mt-6 space-y-3 border-t border-line-soft pt-6">
+                      {capabilities.map((c) => (
+                        <li key={c.title} className="flex gap-3 text-[0.88rem] text-body">
+                          <span
+                            aria-hidden="true"
+                            className="mt-[0.55em] size-1 shrink-0 rounded-full bg-faint"
+                          />
+                          {c.title}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-6 flex flex-wrap gap-1.5">
+                      {tech.slice(0, 4).map((t) => (
+                        <span
+                          key={t}
+                          className="rounded border border-line bg-paper-soft px-2 py-0.5 font-mono text-[0.7rem] text-muted"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-7 text-[0.88rem] font-semibold text-signal">
+                      How we run it
+                      <ArrowRight
+                        size={15}
+                        className="transition-transform duration-200 group-hover:translate-x-1"
+                      />
+                    </span>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Specialisms */}
+        <section className="border-y border-line bg-paper-soft py-20 lg:py-28">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
+              Specialisms
+            </h2>
+            <p data-reveal className="lede mt-4">
+              Scoped engagements when you know exactly what you need building.
+            </p>
+
+            <ul className="mt-12 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+              {SPECIALIZED_LIST.map(({ slug, icon: Icon, title, tagline }) => (
+                <li key={slug} data-reveal>
+                  <Link
+                    to={`/services/${slug}`}
+                    className="group flex h-full flex-col bg-white p-6 transition-colors hover:bg-paper-soft"
+                  >
+                    <span className="flex items-start justify-between gap-3">
+                      <Icon size={20} strokeWidth={1.8} className="text-signal" />
+                      <ArrowUpRight
+                        size={15}
+                        className="text-faint transition-colors group-hover:text-signal"
+                      />
+                    </span>
+                    <h3 className="mt-5 text-[1rem] group-hover:text-signal">{title}</h3>
+                    <p className="mt-2 text-[0.85rem] leading-snug text-muted">{tagline}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Around the build */}
+        <section className="py-20 lg:py-28">
+          <div className="shell">
+            <h2 data-reveal className="text-[1.8rem] sm:text-[2.2rem]">
+              Around the build
+            </h2>
+            <p data-reveal className="lede mt-4">
+              The work that decides whether a good product finds anyone.
+            </p>
+
+            <div className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
+              {ADDITIONAL.map(({ icon: Icon, title, desc }) => (
+                <div key={title} data-reveal>
+                  <Icon size={20} strokeWidth={1.8} className="text-signal" />
+                  <h3 className="mt-4 text-[1rem]">{title}</h3>
+                  <p className="mt-2 text-[0.89rem] leading-relaxed text-body">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
 
       <PageCTA />
-    </div>
+    </>
   )
 }

@@ -15,7 +15,7 @@ const app = (
   </StrictMode>
 )
 
-// Production ships prerendered HTML per route (scripts/prerender.mjs) —
+// Production ships prerendered HTML per route (scripts/prerender.mjs),
 // hydrate it; fall back to a fresh render in dev.
 if (container.firstElementChild) {
   hydrateRoot(container, app)
