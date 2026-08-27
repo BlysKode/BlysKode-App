@@ -10,7 +10,7 @@ export default function Services() {
   useGSAP(() => revealIn(root.current), { scope: root })
 
   return (
-    <section id="services" ref={root} className="border-y border-line bg-paper-soft section-lg">
+    <section id="services" ref={root} className="section-lg">
       <div className="shell">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>

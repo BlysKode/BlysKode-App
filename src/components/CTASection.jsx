@@ -30,6 +30,8 @@ const PROMISES = [
 const FIELD =
   'w-full rounded-lg border border-white/15 bg-white/[0.06] px-3.5 py-2.5 text-[0.92rem] text-white placeholder:text-white/55 transition-colors focus:border-white/40 focus:bg-white/10 focus:outline-none'
 
+const SELECT = `${FIELD} field-dark cursor-pointer`
+
 const LABEL = 'mb-1.5 block text-[0.78rem] font-medium tracking-wide text-white/55'
 
 const EMPTY_FORM = {
@@ -121,7 +123,8 @@ export default function CTASection({ titleAs: Title = 'h2' }) {
             <CalendarDays size={16} />
             Book a 30 minute call
             <ArrowRight size={16} className="arrow" />
-          </a>
+          
+              <span className="sr-only"> (opens in a new tab)</span></a>
 
           <ul data-reveal className="mt-10 space-y-3.5 border-t border-white/10 pt-8 text-[0.9rem]">
             <li className="flex items-center gap-3 text-white/70">
@@ -214,7 +217,7 @@ export default function CTASection({ titleAs: Title = 'h2' }) {
                 id="inq-service"
                 value={form.service}
                 onChange={set('service')}
-                className={FIELD}
+                className={SELECT}
               >
                 {SERVICES.map((s) => (
                   <option key={s} className="text-ink">
@@ -231,7 +234,7 @@ export default function CTASection({ titleAs: Title = 'h2' }) {
                 id="inq-budget"
                 value={form.budget}
                 onChange={set('budget')}
-                className={FIELD}
+                className={SELECT}
               >
                 {BUDGETS.map((b) => (
                   <option key={b} className="text-ink">
@@ -248,7 +251,7 @@ export default function CTASection({ titleAs: Title = 'h2' }) {
                 id="inq-timeline"
                 value={form.timeline}
                 onChange={set('timeline')}
-                className={FIELD}
+                className={SELECT}
               >
                 {TIMELINES.map((t) => (
                   <option key={t} className="text-ink">

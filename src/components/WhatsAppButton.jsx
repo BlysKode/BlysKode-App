@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
       href={href}
       target="_blank"
       rel="noreferrer"
-      aria-label="Chat with Blyskode on WhatsApp"
+      aria-label="Chat with Blyskode on WhatsApp, opens in a new tab"
       className="fixed right-4 bottom-4 z-[60] grid size-11 place-items-center rounded-full bg-[#1fa855] text-white shadow-[0_2px_6px_rgba(10,33,26,0.14),0_14px_30px_-12px_rgba(10,33,26,0.5)] transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 md:right-8 md:bottom-8 md:size-13"
     >
       <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" className="md:size-[26px]">

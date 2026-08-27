@@ -75,7 +75,7 @@ export default function Process() {
   )
 
   return (
-    <section id="process" ref={root} className="section-lg">
+    <section id="process" ref={root} className="border-y border-line bg-paper-soft section-lg">
       <div className="shell grid gap-14 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-20">
         {/* Sticky framing */}
         <div className="lg:sticky lg:top-28 lg:self-start">

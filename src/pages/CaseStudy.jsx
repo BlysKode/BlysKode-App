@@ -66,7 +66,8 @@ export default function CaseStudy() {
             >
               <CalendarDays size={16} />
               Book a call
-            </a>
+            
+              <span className="sr-only"> (opens in a new tab)</span></a>
           </div>
         </div>
       </header>
@@ -102,7 +103,12 @@ export default function CaseStudy() {
           <div className="mx-auto w-full max-w-[900px] space-y-8 px-5 sm:px-7">
             {project.images.map((img) => (
               <figure key={img.src} className="card overflow-hidden">
-                <img src={img.src} alt={img.caption} loading="lazy" className="w-full" />
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
                 <figcaption className="border-t border-line px-6 py-4 text-[0.9rem] leading-relaxed text-body">
                   {img.caption}
                 </figcaption>
@@ -143,7 +149,8 @@ export default function CaseStudy() {
                       className="mt-1 shrink-0 text-faint transition-colors group-hover:text-signal"
                     />
                   </div>
-                </a>
+                
+              <span className="sr-only"> (opens in a new tab)</span></a>
               ))}
             </div>
           </div>

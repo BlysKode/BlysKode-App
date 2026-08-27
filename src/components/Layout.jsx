@@ -26,8 +26,14 @@ export default function Layout() {
 
   return (
     <>
+      {/* Every page opens with a header carrying nineteen menu links. Without
+          this, reaching the content by keyboard means tabbing through all of
+          them on every navigation. */}
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Outlet />
       </main>
       <Footer />

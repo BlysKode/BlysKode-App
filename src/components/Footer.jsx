@@ -84,7 +84,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/blyskode"
               target="_blank"
               rel="noreferrer"
-              aria-label="Blyskode on LinkedIn"
+              aria-label="Blyskode on LinkedIn, opens in a new tab"
               className="mt-7 grid size-9 place-items-center rounded-md border border-line bg-white text-muted transition-colors hover:border-signal/40 hover:bg-signal-wash hover:text-signal"
             >
               <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">

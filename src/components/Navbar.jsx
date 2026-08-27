@@ -31,6 +31,7 @@ function MegaMenu({ link }) {
   const [open, setOpen] = useState(false)
   const wrap = useRef(null)
   const { pathname } = useLocation()
+  const active = pathname === link.to || pathname.startsWith(`${link.to}/`)
 
   // A route change while the pointer still rests on the trigger would leave
   // the panel open over the new page.
@@ -51,7 +52,10 @@ function MegaMenu({ link }) {
       <Link
         to={link.to}
         aria-expanded={open}
-        className="inline-flex items-center gap-1 py-2 text-[0.92rem] font-medium text-body transition-colors hover:text-ink"
+        aria-current={active ? 'page' : undefined}
+        className={`inline-flex items-center gap-1 py-2 text-[0.92rem] font-medium transition-colors hover:text-ink ${
+          active ? 'text-ink' : 'text-body'
+        }`}
       >
         {link.label}
         <ChevronDown

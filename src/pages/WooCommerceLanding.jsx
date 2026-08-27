@@ -117,7 +117,8 @@ export default function WooCommerceLanding() {
           >
             Book a free store audit
             <ArrowRight size={16} className="arrow" />
-          </a>
+          
+              <span className="sr-only"> (opens in a new tab)</span></a>
           <Link to="/portfolio/web-development-wordpress" className="btn btn-secondary">
             See live stores
           </Link>
@@ -172,8 +173,10 @@ export default function WooCommerceLanding() {
               <img
                 src="/portfolio/webdev/harperreece.png"
                 alt="Harper Reece, a live WooCommerce store built by Blyskode"
+                width="1280"
+                height="800"
                 loading="lazy"
-                className="w-full object-cover object-top"
+                className="h-auto w-full object-cover object-top"
               />
             </div>
             <div>
@@ -243,7 +246,8 @@ export default function WooCommerceLanding() {
                   >
                     <CalendarDays size={16} />
                     Book my free audit
-                  </a>
+                  
+              <span className="sr-only"> (opens in a new tab)</span></a>
                   <Link to="/contact" className="btn btn-ghostDark w-full">
                     Or send us a message
                   </Link>
@@ -310,7 +314,8 @@ export default function WooCommerceLanding() {
                 >
                   Book a free store audit
                   <ArrowRight size={16} className="arrow" />
-                </a>
+                
+              <span className="sr-only"> (opens in a new tab)</span></a>
                 <p className="mt-6 text-[0.82rem] text-white/60">
                   Free audit, no obligation, US based team in Brooklyn, New York.
                 </p>

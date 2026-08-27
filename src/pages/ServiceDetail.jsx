@@ -44,7 +44,8 @@ export default function ServiceDetail() {
           >
             <CalendarDays size={16} />
             Book a call
-          </a>
+          
+              <span className="sr-only"> (opens in a new tab)</span></a>
         </div>
       </PageHeader>
 

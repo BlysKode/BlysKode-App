@@ -26,7 +26,8 @@ export default function PageCTA({
               >
                 <CalendarDays size={16} />
                 Book a call
-              </a>
+              
+              <span className="sr-only"> (opens in a new tab)</span></a>
             </div>
             <p className="mt-6 text-[0.82rem] text-white/60">
               Thirty minutes, no obligation, and you talk to an engineer.

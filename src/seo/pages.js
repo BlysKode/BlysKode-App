@@ -188,11 +188,13 @@ const ORG = {
     'Quality Assurance',
   ],
   sameAs: ['https://www.linkedin.com/company/blyskode'],
+  // Who founded the company is still true and still worth declaring for
+  // search, but the portraits are no longer shown anywhere on the site, so
+  // the schema stops pointing at them.
   founder: TEAM.map((m) => ({
     '@type': 'Person',
     name: m.name,
     jobTitle: m.role,
-    image: `${SITE}${m.image}`,
     worksFor: { '@id': `${SITE}/#organization` },
   })),
 }

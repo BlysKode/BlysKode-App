@@ -30,7 +30,7 @@ export default function Results() {
   if (!projects.length) return null
 
   return (
-    <section ref={root} className="border-b border-line bg-paper-soft section-lg">
+    <section ref={root} className="section-lg">
       <div className="shell">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
