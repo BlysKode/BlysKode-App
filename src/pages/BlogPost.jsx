@@ -12,8 +12,10 @@ import StaffAug from '../content/staff-augmentation-vs-outsourcing.jsx'
 import HireCompany from '../content/how-to-hire-a-software-development-company.jsx'
 import SaasMvpCost from '../content/cost-to-build-a-saas-mvp.jsx'
 import OffshoreVsUs from '../content/offshore-vs-us-software-development.jsx'
+import WebsiteCost from '../content/how-much-does-a-website-cost.jsx'
 
 const BODIES = {
+  'how-much-does-a-website-cost': WebsiteCost,
   'ai-automation-for-small-business': AiAutomation,
   'cost-to-build-a-mobile-app': AppCost,
   'reduce-cloud-costs': CloudCosts,

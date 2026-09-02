@@ -3,6 +3,19 @@
 
 export const POSTS = [
   {
+    slug: 'how-much-does-a-website-cost',
+    title: 'How Much Does a Website Cost in 2026? A Clear Breakdown',
+    description:
+      'How much does a website cost in 2026? A clear breakdown by type (small business, custom, WordPress, e-commerce, web app), what drives the price, ongoing costs, and how to get the best value.',
+    excerpt:
+      'A website can cost anywhere from $1,000 to $50,000+. Here is a clear 2026 breakdown by type of site, what actually drives the price, the ongoing costs people forget, and how to get the best value.',
+    date: '2026-09-02',
+    dateLabel: 'September 2, 2026',
+    author: 'Blyskode Team',
+    tags: ['Web Development', 'Pricing'],
+    readMins: 7,
+  },
+  {
     slug: 'how-to-hire-a-software-development-company',
     title: 'How to Hire a Software Development Company in 2026: A Buyer’s Checklist',
     description:
