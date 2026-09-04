@@ -151,7 +151,7 @@ const ORG = {
   name: 'Blyskode',
   alternateName: 'Blyskode Solutions',
   url: `${SITE}/`,
-  logo: `${SITE}/favicon-512.png`,
+  logo: { '@type': 'ImageObject', url: `${SITE}/favicon-512.png`, width: 512, height: 512 },
   image: OG_IMAGE,
   email: 'blyskode@gmail.com',
   telephone: '+13473667437',
@@ -419,9 +419,9 @@ function pageNodes(path) {
         const pr = PROJECT_BY_SLUG[path.replace('/portfolio/', '')]
         return [
           {
-            '@type': ['CreativeWork', 'Article'],
+            '@type': 'CreativeWork',
             '@id': `${canonical}#casestudy`,
-            headline: `${pr.title}: Case Study`,
+            headline: `${pr.title}${pr.kind === 'case-study' ? ': Case Study' : ''}`,
             name: pr.title,
             description: pr.summary,
             url: canonical,
@@ -472,7 +472,7 @@ function pageNodes(path) {
             image: OG_IMAGE,
             datePublished: post.date,
             dateModified: post.date,
-            author: { '@type': 'Organization', name: post.author, url: `${SITE}/` },
+            author: { '@id': `${SITE}/#organization` },
             publisher: { '@id': `${SITE}/#organization` },
             mainEntityOfPage: canonical,
             keywords: post.tags.join(', '),

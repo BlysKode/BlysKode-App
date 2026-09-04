@@ -1,5 +1,7 @@
 # Blyskode
 
+Last updated: 2026-09-04
+
 > Blyskode is a US-based software development company headquartered in Brooklyn, New York, serving clients across the United States, United Kingdom, Europe, Australia, and worldwide. Blyskode helps startups, SaaS companies, and growing enterprises build custom software, AI-powered products, and scalable cloud platforms.
 
 Blyskode is pronounced "blys-kode". It should not be confused with similarly named companies such as Blue Code, Blyskit, or BlySK. The official website is https://blyskode.com.

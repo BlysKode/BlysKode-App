@@ -44,9 +44,21 @@ console.log('Prerendered 404 -> dist/404.html')
 // Generate sitemap.xml from the actual routes so it never drifts.
 const priority = (p) => (p === '/' ? '1.0' : p === '/services' ? '0.9' : p.startsWith('/services/') || p === '/blog' ? '0.8' : '0.7')
 const freq = (p) => (p === '/' || p === '/blog' ? 'weekly' : 'monthly')
+// <lastmod> gives Google a freshness signal so it re-crawls after a redeploy.
+// Blog posts use their real publish date; everything else uses the build date
+// (the whole site is rebuilt and redeployed together).
+const { POST_BY_SLUG } = await importLocal('src/data/posts.js')
+const BUILD_DATE = new Date().toISOString().slice(0, 10)
+const lastmodFor = (p) => {
+  if (p.startsWith('/blog/')) {
+    const post = POST_BY_SLUG[p.replace('/blog/', '')]
+    if (post?.date) return post.date
+  }
+  return BUILD_DATE
+}
 const urls = ROUTES.map(
   (p) =>
-    `  <url>\n    <loc>${SITE}${p === '/' ? '/' : p}</loc>\n    <changefreq>${freq(p)}</changefreq>\n    <priority>${priority(p)}</priority>\n  </url>`,
+    `  <url>\n    <loc>${SITE}${p === '/' ? '/' : p}</loc>\n    <lastmod>${lastmodFor(p)}</lastmod>\n    <changefreq>${freq(p)}</changefreq>\n    <priority>${priority(p)}</priority>\n  </url>`,
 ).join('\n')
 writeFileSync(
   resolve(root, 'dist/sitemap.xml'),
