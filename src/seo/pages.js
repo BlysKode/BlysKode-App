@@ -14,7 +14,7 @@ const STATIC_PAGES = {
   '/': {
     title: 'Blyskode | US Software Development Company: Web, Mobile & AI',
     description:
-      'Blyskode is a US-based software development company building custom software, AI, cloud, web, and mobile apps for startups and enterprises worldwide. Hire dedicated developers or outsource your project.',
+      'Blyskode is a US-based software development company building custom web, mobile, AI, and cloud software for startups and businesses worldwide.',
   },
   '/services': {
     title: 'Services | Blyskode Software & AI Agency',

@@ -60,7 +60,7 @@ export default function Results() {
                   <div className="aspect-[16/10] overflow-hidden border-b border-line bg-paper-mute">
                     <img
                       src={project.image}
-                      alt=""
+                      alt={`${project.title}, a Blyskode project`}
                       loading="lazy"
                       width="640"
                       height="400"

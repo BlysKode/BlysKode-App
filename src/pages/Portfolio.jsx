@@ -41,7 +41,7 @@ export default function Portfolio() {
                   <div className="aspect-[16/10] overflow-hidden border-b border-line lg:aspect-auto lg:border-b-0">
                     <img
                       src={project.image}
-                      alt=""
+                      alt={`${project.title}, a Blyskode project`}
                       loading="lazy"
                       className="size-full object-cover object-top transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                     />
