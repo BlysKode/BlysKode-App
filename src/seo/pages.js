@@ -187,7 +187,12 @@ const ORG = {
     'Google Cloud',
     'Quality Assurance',
   ],
-  sameAs: ['https://www.linkedin.com/company/blyskode'],
+  sameAs: [
+    'https://www.linkedin.com/company/blyskode',
+    'https://www.crunchbase.com/organization/blyskode',
+    'https://clutch.co/profile/blyskode',
+    'https://themanifest.com/company/blyskode',
+  ],
   // Who founded the company is still true and still worth declaring for
   // search, but the portraits are no longer shown anywhere on the site, so
   // the schema stops pointing at them.
