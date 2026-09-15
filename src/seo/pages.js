@@ -333,6 +333,25 @@ function breadcrumb(trail) {
   }
 }
 
+// A distinct WebPage node per page ties that page's primary entity
+// (#service / #article / #casestudy) to the site and gives every URL its
+// own complete, page-specific schema.
+function webPageNode(path, mainId) {
+  const canonical = `${SITE}${path === '/' ? '/' : path}`
+  const meta = PAGES[path]
+  return {
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: meta.title.replace(' | Blyskode', ''),
+    description: meta.description,
+    isPartOf: { '@id': `${SITE}/#website` },
+    inLanguage: 'en-US',
+    primaryImageOfPage: meta.image ? `${SITE}${meta.image}` : OG_IMAGE,
+    ...(mainId ? { mainEntity: { '@id': mainId } } : {}),
+  }
+}
+
 function pageNodes(path) {
   const canonical = `${SITE}${path === '/' ? '/' : path}`
   switch (path) {
@@ -423,6 +442,7 @@ function pageNodes(path) {
       if (path.startsWith('/portfolio/')) {
         const pr = PROJECT_BY_SLUG[path.replace('/portfolio/', '')]
         return [
+          webPageNode(path, `${canonical}#casestudy`),
           {
             '@type': 'CreativeWork',
             '@id': `${canonical}#casestudy`,
@@ -447,6 +467,7 @@ function pageNodes(path) {
       if (path.startsWith('/hire-developers/')) {
         const r = HIRE_ROLES[path.replace('/hire-developers/', '')]
         return [
+          webPageNode(path, `${canonical}#service`),
           {
             '@type': 'Service',
             '@id': `${canonical}#service`,
@@ -468,6 +489,7 @@ function pageNodes(path) {
       if (path.startsWith('/blog/')) {
         const post = POST_BY_SLUG[path.replace('/blog/', '')]
         return [
+          webPageNode(path, `${canonical}#article`),
           {
             '@type': 'BlogPosting',
             '@id': `${canonical}#article`,
@@ -493,6 +515,7 @@ function pageNodes(path) {
       // service detail pages
       const name = PAGES[path].title.replace(' | Blyskode', '')
       return [
+        webPageNode(path, `${canonical}#service`),
         {
           '@type': 'Service',
           '@id': `${canonical}#service`,
