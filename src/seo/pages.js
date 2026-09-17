@@ -39,12 +39,12 @@ const STATIC_PAGES = {
   '/services/mobile-app-development': {
     title: 'Mobile App Development Services | Blyskode',
     description:
-      'Blyskode builds native and cross-platform iOS and Android apps with React Native and Flutter, from MVP to App Store launch. Hire a mobile app development team.',
+      'Blyskode builds native and cross-platform iOS and Android apps with React Native and Flutter, from MVP to App Store launch. Hire dedicated mobile app developers or a full app development team.',
   },
   '/services/custom-software-development': {
     title: 'Custom Software Development Services | Blyskode',
     description:
-      'Blyskode builds bespoke custom software and SaaS products, from MVP development to enterprise platforms, engineered around your exact business workflows.',
+      'Blyskode provides bespoke software development services: custom software and SaaS products, from MVP development to enterprise platforms, built around your exact business workflows.',
   },
   '/services/quality-assurance': {
     title: 'QA & Software Testing Services | Blyskode',
