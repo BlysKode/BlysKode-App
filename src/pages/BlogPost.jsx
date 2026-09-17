@@ -13,8 +13,10 @@ import HireCompany from '../content/how-to-hire-a-software-development-company.j
 import SaasMvpCost from '../content/cost-to-build-a-saas-mvp.jsx'
 import OffshoreVsUs from '../content/offshore-vs-us-software-development.jsx'
 import WebsiteCost from '../content/how-much-does-a-website-cost.jsx'
+import HireMobileDevs from '../content/how-to-hire-mobile-app-developers.jsx'
 
 const BODIES = {
+  'how-to-hire-mobile-app-developers': HireMobileDevs,
   'how-much-does-a-website-cost': WebsiteCost,
   'ai-automation-for-small-business': AiAutomation,
   'cost-to-build-a-mobile-app': AppCost,

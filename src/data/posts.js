@@ -3,6 +3,19 @@
 
 export const POSTS = [
   {
+    slug: 'how-to-hire-mobile-app-developers',
+    title: 'How to Hire Mobile App Developers in 2026: Costs, Models & Where to Find Them',
+    description:
+      'How to hire mobile app developers in 2026: where to find them, freelancer vs agency vs dedicated team, real costs, native vs cross-platform, what to vet, and a step-by-step hiring guide.',
+    excerpt:
+      'Hiring the wrong app developer costs you twice. Here is a 2026 guide to where to hire mobile app developers, the models and costs, what to vet, and how to make the right hire.',
+    date: '2026-09-17',
+    dateLabel: 'September 17, 2026',
+    author: 'Blyskode Team',
+    tags: ['Mobile Apps', 'Hiring'],
+    readMins: 8,
+  },
+  {
     slug: 'how-much-does-a-website-cost',
     title: 'How Much Does a Website Cost in 2026? A Clear Breakdown',
     description:
