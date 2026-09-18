@@ -3,6 +3,19 @@
 
 export const POSTS = [
   {
+    slug: 'how-to-hire-wordpress-developers',
+    title: 'How to Hire WordPress Developers in 2026: Costs, Where to Find Them & What to Check',
+    description:
+      'How to hire WordPress developers in 2026: what they do, where to find them, freelancer vs agency vs dedicated, real costs, what to vet (speed, security, WooCommerce), and a step-by-step guide.',
+    excerpt:
+      'A slow or insecure WordPress site costs you leads. Here is a 2026 guide to hiring WordPress developers: where to find them, the costs, what to check, and how to make the right hire.',
+    date: '2026-09-18',
+    dateLabel: 'September 18, 2026',
+    author: 'Blyskode Team',
+    tags: ['WordPress', 'Hiring'],
+    readMins: 8,
+  },
+  {
     slug: 'how-to-hire-mobile-app-developers',
     title: 'How to Hire Mobile App Developers in 2026: Costs, Models & Where to Find Them',
     description:

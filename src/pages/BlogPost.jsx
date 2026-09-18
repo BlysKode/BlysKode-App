@@ -14,8 +14,10 @@ import SaasMvpCost from '../content/cost-to-build-a-saas-mvp.jsx'
 import OffshoreVsUs from '../content/offshore-vs-us-software-development.jsx'
 import WebsiteCost from '../content/how-much-does-a-website-cost.jsx'
 import HireMobileDevs from '../content/how-to-hire-mobile-app-developers.jsx'
+import HireWpDevs from '../content/how-to-hire-wordpress-developers.jsx'
 
 const BODIES = {
+  'how-to-hire-wordpress-developers': HireWpDevs,
   'how-to-hire-mobile-app-developers': HireMobileDevs,
   'how-much-does-a-website-cost': WebsiteCost,
   'ai-automation-for-small-business': AiAutomation,

@@ -1,0 +1,433 @@
+- generic [active] [ref=f2e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=f2e2] [cursor=pointer]
+      - link "Accessibility help" [ref=f2e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en
+  - generic [ref=f2e8]:
+    - search [ref=f2e9]:
+      - generic [ref=f2e12]:
+        - link [ref=f2e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQpYkNegQIBhAG
+          - img "Go to Google home" [ref=f2e14]
+        - generic [ref=f2e19]:
+          - combobox "Search" [ref=f2e22]: hire mobile app developers hire mobile app developers
+          - generic [ref=f2e23]:
+            - button "Clear" [ref=f2e25] [cursor=pointer]
+            - generic [ref=f2e30]:
+              - button "Search by voice" [ref=f2e31] [cursor=pointer]
+              - button "Search by image" [ref=f2e34] [cursor=pointer]
+        - button "Search" [ref=f2e37] [cursor=pointer]
+    - generic [ref=f2e42]:
+      - button "Settings" [ref=f2e44] [cursor=pointer]
+      - button "Share" [ref=f2e49] [cursor=pointer]
+      - generic [ref=f2e55]:
+        - button "Google apps" [ref=f2e57] [cursor=pointer]
+        - link "Sign in" [ref=f2e62] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3Dhire%2Bmobile%2Bapp%2Bdevelopers%26num%3D100%26gl%3Dus%26hl%3Den%26sei%3DswetapHoAf_e1sQPgKCvwAE&ec=futura_srp_og_si_72236_p
+  - generic [ref=f2e65]:
+    - navigation [ref=f2e71]:
+      - generic [ref=f2e77]:
+        - list [ref=f2e78]:
+          - listitem [ref=f2e79]:
+            - link "AI Mode" [ref=f2e82] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=50&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832X6CeY5aSHvaPXpohaS1dducKJ9vW2r5g1d5cMKghneO17pkIDLkifCExdoydOwG8mmCh2TQxYtdec849xvnwoCQqBvDepov130Z24dGPrdlqCPMYUaUQD7UmPxfvtYB5GRHZtlnJboI7t-AT8Od_8OgZi3spLXbZ02sQmc6D8Lq24B8Kg&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ2J8OegQIFhAD
+          - listitem [ref=f2e86]:
+            - link "All" [disabled] [ref=f2e87]
+          - listitem [ref=f2e90]:
+            - link "Images" [ref=f2e91] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832X6CeY5aSHvaPXpohaS1dducKJ9vW2r5g1d5cMKghneO17pkIDLkifCExdoydOwG8mmCh2TQxYtdec849xvnwoCQqBvDepov130Z24dGPrdlqCPMYUaUQD7UmPxfvtYB5GRHZtlnJboI7t-AT8Od_8OgZi3spLXbZ02sQmc6D8Lq24B8Kg&q=hire+mobile+app+developers&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQtKgLegQIHBAB
+          - listitem [ref=f2e94]:
+            - link "News" [ref=f2e95] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=hire+mobile+app+developers&tbm=nws&source=lnms&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832X6CeY5aSHvaPXpohaS1dducKJ9vW2r5g1d5cMKghneO17pkIDLkifCExdoydOwG8mmCh2TQxYtdec849xvnwoCQqBvDepov130Z24dGPrdlqCPMYUaUQD7UmPxfvtYB5GRHZtlnJboI7t-AT8Od_8OgZi3spLXbZ02sQmc6D8Lq24B8Kg&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ0pQJegQIGxAB
+          - listitem [ref=f2e98]:
+            - link "Forums" [ref=f2e99] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=forums&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832X6CeY5aSHvaPXpohaS1dducKJ9vW2r5g1d5cMKghneO17pkIDLkifCExdoydOwG8mmCh2TQxYtdec849xvnwoCQqBvDepov130Z24dGPrdlqCPMYUaUQD7UmPxfvtYB5GRHZtlnJboI7t-AT8Od_8OgZi3spLXbZ02sQmc6D8Lq24B8Kg&q=hire+mobile+app+developers&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQs6gLegQIGhAB
+          - listitem [ref=f2e102]:
+            - link "Videos" [ref=f2e103] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=vids&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832X6CeY5aSHvaPXpohaS1dducKJ9vW2r5g1d5cMKghneO17pkIDLkifCExdoydOwG8mmCh2TQxYtdec849xvnwoCQqBvDepov130Z24dGPrdlqCPMYUaUQD7UmPxfvtYB5GRHZtlnJboI7t-AT8Od_8OgZi3spLXbZ02sQmc6D8Lq24B8Kg&q=hire+mobile+app+developers&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQtKgLegQIGRAB
+          - listitem [ref=f2e106]:
+            - link "Shopping" [ref=f2e107] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=28&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832X6CeY5aSHvaPXpohaS1dducKJ9vW2r5g1d5cMKghneO17pkIDLkifCExdoydOwG8mmCh2TQxYtdec849xvnwoCQqBvDepov130Z24dGPrdlqCPMYUaUQD7UmPxfvtYB5GRHZtlnJboI7t-AT8Od_8OgZi3spLXbZ02sQmc6D8Lq24B8Kg&q=hire+mobile+app+developers&ved=1t:220175&ictx=111
+          - listitem [ref=f2e110]:
+            - button [ref=f2e111] [cursor=pointer]:
+              - generic "More filters" [ref=f2e112]: More
+        - button "Tools" [ref=f2e119] [cursor=pointer]
+    - heading "Search Results" [level=1] [ref=f2e127]
+    - generic [ref=f2e132]:
+      - generic [ref=f2e133]:
+        - region "Ads" [ref=f2e138]:
+          - generic [ref=f2e139]:
+            - heading "Sponsored result" [level=2] [ref=f2e146]
+            - generic [ref=f2e147]:
+              - generic [ref=f2e160]:
+                - generic [ref=f2e161]:
+                  - link "Mobile App Developer for Hire - Contact Us Today briankayfitz.com https://www.briankayfitz.com" [ref=f2e162] [cursor=pointer]:
+                    - /url: /goto?url=CAESZgHrOzAVmHWIWz8kr9Rr_kcrVQr1CPUfX6yA0NVKcZD7P7leHJWnS04sE9wxZk_iwdDevCIp-dYnLFjJNuqqj4n5RgEyrqPyelNcaR_gfkImaPmGhZwNmZAh_Vy1kfxMlPzgVwD5eA
+                    - heading "Mobile App Developer for Hire - Contact Us Today" [level=3] [ref=f2e163]
+                    - generic [ref=f2e172]:
+                      - generic [ref=f2e173]: briankayfitz.com
+                      - generic [ref=f2e175]: https://www.briankayfitz.com
+                  - button "Why this ad?" [ref=f2e178] [cursor=pointer]
+                - generic [ref=f2e182]: Flutter developer and author with over 25 mobile apps successfully launched.
+                - generic [ref=f2e185]:
+                  - link "Get A Free Quote Brian Kayfitz provides custom app development services." [ref=f2e189] [cursor=pointer]:
+                    - /url: /aclk?sa=L&pf=1&ai=DChsSEwjK64HX6_eWAxVJUEgAHUiaDioYACICCAEQAxoCY2U&co=1&ase=2&gclid=EAIaIQobChMIyuuB1-v3lgMVSVBIAB1Img4qEAAYASADEgIBnvD_BwE&cid=CAASugHkaKESunT5SmglUovAFYkqwd3Xju3JHZqrYqgPpyMxvuhZJY4yhlKQOTEnxYM54jBrcQYPcjfqojf_rrCOgW0OlLsiZ4DKXt5o1QZ02woPimiEYkO0cNLQ-Ke9zVhmKovll6ljX72ch0J7wmKEyRFQTXKEHXrhxvLs5bO8buDQJ-4gB8GIN3DHQdc5lgbJqSs5qTHLsw8sypWHRePVZTXLb_Tp_y9RPt9MLjjd_e8HMTm-pBw3vJ4VvUo&cce=2&category=acrcp_v1_32&sig=AOD64_20r6S18MynwvWGVXSbInoKyE0Tlw&adurl=https://briankayfitz.com/flutter-freelancer-3/%3Fgad_source%3D1%26gad_campaignid%3D24204624891%26gbraid%3D0AAAAACa4l4DqSQrtU-f_DbmIskwyM3eX5%26gclid%3DEAIaIQobChMIyuuB1-v3lgMVSVBIAB1Img4qEAAYASADEgIBnvD_BwE&q=
+                    - generic [ref=f2e190]: Get A Free Quote
+                    - generic [ref=f2e193]: Brian Kayfitz provides custom app development services.
+                  - link "Best Mobile App Freelance Brian Can Help Build an MVP App to Test Your Idea and Market Demand" [ref=f2e197] [cursor=pointer]:
+                    - /url: /aclk?sa=L&pf=1&ai=DChsSEwjK64HX6_eWAxVJUEgAHUiaDioYACICCAEQBBoCY2U&co=1&ase=2&gclid=EAIaIQobChMIyuuB1-v3lgMVSVBIAB1Img4qEAAYASAEEgKt4PD_BwE&cid=CAASugHkaKESunT5SmglUovAFYkqwd3Xju3JHZqrYqgPpyMxvuhZJY4yhlKQOTEnxYM54jBrcQYPcjfqojf_rrCOgW0OlLsiZ4DKXt5o1QZ02woPimiEYkO0cNLQ-Ke9zVhmKovll6ljX72ch0J7wmKEyRFQTXKEHXrhxvLs5bO8buDQJ-4gB8GIN3DHQdc5lgbJqSs5qTHLsw8sypWHRePVZTXLb_Tp_y9RPt9MLjjd_e8HMTm-pBw3vJ4VvUo&cce=2&category=acrcp_v1_32&sig=AOD64_3IHRtKxZIWVsxqpmKY2k8cuHN45g&adurl=https://briankayfitz.com/flutter-freelancer-3/%3Fgad_source%3D1%26gad_campaignid%3D24204624891%26gbraid%3D0AAAAACa4l4DqSQrtU-f_DbmIskwyM3eX5%26gclid%3DEAIaIQobChMIyuuB1-v3lgMVSVBIAB1Img4qEAAYASAEEgKt4PD_BwE&q=
+                    - generic [ref=f2e198]: Best Mobile App Freelance
+                    - generic [ref=f2e201]: Brian Can Help Build an MVP App to Test Your Idea and Market Demand
+                  - link "MVP App Turn Your App Idea Into an MVP Build and Test Your App Idea" [ref=f2e205] [cursor=pointer]:
+                    - /url: /goto?url=CAESYQHrOzAVn8grXPIdJuMC5-MQVxVaCED6nrFf86iaHlsXzSSOZkDrMqQcplmTNDHQ9tqJgy5VNNW_n2TsGQB8wDl6W39eNXhJRQK_OguWB50z444UsgwT2HIn8xBfuu2sT2Y
+                    - generic [ref=f2e206]: MVP App
+                    - generic [ref=f2e209]: Turn Your App Idea Into an MVP Build and Test Your App Idea
+                  - link "About Brian Flutter Developer and Author 15+ Years Developing Apps" [ref=f2e213] [cursor=pointer]:
+                    - /url: /goto?url=CAESVwHrOzAV-0NfoceYxc34YCMZmTTsqq3KlkPtwpBKtfsh8tOUqeR-SuCiE_XZT0hdhyMUvmpuajPDZTYPXRdolFM6L8c4QB41OgZJiAAx8m6tMRnbguH0Ug
+                    - generic [ref=f2e214]: About Brian
+                    - generic [ref=f2e217]: Flutter Developer and Author 15+ Years Developing Apps
+              - button "Hide sponsored result" [ref=f2e220] [cursor=pointer]:
+                - separator [aria-hidden] [ref=f2e221]
+        - generic [ref=f2e239]:
+          - generic [ref=f2e241]:
+            - generic [ref=f2e243]:
+              - heading "AI Overview" [level=2] [ref=f2e247]
+              - button "About this result" [ref=f2e251]
+            - generic [ref=f2e273]:
+              - generic [ref=f2e274]:
+                - mark [ref=f2e275]:
+                  - text: You can find vetted freelance mobile app experts on platforms like
+                  - link "Upwork" [ref=f2e277] [cursor=pointer]:
+                    - /url: /goto?url=CAESagHrOzAV3t6-HqlRyCbzsL6or7ejoWfGC6twk_FtMADWT6NjYVLXbmLk37D_dTKyuO378-Nh2zBYQ0eqvVHMwuUCRAz0HT5qV8IbJcb_EI09JGdm2xtwkOp81653imgnINEAD2dKix2c5Hw
+                - text: or post open project listings directly through
+                - link "Freelancer" [ref=f2e279] [cursor=pointer]:
+                  - /url: /goto?url=CAESbgHrOzAVxQgtCijE2cekXUGRryxV4fcbjigzKIyv_SGyJp34yT1Lx-HuLY_L-8TbAs6CQ11HTRecYbG9QraQ5fJwiIKAuz6g038u3zNTZe_jXWpnfw8pDNdfhYi_hxo8Wx216blDlSZMeQ7kNnXv
+                - text: .
+                - button "Related results" [ref=f2e282] [cursor=pointer]
+              - heading "Where to Find Developers" [level=3] [ref=f2e287]
+              - list [ref=f2e288]:
+                - listitem [ref=f2e290]:
+                  - generic [ref=f2e291]:
+                    - strong [ref=f2e292]: "Freelance Platforms:"
+                    - text: Browse independent specialists or agencies on Upwork and Freelancer.
+                - listitem [ref=f2e294]:
+                  - generic [ref=f2e295]:
+                    - strong [ref=f2e296]: "Vetted Talent Networks:"
+                    - text: Use curated networks like
+                    - link "Toptal" [ref=f2e298] [cursor=pointer]:
+                      - /url: /goto?url=CAESXQHrOzAVRG7hu23WAasrFrXhxHXH9V_pn4yvTAWMzIKRby_ufm0y-vub1O3bC5DVxaGWReag1FeDw1Wk9Kq_B870AEGqp63pCe6clhsd2TqevbLwl_ejKmglwJe4qA
+                    - text: for high-vetted senior engineers.
+                - listitem [ref=f2e300]:
+                  - generic [ref=f2e301]:
+                    - strong [ref=f2e302]: "Project Marketplaces:"
+                    - text: Find fixed-scope technical help via
+                    - link [ref=f2e304] [cursor=pointer]:
+                      - /url: /goto?url=CAESagHrOzAVJPJplDvTKF2n6A4NFbU0OL_CdquJt6vlzuM-8NCwuHZsB6Kv7RTsGkpDiJiP_dxiisjoqBFUmFfB5FjKdmPrFxXDg4uneSVFqPmrktxZlVYuZMald1ziN2_BpwQekHkvF-THwPE
+                      - text: Fiverr Pro
+                    - text: .
+                  - button [ref=f2e307] [cursor=pointer]
+              - heading [level=3] [ref=f2e313]: Estimated Costs
+              - list [aria-hidden] [ref=f2e314]:
+                - listitem [ref=f2e316]:
+                  - generic [ref=f2e317]:
+                    - strong [ref=f2e318]: "Freelance Hourly Rates:"
+                    - text: $18 to $39+ per hour depending on experience.
+                - listitem [ref=f2e320]:
+                  - generic [ref=f2e321]:
+                    - strong [ref=f2e322]: "Basic MVP (Minimum Viable Product):"
+                    - text: $3,000 to $8,000 per project for simple single-feature apps.
+                - listitem [ref=f2e325]:
+                  - generic [ref=f2e326]:
+                    - strong [ref=f2e327]: "Full Agency Development:"
+                    - text: $40,000 to $400,000+ for comprehensive enterprise applications.
+                  - generic [ref=f2e329]:
+                    - link [ref=f2e330] [cursor=pointer]:
+                      - /url: /goto?url=CAESagHrOzAV3t6-HqlRyCbzsL6or7ejoWfGC6twk_FtMADWT6NjYVLXbmLk37D_dTKyuO378-Nh2zBYQ0eqvVHMwuUCRAz0HT5qV8IbJcb_EI09JGdm2xtwkOp81653imgnINEAD2dKix2c5Hw
+                    - button [ref=f2e331] [cursor=pointer]:
+                      - generic [ref=f2e333]:
+                        - generic [ref=f2e334]: Upwork
+                        - generic [ref=f2e335]: "+1"
+              - generic [ref=f2e340]:
+                - heading [level=3] [ref=f2e342]: Steps to Hire
+                - list [aria-hidden] [ref=f2e343]:
+                  - listitem [ref=f2e345]:
+                    - generic [ref=f2e346]:
+                      - strong [ref=f2e347]: "Define the Scope:"
+                      - text: Outline target platforms (iOS, Android, or cross-platform like Flutter or React Native) and required features.
+                  - listitem [ref=f2e349]:
+                    - generic [ref=f2e350]:
+                      - strong [ref=f2e351]: "Review Portfolios:"
+                      - text: Check past app store links or GitHub contributions.
+                  - listitem [ref=f2e353]:
+                    - generic [ref=f2e354]:
+                      - strong [ref=f2e355]: "Interview & Test:"
+                      - text: Ask technical questions regarding API integration, state management, and store deployment.
+                    - generic [ref=f2e357]:
+                      - link [ref=f2e358] [cursor=pointer]:
+                        - /url: /goto?url=CAESagHrOzAVJPJplDvTKF2n6A4NFbU0OL_CdquJt6vlzuM-8NCwuHZsB6Kv7RTsGkpDiJiP_dxiisjoqBFUmFfB5FjKdmPrFxXDg4uneSVFqPmrktxZlVYuZMald1ziN2_BpwQekHkvF-THwPE
+                      - button [ref=f2e359] [cursor=pointer]:
+                        - generic [ref=f2e361]:
+                          - generic [ref=f2e362]: Fiverr Pro
+                          - generic [ref=f2e363]: "+3"
+                - generic [ref=f2e369]:
+                  - generic [ref=f2e370]: "If you want, tell me:"
+                  - list [ref=f2e371]:
+                    - listitem [ref=f2e372]:
+                      - generic [ref=f2e373]:
+                        - text: What
+                        - strong [ref=f2e374]: platform
+                        - text: are you targeting (iOS, Android, or both)?
+                    - listitem [ref=f2e375]:
+                      - generic [ref=f2e376]:
+                        - text: What are the
+                        - strong [ref=f2e377]: key features
+                        - text: of your app?
+                  - generic [ref=f2e378]: I can help you write a project brief or narrow down the best tech stack.
+          - button "Show more AI Overview" [ref=f2e383]:
+            - generic [ref=f2e384] [cursor=pointer]: Show more
+      - main [ref=f2e391]:
+        - generic [ref=f2e396]:
+          - generic [ref=f2e399]:
+            - heading "Web results" [level=2] [ref=f2e400]
+            - generic [ref=f2e401]:
+              - generic [ref=f2e404]:
+                - link "Hire Mobile App Developers Hyperlink InfoSystem https://www.hyperlinkinfosystem.com › app-developers..." [ref=f2e406] [cursor=pointer]:
+                  - /url: /goto?url=CAESdwHrOzAVSBGSTF3gOwSfsA9IK_RrpVFp7TJlubNakAYG52u6WwBF__0n8n6AzqIbudmokKytKtxYxyX0Svq27MQcE1zDfsCndHGcO0ZI0TzaqDHs8WZtuOn5GYLuRE9x2UDDBkD9gysmTEQ4iX9Q7qGOazjY7sQy
+                  - heading "Hire Mobile App Developers" [level=3] [ref=f2e407]
+                  - generic [ref=f2e413]:
+                    - generic [ref=f2e414]: Hyperlink InfoSystem
+                    - generic [ref=f2e416]: https://www.hyperlinkinfosystem.com › app-developers...
+                - button "About this result" [ref=f2e422] [cursor=pointer]
+              - generic [ref=f2e429]:
+                - emphasis [ref=f2e430]: Hyperlink InfoSystem offers highly skilled developers
+                - text: specializing in Android, iOS, and cross-platform app development. Our experts create seamless, secure,
+          - generic [ref=f2e435]:
+            - heading "People also ask" [level=2] [ref=f2e437]
+            - generic [ref=f2e438]:
+              - button "How much does it cost to hire a mobile app developer?" [ref=f2e444] [cursor=pointer]
+              - button "How much does it cost to develop a mobile app?" [ref=f2e458] [cursor=pointer]
+              - button "How can I hire someone to develop a mobile app?" [ref=f2e472] [cursor=pointer]
+              - button "How much is an app with 100,000 users worth?" [ref=f2e486] [cursor=pointer]
+          - generic [ref=f2e496]:
+            - heading "Web results" [level=2] [ref=f2e497]
+            - generic [ref=f2e498]:
+              - generic [ref=f2e501]:
+                - link "Hire the Best App developers Fiverr Pro https://pro.fiverr.com › cat › technical › app-developer" [ref=f2e503] [cursor=pointer]:
+                  - /url: /goto?url=CAESagHrOzAVmU5QQDRKJVMbXnhyH8zdCdkVR2BK_Ioq3Wf-DQZKc-cSpa4ya8YDhj8u2mBBUAm7oI7HWW9Qs7f-9EB9tYQzpQ1eE4AyUiITfMcWCMK-1xGJM7QPZOAodkyANtySbQ19cQ2uyUU
+                  - heading "Hire the Best App developers" [level=3] [ref=f2e504]
+                  - generic [ref=f2e510]:
+                    - generic [ref=f2e511]: Fiverr Pro
+                    - generic [ref=f2e513]: https://pro.fiverr.com › cat › technical › app-developer
+                - button "About this result" [ref=f2e519] [cursor=pointer]
+              - generic [ref=f2e526]:
+                - emphasis [ref=f2e527]: Hire an expert app developer for custom mobile solutions
+                - text: . Our top-rated professionals build user-friendly iOS and Android apps that convert. From $300/project
+              - generic [ref=f2e528]: $155 to $4,000
+          - generic [ref=f2e534]:
+            - generic [ref=f2e537]:
+              - 'link "Where to hire/ find app developers? : r/Entrepreneur Reddit · r/Entrepreneur 210+ comments · 4 years ago" [ref=f2e539] [cursor=pointer]':
+                - /url: /goto?url=CAESkAEB6zswFQG-6pPlRVWSUyYPkzbpA7aQPql8QS6Ow_kCu7vF-a5-NG23nikB8zJWyZ1MtwcoqNGE3oU6ZhQc1LpV3ziqjG2kBg0-h4HQcQsudBlp91mjWjVAbSrfey_9LFjl_rdHhvfGDIsgTZ7L0akN9r3b4AE3iBmnIyyN1XccJ_WXrtm1BGzyWkgY3IWhM5k
+                - 'heading "Where to hire/ find app developers? : r/Entrepreneur" [level=3] [ref=f2e540]'
+                - generic [ref=f2e546]:
+                  - generic [ref=f2e547]: Reddit · r/Entrepreneur
+                  - generic [ref=f2e549]: 210+ comments · 4 years ago
+              - button "About this result" [ref=f2e555] [cursor=pointer]
+            - generic [ref=f2e560]: I have an idea and need a dev, how do I find the right one?
+            - generic [ref=f2e566]:
+              - link "217 answers" [ref=f2e567] [cursor=pointer]:
+                - /url: /goto?url=CAESmAEB6zswFaR6FLcWBgxv3qnVC6NU0WAEHbvQfmItScCsb9RRjfactpj4pcfxYpa4kGsGFyEecY-g6Hw6sDtrtGx7S1DMntLr-DFXeTmF3OCY9o5sTlxFPckd3zWuod3Lfb5dRa1t-WBNb7lrKc-XfTArhlA5Maik0dwlFFE_4331WcIIzu_GL7w93hKXSIYPxo0r2wYzeoY9HA
+              - generic [ref=f2e568]: ·
+              - generic [ref=f2e569]: "Top answer:"
+              - generic [ref=f2e570]: I would suggest you make a document/slides that would explain your idea. What you are trying ...
+          - generic [ref=f2e574]:
+            - heading "Sponsored result" [level=2] [ref=f2e581]
+            - generic [ref=f2e582]:
+              - generic [ref=f2e594]:
+                - generic [ref=f2e595]:
+                  - link "Mobile App Developer for Hire | Best Mobile App Freelance briankayfitz.com https://www.briankayfitz.com" [ref=f2e596] [cursor=pointer]:
+                    - /url: /goto?url=CAESZgHrOzAVmHWIWz8kr9Rr_kcrVQr1CPUfX6yA0NVKcZD7P7leHJWnS04sE9wxZk_iwdDevCIp-dYnLFjJNuqqj4n5RgEyrqPyelNcaR_gfkImaPmGhZwNmZAh_Vy1kfxMlPzgVwD5eA
+                    - heading "Mobile App Developer for Hire | Best Mobile App Freelance" [level=3] [ref=f2e597]
+                    - generic [ref=f2e606]:
+                      - generic [ref=f2e607]: briankayfitz.com
+                      - generic [ref=f2e609]: https://www.briankayfitz.com
+                  - button "Why this ad?" [ref=f2e612] [cursor=pointer]
+                - generic [ref=f2e616]: Flutter developer and author with over 25 mobile apps successfully launched. Launch your custom...
+                - generic [ref=f2e620]:
+                  - text: ‎
+                  - link "Get A Free Quote" [ref=f2e621] [cursor=pointer]:
+                    - /url: /aclk?sa=L&ai=DChsSEwjK64HX6_eWAxVJUEgAHUiaDioYACICCAIQBRoCY2U&co=1&ase=2&gclid=EAIaIQobChMIyuuB1-v3lgMVSVBIAB1Img4qEAMYASAFEgJtl_D_BwE&cid=CAASugHkaKESunT5SmglUovAFYkqwd3Xju3JHZqrYqgPpyMxvuhZJY4yhlKQOTEnxYM54jBrcQYPcjfqojf_rrCOgW0OlLsiZ4DKXt5o1QZ02woPimiEYkO0cNLQ-Ke9zVhmKovll6ljX72ch0J7wmKEyRFQTXKEHXrhxvLs5bO8buDQJ-4gB8GIN3DHQdc5lgbJqSs5qTHLsw8sypWHRePVZTXLb_Tp_y9RPt9MLjjd_e8HMTm-pBw3vJ4VvUo&cce=2&category=acrcp_v1_32&sig=AOD64_1Xiga4c8T84ETVTAYdVqOk2yet4w&adurl=&q=
+                  - text: · ‎
+                  - link "Mobile App Developer" [ref=f2e622] [cursor=pointer]:
+                    - /url: /aclk?sa=L&ai=DChsSEwjK64HX6_eWAxVJUEgAHUiaDioYACICCAIQBhoCY2U&co=1&ase=2&gclid=EAIaIQobChMIyuuB1-v3lgMVSVBIAB1Img4qEAMYASAGEgJVyPD_BwE&cid=CAASugHkaKESunT5SmglUovAFYkqwd3Xju3JHZqrYqgPpyMxvuhZJY4yhlKQOTEnxYM54jBrcQYPcjfqojf_rrCOgW0OlLsiZ4DKXt5o1QZ02woPimiEYkO0cNLQ-Ke9zVhmKovll6ljX72ch0J7wmKEyRFQTXKEHXrhxvLs5bO8buDQJ-4gB8GIN3DHQdc5lgbJqSs5qTHLsw8sypWHRePVZTXLb_Tp_y9RPt9MLjjd_e8HMTm-pBw3vJ4VvUo&cce=2&category=acrcp_v1_32&sig=AOD64_02LldLPfAcVyETZaeSkyTrj4K6gQ&adurl=&q=
+                  - text: · ‎
+                  - link "MVP App" [ref=f2e623] [cursor=pointer]:
+                    - /url: /goto?url=CAESYQHrOzAVn8grXPIdJuMC5-MQVxVaCED6nrFf86iaHlsXzSSOZkDrMqQcplmTNDHQ9tqJgy5VNNW_n2TsGQB8wDl6W39eNXhJRQK_OguWB50z444UsgwT2HIn8xBfuu2sT2Y
+                  - text: · ‎
+                  - link "About Brian" [ref=f2e624] [cursor=pointer]:
+                    - /url: /goto?url=CAESVwHrOzAV-0NfoceYxc34YCMZmTTsqq3KlkPtwpBKtfsh8tOUqeR-SuCiE_XZT0hdhyMUvmpuajPDZTYPXRdolFM6L8c4QB41OgZJiAAx8m6tMRnbguH0Ug
+                  - text: · ‎
+                  - link "App Portfolio" [ref=f2e625] [cursor=pointer]:
+                    - /url: /goto?url=CAESbQHrOzAVMO280hG388X24wQLVKGvkRfXrU7nmyfihcEKk4drbPzJqHVfY4heQ-m3ED7Kkst8ypPe23ax891tqrJ47FpAtzpFkH1y9RoRwyvxApmGJEawPxhfZ7WvuqK0ny7DWY8rgkWwyWumqkY
+                  - text: · ‎
+                  - link "Contact" [ref=f2e626] [cursor=pointer]:
+                    - /url: /goto?url=CAESWQHrOzAVpOnku0PDFtR7yzhaMBRjjkpYAyHppLhl-qwuRI-OpAZMNVrmjBGqwg72QxB6WKwfSdaQN5YpSFAlm9L6kjTWRf7QpRtdu7iopG-BWNkujzcyJ0eY
+              - button "Hide sponsored result" [ref=f2e628] [cursor=pointer]:
+                - separator [aria-hidden] [ref=f2e629]
+          - generic [ref=f2e638]:
+            - generic [ref=f2e641]:
+              - link "Best Freelance App Developers for Hire (Sep 2026) Upwork https://www.upwork.com › ... › Development & IT Talent" [ref=f2e643] [cursor=pointer]:
+                - /url: /goto?url=CAESagHrOzAVhkSeBgkAUhGXIgDd2-HrGF-Pv9069n9UT3BRVG4V7z-EQS4KHGqJRDxj_XAIRQxWN7GS1oF6C73VCQtcsEf0Ju3HTq4s7b4lKfeJsd0rMnsFJvliC1oRjmFdCG5Bw26QM9J5D0Y
+                - heading "Best Freelance App Developers for Hire (Sep 2026)" [level=3] [ref=f2e644]
+                - generic [ref=f2e650]:
+                  - generic [ref=f2e651]: Upwork
+                  - generic [ref=f2e653]: https://www.upwork.com › ... › Development & IT Talent
+              - button "About this result" [ref=f2e659] [cursor=pointer]
+            - generic [ref=f2e665]:
+              - generic [ref=f2e666]:
+                - text: On Upwork,
+                - emphasis [ref=f2e667]: hiring a mobile app developer generally costs $18-$39 per hour
+                - text: . Factors that influence costs include app complexity, the number of platforms you need ...
+              - link "Read more" [ref=f2e668] [cursor=pointer]:
+                - /url: /goto?url=CAESygEB6zswFSfgdykCTCjHCZXXlEIamCOH_vRY-MufleKvOGj-GKDiokc3YZ4YgMU9w9JUw9zL3iQQxm4axefnKNkWKE1bmZBF1k2LBnPNfJeZWpdRO3LzDXErc53UI0HX5kGBOdCeaFoEM3yZr1QeRynJWeqi24rrfZC66OZ-HLTyDDKm35DwDsz1R1V0MoTnXeo8Igpli25-0x2PjQtFgSorqe3jVq046rRpMwGCjRSg4R3yahBJiqFUFQD6D91W8GJfGyIWeQlUk5fr
+          - generic [ref=f2e672]:
+            - generic [ref=f2e675]:
+              - link "Hire Mobile App Developers Serviots https://www.serviots.com › hire-mobile-app-developers" [ref=f2e677] [cursor=pointer]:
+                - /url: /goto?url=CAESawHrOzAVu2-180cpRJorA-6qWketjYJDHgr6_RPlzIdl4f2ItpTR_SHYzIVGscALRVmxMoO2X7bnBgmkIqiE7z8-rLoVfr1C3xU0QDdul9pm6ayCNYznMpjdjcg7cBTFToU1VHiIXlxEucu9
+                - heading "Hire Mobile App Developers" [level=3] [ref=f2e678]
+                - generic [ref=f2e684]:
+                  - generic [ref=f2e685]: Serviots
+                  - generic [ref=f2e687]: https://www.serviots.com › hire-mobile-app-developers
+              - button "About this result" [ref=f2e693] [cursor=pointer]
+            - generic [ref=f2e700]:
+              - emphasis [ref=f2e701]: Hire vetted mobile developers from Serviots
+              - text: … with 2 to 9+ years of experience. On average, rates can range from $20 to $100 per hour,
+          - generic [ref=f2e705]:
+            - generic [ref=f2e708]:
+              - 'link "Hire Mobile App Developers: Guide to Find the Best Team Appinventiv https://appinventiv.com › blog › hire-mobile-app-devel..." [ref=f2e710] [cursor=pointer]':
+                - /url: /goto?url=CAEScAHrOzAVGjhjkFehq46yX77UlBGGuj7MOnuD-b_rU9gwEE5g2Ge07WvskVv_83dqYN_DQOPSSeZTz8HEFduwrE9S6R88zOjwd5Ncou4Fd86F9wD1hHyDESDk6MANmDJdix1uc7OG9dEH-872L9356jI
+                - 'heading "Hire Mobile App Developers: Guide to Find the Best Team" [level=3] [ref=f2e711]'
+                - generic [ref=f2e717]:
+                  - generic [ref=f2e718]: Appinventiv
+                  - generic [ref=f2e720]: https://appinventiv.com › blog › hire-mobile-app-devel...
+              - button "About this result" [ref=f2e726] [cursor=pointer]
+            - generic [ref=f2e732]:
+              - generic [ref=f2e733]:
+                - emphasis [ref=f2e734]: Hiring a mobile app development company can cost $40,000 to $400,000
+                - text: +, based on complexity, features, platforms, integrations, and technology choices.
+              - link "Read more" [ref=f2e735] [cursor=pointer]:
+                - /url: /goto?url=CAES3gEB6zswFSX-2q3gJ070l-WUHEA9vt71eT_ai-ubm_jbme0ZZhoO9Z8sE1u0ccnei3Z0_VeoOQCGwxy1gudidJtLZi7gG5E-Z5tyKsapIn7FbfYkeflsje41dmWrFNAK1xWrlRg1MDklQex46UsEo1FD7cHlLNJAKbGR74UIR5ddADkUAYoCqFEK0dMN86r4WAB-imKoxuJlFG8rMxjLkP1isTBUC8Ootz_dLDOlMpI7RwtqVxWnML-WSUrf8PgDq7w_wr5Psl-Sr1AD0utzwS1iHT_835xvea43bRIuMJ8
+          - generic [ref=f2e739]:
+            - generic [ref=f2e742]:
+              - link "11 Best Freelance Mobile App Developer for Hire ... Toptal https://www.toptal.com › Developers" [ref=f2e744] [cursor=pointer]:
+                - /url: /goto?url=CAESXQHrOzAVZ-OtZlNX5eRabQPrhse7JGK-J4lVdGFjXf6ZLLaQCirXoFHXTyBDuFj0CUP_xo7L7vHoJdbww1yWyY61-iXV93KtBwp70A8PzvcOWZ9Yn70rlV2Nmz5icw
+                - heading "11 Best Freelance Mobile App Developer for Hire ..." [level=3] [ref=f2e745]
+                - generic [ref=f2e751]:
+                  - generic [ref=f2e752]: Toptal
+                  - generic [ref=f2e754]: https://www.toptal.com › Developers
+              - button "About this result" [ref=f2e760] [cursor=pointer]
+            - generic [ref=f2e767]:
+              - emphasis [ref=f2e768]: Toptal offers top mobile app developer
+              - text: on an hourly, part-time, or full-time contract basis. Clients include Thumbtack, Bridgestone, and Motorola.
+            - img "Rated 4.9 out of 5, (1,709) user reviews" [ref=f2e773]: 4.9(1,709)
+          - generic [ref=f2e780]:
+            - generic [ref=f2e783]:
+              - 'link "Hire Mobile Application Developers: Top App Developers Jellyfish Technologies https://www.jellyfishtechnologies.com › hire-mobile-app..." [ref=f2e785] [cursor=pointer]':
+                - /url: /goto?url=CAESeQHrOzAVCkQfowCO_B6yosIq0zJVqJssI3ycUKFPZrIh7-oCeQ2Hc6dB54zR55ijxHeadyUYriruAzGIG2cNUmNdGpWyBmWkCbZyKxTUcnjKfDrI4J-8c7CL8mU2YmG7cYaAVm4Vm62bkZlEIzxNFO2JXVZGc6DDS7c
+                - 'heading "Hire Mobile Application Developers: Top App Developers" [level=3] [ref=f2e786]'
+                - generic [ref=f2e792]:
+                  - generic [ref=f2e793]: Jellyfish Technologies
+                  - generic [ref=f2e795]: https://www.jellyfishtechnologies.com › hire-mobile-app...
+              - button "About this result" [ref=f2e801] [cursor=pointer]
+            - generic [ref=f2e808]:
+              - emphasis [ref=f2e809]: Hire top mobile app developers
+              - text: to build modern & secure applications using Flutter, React Native, Swift, and more. Get expert & dedicated remote app ...
+          - generic [ref=f2e813]:
+            - generic [ref=f2e816]:
+              - link "Hire Mobile App Developers With 40-Hour Free Trial ManekTech https://www.manektech.com › hire-mobile-app-develop..." [ref=f2e818] [cursor=pointer]:
+                - /url: /goto?url=CAESbAHrOzAVJ9Id8ZdlXWIhXL-yblG5DIpC8N0iYAMPI8WRSk6EOH-4Ww9zegIkaUpzU-duRPWhnQBrNiI2Eg5xy159GanoWPmNy9xQnc4zgQhRHoNGI3nXKFmnke8Uy1asIvd8JlnHwAfH85M6Pg
+                - heading "Hire Mobile App Developers With 40-Hour Free Trial" [level=3] [ref=f2e819]
+                - generic [ref=f2e825]:
+                  - generic [ref=f2e826]: ManekTech
+                  - generic [ref=f2e828]: https://www.manektech.com › hire-mobile-app-develop...
+              - button "About this result" [ref=f2e834] [cursor=pointer]
+            - generic [ref=f2e841]:
+              - text: Looking to hire mobile app developers in the USA?
+              - emphasis [ref=f2e842]: Get application developers at low cost with a 40-hour free trial
+              - text: . Contact to Hire on an hourly, monthly, ...
+        - generic [ref=f2e844]:
+          - generic [ref=f2e849]:
+            - heading "People also search for" [level=2] [ref=f2e851]
+            - generic [ref=f2e853]:
+              - generic [ref=f2e854]:
+                - link "Hire mobile app developers near me" [ref=f2e858] [cursor=pointer]:
+                  - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Hire+mobile+app+developers+near+me&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ1QJ6BAgvEAE
+                - link "Hire mobile app developers reddit" [ref=f2e872] [cursor=pointer]:
+                  - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Hire+mobile+app+developers+reddit&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ1QJ6BAg5EAE
+                - link "Hire mobile app developers jobs" [ref=f2e886] [cursor=pointer]:
+                  - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Hire+mobile+app+developers+jobs&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ1QJ6BAgzEAE
+                - link "Hire mobile app developers in India" [ref=f2e900] [cursor=pointer]:
+                  - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Hire+mobile+app+developers+in+India&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ1QJ6BAg4EAE
+              - generic [ref=f2e911]:
+                - link "Freelance app developers India" [ref=f2e915] [cursor=pointer]:
+                  - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Freelance+app+developers+India&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ1QJ6BAg3EAE
+                - link "Freelance app developers cost" [ref=f2e929] [cursor=pointer]:
+                  - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Freelance+app+developers+cost&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ1QJ6BAgyEAE
+                - link "App developers for hire near me" [ref=f2e943] [cursor=pointer]:
+                  - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=App+developers+for+hire+near+me&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ1QJ6BAgwEAE
+                - link "Mobile app developer freelancer" [ref=f2e957] [cursor=pointer]:
+                  - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Mobile+app+developer+freelancer&sa=X&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ1QJ6BAgxEAE
+          - navigation [ref=f2e968]:
+            - heading "Page Navigation" [level=1] [ref=f2e969]
+            - text: "1"
+            - link "Page 2" [ref=f2e972] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=10&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAE
+              - text: "2"
+            - link "Page 3" [ref=f2e974] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=20&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAG
+              - text: "3"
+            - link "Page 4" [ref=f2e976] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=30&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAI
+              - text: "4"
+            - link "Page 5" [ref=f2e978] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=40&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAK
+              - text: "5"
+            - link "Page 6" [ref=f2e980] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=50&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAM
+              - text: "6"
+            - link "Page 7" [ref=f2e982] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=60&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAO
+              - text: "7"
+            - link "Page 8" [ref=f2e984] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=70&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAQ
+              - text: "8"
+            - link "Page 9" [ref=f2e986] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=80&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAS
+              - text: "9"
+            - link "Page 10" [ref=f2e988] [cursor=pointer]:
+              - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=90&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8tMDegQILRAU
+              - text: "10"
+            - heading [level=2] [ref=f2e990]:
+              - link "Next" [ref=f2e991] [cursor=pointer]:
+                - /url: /search?q=hire+mobile+app+developers&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=tQetapu_FYXY1sQPkZmnuQg&start=10&sa=N&sstk=AS6-VmLHw4NYKPYwwF7n93QfP7d5bIrEF_jsCUbxITiruKh7KTYlHpO1ZFhqik28GV3z48_jGqaUb7RLOXxXFUCkVG6fWB1E_aeRDQ&ved=2ahUKEwjb7fvW6_eWAxUFrJUCHZHMKYcQ8NMDegQILRAW
+        - navigation
+    - contentinfo [ref=f2e994]:
+      - heading "Footer Links" [level=1] [ref=f2e995]
+      - generic [ref=f2e999]:
+        - generic [ref=f2e1003]:
+          - button "Unknown - Can't determine location" [ref=f2e1005] [cursor=pointer]:
+            - generic [ref=f2e1006]: Unknown
+            - generic [ref=f2e1008]:
+              - text: "-"
+              - generic [ref=f2e1009]: Can't determine location
+          - text: "-"
+          - button "Update location" [ref=f2e1011] [cursor=pointer]
+        - generic [ref=f2e1014]:
+          - link "Help" [ref=f2e1015] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en&fg=1
+          - link "Send feedback" [ref=f2e1016] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=f2e1017] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en&fg=1
+          - link "Terms" [ref=f2e1018] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en&fg=1

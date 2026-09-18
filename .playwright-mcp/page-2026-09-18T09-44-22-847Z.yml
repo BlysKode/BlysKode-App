@@ -1,0 +1,324 @@
+- generic [active] [ref=f6e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=f6e2] [cursor=pointer]
+      - link "Accessibility help" [ref=f6e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en
+  - generic [ref=f6e8]:
+    - search [ref=f6e9]:
+      - generic [ref=f6e12]:
+        - link [ref=f6e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQpYkNegQIBhAG
+          - img "Go to Google home" [ref=f6e14]
+        - generic [ref=f6e19]:
+          - combobox "Search" [ref=f6e22]: blyskode blyskode
+          - generic [ref=f6e23]:
+            - button "Clear" [ref=f6e25] [cursor=pointer]
+            - generic [ref=f6e30]:
+              - button "Search by voice" [ref=f6e31] [cursor=pointer]
+              - button "Search by image" [ref=f6e34] [cursor=pointer]
+        - button "Search" [ref=f6e37] [cursor=pointer]
+    - generic [ref=f6e42]:
+      - button "Settings" [ref=f6e44] [cursor=pointer]
+      - button "Share" [ref=f6e49] [cursor=pointer]
+      - generic [ref=f6e55]:
+        - button "Google apps" [ref=f6e57] [cursor=pointer]
+        - link "Sign in" [ref=f6e62] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3Dblyskode%26num%3D30%26gl%3Dus%26hl%3Den&ec=futura_srp_og_si_72236_p
+  - generic [ref=f6e65]:
+    - navigation [ref=f6e71]:
+      - generic [ref=f6e77]:
+        - list [ref=f6e78]:
+          - listitem [ref=f6e79]:
+            - link "AI Mode" [ref=f6e82] [cursor=pointer]:
+              - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=50&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5bBLHMJ0vMQmTbuI72DM7jmWJFBVVBK15iI7JoQNn0Xj22cTg8ebUnP6Er5WlG8GSYeW1_U73F1tPh6iUJBvDK0Kds70Uit_RAl3U4_-al34fJyOIq2tbduVUwfdTLbP5CVAzrxzDG_vIjOzRSmI1eucjmu4A7Lk6GoMCE2bjlUSeAXqhQ&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ2J8OegQIEhAD
+          - listitem [ref=f6e86]:
+            - link "All" [disabled] [ref=f6e87]
+          - listitem [ref=f6e90]:
+            - link "Shopping" [ref=f6e91] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=28&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5bBLHMJ0vMQmTbuI72DM7jmWJFBVVBK15iI7JoQNn0Xj22cTg8ebUnP6Er5WlG8GSYeW1_U73F1tPh6iUJBvDK0Kds70Uit_RAl3U4_-al34fJyOIq2tbduVUwfdTLbP5CVAzrxzDG_vIjOzRSmI1eucjmu4A7Lk6GoMCE2bjlUSeAXqhQ&q=blyskode&ved=1t:220175&ictx=111
+          - listitem [ref=f6e94]:
+            - link "Images" [ref=f6e95] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5bBLHMJ0vMQmTbuI72DM7jmWJFBVVBK15iI7JoQNn0Xj22cTg8ebUnP6Er5WlG8GSYeW1_U73F1tPh6iUJBvDK0Kds70Uit_RAl3U4_-al34fJyOIq2tbduVUwfdTLbP5CVAzrxzDG_vIjOzRSmI1eucjmu4A7Lk6GoMCE2bjlUSeAXqhQ&q=blyskode&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQtKgLegQIFxAB
+          - listitem [ref=f6e98]:
+            - link "Videos" [ref=f6e99] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=vids&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5bBLHMJ0vMQmTbuI72DM7jmWJFBVVBK15iI7JoQNn0Xj22cTg8ebUnP6Er5WlG8GSYeW1_U73F1tPh6iUJBvDK0Kds70Uit_RAl3U4_-al34fJyOIq2tbduVUwfdTLbP5CVAzrxzDG_vIjOzRSmI1eucjmu4A7Lk6GoMCE2bjlUSeAXqhQ&q=blyskode&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQtKgLegQIGBAB
+          - listitem [ref=f6e102]:
+            - link "News" [ref=f6e103] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=blyskode&tbm=nws&source=lnms&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5bBLHMJ0vMQmTbuI72DM7jmWJFBVVBK15iI7JoQNn0Xj22cTg8ebUnP6Er5WlG8GSYeW1_U73F1tPh6iUJBvDK0Kds70Uit_RAl3U4_-al34fJyOIq2tbduVUwfdTLbP5CVAzrxzDG_vIjOzRSmI1eucjmu4A7Lk6GoMCE2bjlUSeAXqhQ&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ0pQJegQIFBAB
+          - listitem [ref=f6e106]:
+            - link "Forums" [ref=f6e107] [cursor=pointer]:
+              - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&udm=forums&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5bBLHMJ0vMQmTbuI72DM7jmWJFBVVBK15iI7JoQNn0Xj22cTg8ebUnP6Er5WlG8GSYeW1_U73F1tPh6iUJBvDK0Kds70Uit_RAl3U4_-al34fJyOIq2tbduVUwfdTLbP5CVAzrxzDG_vIjOzRSmI1eucjmu4A7Lk6GoMCE2bjlUSeAXqhQ&q=blyskode&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQs6gLegQIFRAB
+          - listitem [ref=f6e110]:
+            - button [ref=f6e111] [cursor=pointer]:
+              - generic "More filters" [ref=f6e112]: More
+        - button "Tools" [ref=f6e119] [cursor=pointer]
+    - heading "Search Results" [level=1] [ref=f6e126]
+    - main [ref=f6e132]:
+      - generic [ref=f6e136]:
+        - generic [ref=f6e139]:
+          - heading "Web Result with Site Links" [level=2] [ref=f6e140]
+          - generic [ref=f6e141]:
+            - generic [ref=f6e145]:
+              - generic [ref=f6e147]:
+                - 'link "Blyskode | US Software Development Company: Web, Mobile ... blyskode.com https://blyskode.com" [ref=f6e149] [cursor=pointer]':
+                  - /url: /goto?url=CAESTQHrOzAVwmd_cbo17gHCH1ajfBeQk_Fe_jwISG6OHD6774Mq-1jWBjZaD_GnJuoE9dIfieSDLSTaP58oezQKc-Xw6P-l9O-Ndeg4NKZF
+                  - 'heading "Blyskode | US Software Development Company: Web, Mobile ..." [level=3] [ref=f6e150]'
+                  - generic [ref=f6e156]:
+                    - generic [ref=f6e157]: blyskode.com
+                    - generic [ref=f6e159]: https://blyskode.com
+                - button "About this result" [ref=f6e165] [cursor=pointer]
+              - generic [ref=f6e172]:
+                - emphasis [ref=f6e173]: Blyskode
+                - text: offers full stack web and mobile development, custom software, quality assurance, AI engineering and automation, machine learning, cloud architecture ...
+            - group "Personalized recommendations based on your history" [ref=f6e174]:
+              - rowgroup [ref=f6e175]:
+                - row [ref=f6e176]:
+                  - cell [ref=f6e177]:
+                    - generic [ref=f6e183]:
+                      - heading [level=3] [ref=f6e184]:
+                        - link [ref=f6e185] [cursor=pointer]:
+                          - /url: /goto?url=CAESVgHrOzAV4Vj4h00wOY7R-2fxh_LXXdUoPAkIDdDN0FRLuihVT8myMgmF_QNDt8KNnuhCtcl242exLz4AKSBdlDCvkhYgzPVjMDtwMGf6pEJXynxBBNth
+                      - generic [ref=f6e188]: "Real systems Blyskode has designed and built: the problem ..."
+                - row [ref=f6e189]:
+                  - cell [ref=f6e190]:
+                    - generic [ref=f6e196]:
+                      - heading [level=3] [ref=f6e197]:
+                        - link [ref=f6e198] [cursor=pointer]:
+                          - /url: /goto?url=CAESVQHrOzAVVQekEnyRXCG5M8V4OnxQAj1tk-8D_SJSU-JAQYTfdbVoo90qcIzuFGz-28z7TOtqkrA-zbRKN7SDUDlETRRV2fooI-vcMXM9Ft-Cq2-xeTU
+                      - generic [ref=f6e201]: A software engineering partner in Brooklyn, New York. We design ...
+                - row [ref=f6e202]:
+                  - cell [ref=f6e203]:
+                    - generic [ref=f6e209]:
+                      - heading [level=3] [ref=f6e210]:
+                        - link [ref=f6e211] [cursor=pointer]:
+                          - /url: /goto?url=CAESVAHrOzAVIUWb-mlcu1S7vHv6C5OidspiLbu2sbJaNU21cqpm6BoMzjeFJH3yW-egYxLpJyv19t2DbdP26ZlH7AcOdkrjppB-Jt8EmfJDwSZdeqTkbw
+                      - generic [ref=f6e214]: Get in touch with Blyskode. Share your project and we reply within ...
+                - row [ref=f6e215]:
+                  - cell [ref=f6e216]:
+                    - generic [ref=f6e222]:
+                      - heading [level=3] [ref=f6e223]:
+                        - link [ref=f6e224] [cursor=pointer]:
+                          - /url: /goto?url=CAESZgHrOzAV8ERItM8TCIPDFkxulfvQAQeUvjENue3h8BLTHhblnb0aXRosUw1T1nMZ9ZgsSIkLdzBbqaWzP53eD0EJJYtCxVfsTux3xoATyGWdlTo3Fl-VCYXBNQ4TmSNPaaU-N9yIWA
+                      - generic [ref=f6e227]: Blyskode builds multi-tenant SaaS platforms end-to-end, with ...
+                - row [ref=f6e228]:
+                  - cell [ref=f6e229]:
+                    - generic [ref=f6e235]:
+                      - heading [level=3] [ref=f6e236]:
+                        - link [ref=f6e237] [cursor=pointer]:
+                          - /url: /goto?url=CAESXAHrOzAVIm9XrjjdTPxQF09wvJUxJNYkLa0UthUeHf6BB2xPmJwydw03Bo379gk07iODYmKQT57uWQtWYgFbdp8cXy6vG43nDHyKAZtYvDOxhW-BJmK9ZfhLDVSq
+                      - generic [ref=f6e240]: "Hire vetted, dedicated developers from Blyskode: full stack, AI ..."
+                - row [ref=f6e242]:
+                  - cell [ref=f6e243]:
+                    - link "More results from blyskode.com »" [ref=f6e245] [cursor=pointer]:
+                      - /url: /search?q=blyskode+site:blyskode.com&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQrAN6BAgbEAE
+        - generic [ref=f6e256]:
+          - generic [ref=f6e258]:
+            - heading "AI Overview" [level=2] [ref=f6e264]
+            - generic [ref=f6e286]:
+              - generic [ref=f6e287]:
+                - link "Blyskode" [ref=f6e289] [cursor=pointer]:
+                  - /url: /goto?url=CAESTQHrOzAVLvlAyLQ8veLMNxxjEqqkroFRZN_n203mcjEp6Irl4HxSsyFoMubfgC8spZjZKZVi4VWTcUupJgGyQEAzZN39Bz9x8NFsauz8
+                - text: is a
+                - mark [ref=f6e290]: software development company based in the United States
+                - text: . They build digital products for businesses.
+                - generic [ref=f6e292]:
+                  - 'link "blyskode.com - Blyskode | US Software Development Company: Web, Mobile .... Related results" [ref=f6e293] [cursor=pointer]':
+                    - /url: /goto?url=CAESTQHrOzAVLvlAyLQ8veLMNxxjEqqkroFRZN_n203mcjEp6Irl4HxSsyFoMubfgC8spZjZKZVi4VWTcUupJgGyQEAzZN39Bz9x8NFsauz8
+                  - 'button "blyskode.com - Blyskode | US Software Development Company: Web, Mobile .... Related results" [ref=f6e294] [cursor=pointer]':
+                    - generic [ref=f6e295]: blyskode.com
+              - heading "What They Do" [level=3] [ref=f6e302]
+              - list [ref=f6e303]:
+                - listitem [ref=f6e305]:
+                  - generic [ref=f6e306]:
+                    - strong [ref=f6e307]: "Web and mobile apps:"
+                    - text: They build custom software for computers and phones.
+                - listitem [ref=f6e309]:
+                  - generic [ref=f6e310]:
+                    - strong [ref=f6e311]: "AI and automation:"
+                    - text: They create smart tools and machine learning programs to save time.
+                - listitem [ref=f6e313]:
+                  - generic [ref=f6e314]:
+                    - strong [ref=f6e315]: "Cloud architecture:"
+                    - text: They set up secure cloud computer systems.
+                - listitem [ref=f6e317]:
+                  - generic [ref=f6e318]:
+                    - strong [ref=f6e319]: "Quality assurance:"
+                    - text: They test software to make sure it works well.
+                  - generic [ref=f6e321]:
+                    - link [ref=f6e322] [cursor=pointer]:
+                      - /url: /goto?url=CAESTQHrOzAVLvlAyLQ8veLMNxxjEqqkroFRZN_n203mcjEp6Irl4HxSsyFoMubfgC8spZjZKZVi4VWTcUupJgGyQEAzZN39Bz9x8NFsauz8
+                    - button [ref=f6e323] [cursor=pointer]:
+                      - generic [ref=f6e324]: blyskode.com
+              - generic [ref=f6e332]:
+                - generic [ref=f6e333]: "If you want, tell me:"
+                - list [ref=f6e334]:
+                  - listitem [ref=f6e335]:
+                    - generic [ref=f6e336]:
+                      - text: Are you looking for
+                      - strong [ref=f6e337]: app development
+                      - text: help?
+                  - listitem [ref=f6e338]:
+                    - generic [ref=f6e339]:
+                      - text: Do you need
+                      - strong [ref=f6e340]: AI or cloud
+                      - text: services?
+                - generic [ref=f6e341]: I can share more details about how they work.
+              - generic [ref=f6e346]:
+                - list [ref=f6e347]:
+                  - listitem [ref=f6e348]:
+                    - generic [ref=f6e349]:
+                      - 'link "Blyskode | US Software Development Company: Web, Mobile .... Opens in new tab." [ref=f6e350] [cursor=pointer]':
+                        - /url: /goto?url=CAESTQHrOzAVLvlAyLQ8veLMNxxjEqqkroFRZN_n203mcjEp6Irl4HxSsyFoMubfgC8spZjZKZVi4VWTcUupJgGyQEAzZN39Bz9x8NFsauz8
+                      - generic [ref=f6e351]:
+                        - generic [ref=f6e352]:
+                          - generic [ref=f6e355]: blyskode.com
+                          - button "About this result" [ref=f6e359] [cursor=pointer]
+                        - generic [ref=f6e365]:
+                          - generic [aria-hidden] [ref=f6e366]: "Blyskode | US Software Development Company: Web, Mobile ..."
+                          - generic [ref=f6e367]: Blyskode offers full stack web and mobile development, custom software, quality assurance, AI engineering and automation, machine ...
+                - button [aria-hidden] [ref=f6e370]
+          - button "Show more AI Overview" [ref=f6e376]:
+            - generic [ref=f6e377] [cursor=pointer]: Show more
+        - generic [ref=f6e390]:
+          - generic [ref=f6e393]:
+            - 'link "Blyx Studio Review & Bonuses: In-Depth Walkthrough + Demo ... YouTube · Samuel Marco 120+ views · 1 year ago" [ref=f6e395] [cursor=pointer]':
+              - /url: /goto?url=CAESYwHrOzAVM2VDVkDGhzp3sx0ek3FOi8R_butvt_U08Wmq2JLjBrpldBLRxcGgovQWjepkm5x2GDojkd1bOaxrl-osBWUNAip_0NJE3iDtLF0ZVGsC_SNCkkSHxbsyTwy43kG6gA
+              - 'heading "Blyx Studio Review & Bonuses: In-Depth Walkthrough + Demo ..." [level=3] [ref=f6e396]'
+              - generic [ref=f6e402]:
+                - generic [ref=f6e403]: YouTube · Samuel Marco
+                - generic [ref=f6e405]: 120+ views · 1 year ago
+            - button "About this result" [ref=f6e411] [cursor=pointer]
+          - generic [ref=f6e416]:
+            - 'button "Blyx Studio Review & Bonuses: In-Depth Walkthrough + Demo ... by Samuel Marco on YouTube. Play on Google. 36:32" [ref=f6e417] [cursor=pointer]':
+              - generic [ref=f6e418]: 36:32
+            - generic [ref=f6e434]: AI-powered video creation tool can help marketers, content creators, and businesses generate high-quality videos effortlessly.
+        - generic [ref=f6e439]:
+          - generic [ref=f6e442]:
+            - link "Blidz - Shop Deals, Save Money - Apps on Google Play Google https://play.google.com › store › apps › details" [ref=f6e444] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.biddl.biddl&hl=en_US
+              - heading "Blidz - Shop Deals, Save Money - Apps on Google Play" [level=3] [ref=f6e445]
+              - generic [ref=f6e451]:
+                - generic [ref=f6e452]: Google
+                - generic [ref=f6e454]: https://play.google.com › store › apps › details
+            - button "About this result" [ref=f6e460] [cursor=pointer]
+          - generic [ref=f6e466]:
+            - generic [ref=f6e467]: Sep 10, 2026 —
+            - generic [ref=f6e468]:
+              - emphasis [ref=f6e469]: Blidz is a social shopping app
+              - text: designed to help you discover amazing deals, unlock group discounts, and save on millions of products across ...
+            - link "Read more" [ref=f6e470] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.biddl.biddl&hl=en_US#:~:text=Blidz%20is%20a%20social%20shopping,fashion%2C%20home%20goods%20and%20more.
+        - generic [ref=f6e474]:
+          - generic [ref=f6e477]:
+            - link "BluCode (@BluCodeTw) / X X · BluCodeTw 20+ followers" [ref=f6e479] [cursor=pointer]:
+              - /url: /goto?url=CAESTwHrOzAVc6GhcfwuSycpVX4ZNqorBEsfnMj3dZsBbReGccqTxEEmCC_ugGa_4BGBApAmAEKvcybI0heJNG1VAbTh49XzFnDmxNod8uDNLrk
+              - heading "BluCode (@BluCodeTw) / X" [level=3] [ref=f6e480]
+              - generic [ref=f6e486]:
+                - generic [ref=f6e487]: X · BluCodeTw
+                - generic [ref=f6e489]: 20+ followers
+            - button "About this result" [ref=f6e495] [cursor=pointer]
+          - generic [ref=f6e501]:
+            - generic [ref=f6e502]:
+              - text: Hey there.
+              - emphasis [ref=f6e503]: My name is Blucode
+              - text: . I like tech, robotics and programming, and I also like playing Rocket League and Minecraft. Canada.
+            - link "Read more" [ref=f6e504] [cursor=pointer]:
+              - /url: /goto?url=CAESfAHrOzAVjXBkvGwch4GbdMxEHAwT4ch0MuSAEjDjsF-iqlTQHwpOqct5Ux9pNF91xnhe7jtrIiXKYlN44f4laQLva_I8Lm6_K516Pe1eh8enkMqD34FDJuA_Tr3zCSZCIYfq8W-1E_CAyerf80G4BKSbfd3r8L88YUr9icU
+        - generic [ref=f6e511]:
+          - generic [ref=f6e514]:
+            - link "CrossCode - Guard Billston (No Damage) YouTube · Golden Silver 1.5K+ views · 7 years ago" [ref=f6e516] [cursor=pointer]:
+              - /url: /goto?url=CAESYwHrOzAV1kLv-J1gY0p_zBfbAxpwC8AHoGPPuZDOkcSNeEABbqCPaPIqzhhsn6l6xfQ7yjVn-Yyx83-pQR1oeNU_bVTW4piCffQ7Pt48-zkvgkVNiCBzx4vqf62mym69UAmrMg
+              - heading "CrossCode - Guard Billston (No Damage)" [level=3] [ref=f6e517]
+              - generic [ref=f6e523]:
+                - generic [ref=f6e524]: YouTube · Golden Silver
+                - generic [ref=f6e526]: 1.5K+ views · 7 years ago
+            - button "About this result" [ref=f6e532] [cursor=pointer]
+          - generic [ref=f6e537]:
+            - button "CrossCode - Guard Billston (No Damage) by Golden Silver on YouTube. Play on Google. 5:52" [ref=f6e538] [cursor=pointer]:
+              - generic [ref=f6e539]: 5:52
+            - generic [ref=f6e555]: CrossCode - Guard Billston (No Damage) CrossCode - All Bosses [No Damage] Golden Silver CrossCode - Blazehoof (No Damage)
+        - generic [ref=f6e560]:
+          - generic [ref=f6e563]:
+            - link "About| PLAYCODE3 playcode3 https://playcode3.com › pages › about-us" [ref=f6e565] [cursor=pointer]:
+              - /url: /goto?url=CAESnQEB6zswFd-i8h4g5txolyxcU1E-azB5FHJs4r0XiidNbmMpYd61BfVlEhR5eOWmAsgYTWXE64-OFTN1c5bJ7qfKGZ964bByG6LexL6hM3PSQzOJEfQTpiUOoXZpIjYROC1PCfOVIi6cz6hbN-99OWsKqbhdSncr7ceeExBbgFw8xu5whEg75daHyFREO1SHP2pJNvIuXgl1GCGpgmkn
+              - heading "About| PLAYCODE3" [level=3] [ref=f6e566]
+              - generic [ref=f6e572]:
+                - generic [ref=f6e573]: playcode3
+                - generic [ref=f6e575]: https://playcode3.com › pages › about-us
+            - button "About this result" [ref=f6e581] [cursor=pointer]
+          - generic [ref=f6e587]:
+            - generic [ref=f6e588]:
+              - text: At
+              - emphasis [ref=f6e589]: PLAYCODE3
+              - text: ", we offer a diverse range of quality crafting supplies to support creative entrepreneurs and businesses of all kinds. From faux sprinkle mixes ..."
+            - link "Read more" [ref=f6e590] [cursor=pointer]:
+              - /url: /goto?url=CAES8QEB6zswFcIdvlLl8sKOiZtJZdgmSxf2pcSexQOb_lq9lhNjajqe4cfIL0Bky1eKhaId-A7MD7T5VjfVoSsVIsSRKSZMCYVDljIXCHJ56JegLx3vLkUWGZWEVu5D-Oqz8OVThIu69mCd4i99vN8KBraOW-Fr_HWf5Li9CQQZZaAEr_zgmULU19qSh66hKdAEK30zJ6nkTzvqi5ye070vc_QbM7cREvkVO3Zi_J3qH9OKxUTvFCD39j4p1qfzkvGaLRnNqwSZL7Y7wvQMNlYT4uDVgwa5kPDWPtB6pK5spORR3ZuV5x39Y7W52tTLn3_U_d1F
+      - generic [ref=f6e592]:
+        - generic [ref=f6e597]:
+          - heading "People also search for" [level=2] [ref=f6e599]
+          - generic [ref=f6e601]:
+            - generic [ref=f6e602]:
+              - link "Blidz apk download" [ref=f6e606] [cursor=pointer]:
+                - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Blidz+apk+download&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ1QJ6BAgoEAE
+              - link "Blidz mod apk" [ref=f6e620] [cursor=pointer]:
+                - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Blidz+mod+apk&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ1QJ6BAgpEAE
+            - generic [ref=f6e631]:
+              - link "What is Blidz and how does it work" [ref=f6e635] [cursor=pointer]:
+                - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=What+is+Blidz+and+how+does+it+work&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ1QJ6BAgnEAE
+              - link "Delete blidz account" [ref=f6e649] [cursor=pointer]:
+                - /url: /search?sca_esv=18fcc9f3899b33e6&gl=us&hl=en&q=Delete+blidz+account&sa=X&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ1QJ6BAgmEAE
+        - navigation [ref=f6e660]:
+          - heading "Page Navigation" [level=1] [ref=f6e661]
+          - text: "1"
+          - link "Page 2" [ref=f6e664] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=10&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAE
+            - text: "2"
+          - link "Page 3" [ref=f6e666] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=20&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAG
+            - text: "3"
+          - link "Page 4" [ref=f6e668] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=30&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAI
+            - text: "4"
+          - link "Page 5" [ref=f6e670] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=40&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAK
+            - text: "5"
+          - link "Page 6" [ref=f6e672] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=50&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAM
+            - text: "6"
+          - link "Page 7" [ref=f6e674] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=60&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAO
+            - text: "7"
+          - link "Page 8" [ref=f6e676] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=70&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAQ
+            - text: "8"
+          - link "Page 9" [ref=f6e678] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=80&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAS
+            - text: "9"
+          - link "Page 10" [ref=f6e680] [cursor=pointer]:
+            - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=90&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8tMDegQIJBAU
+            - text: "10"
+          - heading [level=2] [ref=f6e682]:
+            - link "Next" [ref=f6e683] [cursor=pointer]:
+              - /url: /search?q=blyskode&sca_esv=18fcc9f3899b33e6&gl=us&hl=en&ei=8getavGsE5_Y1sQPkaOViAc&start=10&sa=N&sstk=AS6-VmLC4QapFFNmtrgYU4LC-xe7rIBMakJhbSNOD0FDk5bie4qRsEljd_mZm93yXR10EbOlwzNd8f068AJd796AmYmvY-5eNpR-LQ&ved=2ahUKEwjx7YT06_eWAxUfrJUCHZFRBXEQ8NMDegQIJBAW
+      - navigation
+    - contentinfo [ref=f6e686]:
+      - heading "Footer Links" [level=1] [ref=f6e687]
+      - generic [ref=f6e691]:
+        - generic [ref=f6e695]:
+          - button "Unknown - Can't determine location" [ref=f6e697] [cursor=pointer]:
+            - generic [ref=f6e698]: Unknown
+            - generic [ref=f6e700]:
+              - text: "-"
+              - generic [ref=f6e701]: Can't determine location
+          - text: "-"
+          - button "Update location" [ref=f6e703] [cursor=pointer]
+        - generic [ref=f6e706]:
+          - link "Help" [ref=f6e707] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en&fg=1
+          - link "Send feedback" [ref=f6e708] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=f6e709] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en&fg=1
+          - link "Terms" [ref=f6e710] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en&fg=1
