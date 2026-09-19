@@ -482,6 +482,19 @@ function pageNodes(path) {
             provider: { '@id': `${SITE}/#organization` },
             areaServed: 'Worldwide',
           },
+          ...(r.faqs?.length
+            ? [
+                {
+                  '@type': 'FAQPage',
+                  '@id': `${canonical}#faq`,
+                  mainEntity: r.faqs.map(([q, a]) => ({
+                    '@type': 'Question',
+                    name: q,
+                    acceptedAnswer: { '@type': 'Answer', text: a },
+                  })),
+                },
+              ]
+            : []),
           breadcrumb([
             { name: 'Home', path: '/' },
             { name: 'Hire Developers', path: '/hire-developers' },

@@ -26,7 +26,7 @@ export default function HireDetail() {
   const data = HIRE_ROLES[slug]
   if (!data) return <Navigate to="/hire-developers" replace />
 
-  const { role, tagline, intro, skills, doing } = data
+  const { role, tagline, intro, skills, doing, faqs, related } = data
   const others = HIRE_LIST.filter((r) => r.slug !== slug).slice(0, 4)
 
   return (
@@ -128,6 +128,45 @@ export default function HireDetail() {
             </div>
           </div>
         </section>
+
+        {/* FAQ + related reading */}
+        {faqs?.length > 0 && (
+          <section className="section">
+            <div className="shell max-w-[760px]">
+              <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
+                Frequently asked questions
+              </h2>
+              <div className="mt-8 divide-y divide-line border-y border-line">
+                {faqs.map(([q, a]) => (
+                  <div key={q} data-reveal className="py-6">
+                    <h3 className="text-[1.02rem]">{q}</h3>
+                    <p className="mt-2 text-[0.94rem] leading-relaxed text-body">{a}</p>
+                  </div>
+                ))}
+              </div>
+              {related?.length > 0 && (
+                <div data-reveal className="mt-10">
+                  <h3 className="font-mono text-[0.75rem] tracking-[0.14em] text-muted uppercase">
+                    Related reading
+                  </h3>
+                  <ul className="mt-3 space-y-2">
+                    {related.map((r) => (
+                      <li key={r.to}>
+                        <Link
+                          to={r.to}
+                          className="inline-flex items-center gap-1.5 text-[0.94rem] font-semibold text-signal"
+                        >
+                          {r.label}
+                          <ArrowUpRight size={14} />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* Other roles */}
         <section className="section">
