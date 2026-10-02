@@ -13,12 +13,16 @@ import {
   Globe,
   Layers,
   LayoutTemplate,
+  Link2,
   LineChart,
+  Mail,
+  Megaphone,
   Palette,
   PenTool,
   Rocket,
   Search,
   ServerCog,
+  Share2,
   ShieldCheck,
   ShoppingCart,
   Smartphone,
@@ -261,6 +265,36 @@ export const SERVICE_DETAILS = {
     ],
     tech: ['WooCommerce', 'Shopify', 'WordPress', 'Next.js', 'Stripe'],
   },
+  'digital-marketing': {
+    slug: 'digital-marketing',
+    icon: Megaphone,
+    title: 'Digital Marketing',
+    tagline: 'SEO, AI search, paid, and outbound that bring in leads.',
+    intro:
+      'Data-backed digital marketing that grows traffic and qualified leads, not vanity metrics. We run SEO, AEO and GEO, performance marketing, social, email, and LinkedIn lead generation as one system, with transparent pricing, written commitments, and no long-term contracts.',
+    capabilities: [
+      { icon: Search, title: 'On-page SEO', desc: 'Keyword research, competitor breakdown, and meta and content optimization so the right pages rank for the right searches.' },
+      { icon: Link2, title: 'Off-page SEO & authority', desc: 'Authority backlinks, content distribution, and local submissions that build the domain trust Google ranks on.' },
+      { icon: BrainCircuit, title: 'AEO & GEO (AI search)', desc: 'Structured answers and entity signals that get you cited in ChatGPT, Gemini, Perplexity, and Google AI Overviews.' },
+      { icon: Target, title: 'Performance marketing', desc: 'Meta and Google ad campaigns, retargeting, and conversion optimization that turn spend into tracked leads.' },
+      { icon: Mail, title: 'Email & outbound', desc: 'Klaviyo automation flows, Instantly outbound prospecting, and LinkedIn outreach with follow-up sequences that reopen cold pipelines.' },
+      { icon: Share2, title: 'Social media management', desc: 'Branded content, weekly posting, and engagement building that keep your brand active where buyers check you out.' },
+    ],
+    deliverables: [
+      'A monthly SEO, AEO, and traffic performance report',
+      'A lead generation report tracking calls and enquiries',
+      'Social media and email automation performance reports',
+      'Competitor analysis across search, maps, social, and paid',
+      'Transparent pricing and written commitments, with no long-term lock-in',
+    ],
+    tech: ['Search Console', 'GA4', 'Ahrefs', 'Klaviyo', 'Instantly', 'Meta Ads', 'Google Ads', 'LinkedIn'],
+    faqs: [
+      ['How long until I see results from SEO?', 'SEO is a compounding channel, not an instant one. Most sites see meaningful movement in traffic and leads within 5 to 6 months, with early technical and on-page wins sooner. Paid and outbound channels (Google, Meta, LinkedIn, and email) can generate leads much faster while SEO builds, and we set clear targets and report progress every month.'],
+      ['What are AEO and GEO, and why do they matter now?', 'AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) are about getting your business cited inside AI answers: ChatGPT, Gemini, Perplexity, and Google AI Overviews. More buyers now ask an AI instead of scrolling ten blue links, so we structure your content and entity signals so AI engines quote you, not just rank you.'],
+      ['Do you lock me into a long-term contract?', 'No. We work without long-term contracts, with transparent pricing and written commitments on what we will deliver. You stay because the results are working, not because a contract traps you.'],
+      ['Which channels do you cover?', 'Search (SEO, AEO, and GEO), paid performance on Google and Meta, social media management, email marketing with Klaviyo, outbound with Instantly, and LinkedIn lead generation. We start with competitor analysis across search, maps, social, and paid to find your fastest wins.'],
+    ],
+  },
 }
 
 const CORE_SLUGS = ['product-engineering', 'ai-automation', 'cloud-devops']
@@ -272,7 +306,6 @@ export const SPECIALIZED_LIST = SERVICE_LIST.filter((s) => !CORE_SLUGS.includes(
 // Extra services surfaced on the overview page.
 export const ADDITIONAL = [
   { icon: ServerCog, title: 'End-to-End Recruitment', desc: 'Sourcing, vetting, and onboarding top technical talent tailored to your team.' },
-  { icon: LineChart, title: 'SEO & Digital Marketing', desc: 'Data-driven growth strategies that increase visibility and convert traffic into revenue.' },
   { icon: BarChart3, title: 'Content & Blog Writing', desc: 'Technical and marketing content that builds authority and engages your audience.' },
   { icon: Rocket, title: 'Launch & Growth Support', desc: 'Ongoing maintenance, iteration, and 24/7 support to keep you moving after launch.' },
 ]

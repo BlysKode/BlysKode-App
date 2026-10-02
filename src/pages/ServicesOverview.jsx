@@ -20,7 +20,7 @@ export default function ServicesOverview() {
         ]}
         eyebrow="Services"
         title="Everything it takes to get a product live."
-        lede="Three core practices we run end to end, plus eight specialisms you can bring us in for on their own. One team, one contract, whichever you need."
+        lede="Three core practices we run end to end, plus nine specialisms you can bring us in for on their own. One team, one contract, whichever you need."
       >
         <div className="flex flex-wrap gap-3">
           <Link to="/contact" className="btn btn-primary">

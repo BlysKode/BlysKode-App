@@ -15,7 +15,7 @@ export default function ServiceDetail() {
   const service = SERVICE_DETAILS[slug]
   if (!service) return <Navigate to="/services" replace />
 
-  const { title, tagline, intro, capabilities, deliverables, tech } = service
+  const { title, tagline, intro, capabilities, deliverables, tech, faqs } = service
   const related = SERVICE_LIST.filter((s) => s.slug !== slug).slice(0, 4)
 
   return (
@@ -117,6 +117,25 @@ export default function ServiceDetail() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        {faqs?.length > 0 && (
+          <section className="section">
+            <div className="shell max-w-[760px]">
+              <h2 data-reveal className="text-[1.8rem] sm:text-[2.1rem]">
+                Frequently asked questions
+              </h2>
+              <div className="mt-8 divide-y divide-line border-y border-line">
+                {faqs.map(([q, a]) => (
+                  <div key={q} data-reveal className="py-6">
+                    <h3 className="text-[1.02rem]">{q}</h3>
+                    <p className="mt-2 text-[0.94rem] leading-relaxed text-body">{a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Related */}
         <section className="section">

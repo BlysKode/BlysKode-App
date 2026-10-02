@@ -3,6 +3,7 @@
 
 import { POSTS, POST_BY_SLUG } from '../data/posts.js'
 import { HIRE_LIST, HIRE_ROLES } from '../data/hire.js'
+import { SERVICE_DETAILS } from '../data/services.js'
 import { FAQS } from '../data/faq.js'
 import { PROJECTS, PROJECT_BY_SLUG } from '../data/portfolio.js'
 import { TEAM } from '../data/team.js'
@@ -75,6 +76,11 @@ const STATIC_PAGES = {
     title: 'Ecommerce Development Services | Blyskode',
     description:
       'Blyskode builds fast, secure online stores on WooCommerce, Shopify, and custom platforms, optimized to convert traffic into sales.',
+  },
+  '/services/digital-marketing': {
+    title: 'Digital Marketing Services: SEO, AEO & Paid | Blyskode',
+    description:
+      'Blyskode runs data-backed digital marketing: SEO, AEO and GEO for AI search, Google and Meta ads, social, email, and LinkedIn lead generation. No long-term contracts.',
   },
   '/about': {
     title: 'About Blyskode | US-Based Software Development Company',
@@ -531,6 +537,7 @@ function pageNodes(path) {
 
       // service detail pages
       const name = PAGES[path].title.replace(' | Blyskode', '')
+      const svc = SERVICE_DETAILS[path.replace('/services/', '')]
       return [
         webPageNode(path, `${canonical}#service`),
         {
@@ -543,6 +550,19 @@ function pageNodes(path) {
           provider: { '@id': `${SITE}/#organization` },
           areaServed: 'Worldwide',
         },
+        ...(svc?.faqs?.length
+          ? [
+              {
+                '@type': 'FAQPage',
+                '@id': `${canonical}#faq`,
+                mainEntity: svc.faqs.map(([q, a]) => ({
+                  '@type': 'Question',
+                  name: q,
+                  acceptedAnswer: { '@type': 'Answer', text: a },
+                })),
+              },
+            ]
+          : []),
         breadcrumb([
           { name: 'Home', path: '/' },
           { name: 'Services', path: '/services' },

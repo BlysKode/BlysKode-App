@@ -1,6 +1,6 @@
 # Blyskode
 
-Last updated: 2026-09-04
+Last updated: 2026-10-02
 
 > Blyskode is a US-based software development company headquartered in Brooklyn, New York, serving clients across the United States, United Kingdom, Europe, Australia, and worldwide. Blyskode helps startups, SaaS companies, and growing enterprises build custom software, AI-powered products, and scalable cloud platforms.
 
@@ -14,7 +14,7 @@ Blyskode delivers across three core practices:
 - **AI & Automation** — AI engineering, LLM integrations, agentic automation workflows, and machine learning.
 - **Cloud & DevOps** — cloud architecture and migration (AWS, Azure, GCP, Huawei Cloud, DigitalOcean, Alibaba Cloud), CI/CD, multi-platform deployment, observability, and cost optimization.
 
-Blyskode also offers end-to-end technical recruitment, SEO and digital marketing, and content writing.
+Blyskode also offers a full digital marketing service: SEO, AEO and GEO (getting cited in AI answers like ChatGPT, Gemini, Perplexity, and Google AI Overviews), performance marketing on Google and Meta, social media management, email marketing with Klaviyo, outbound with Instantly, and LinkedIn lead generation, with transparent pricing and no long-term contracts. Plus end-to-end technical recruitment and content writing.
 
 ## Hire dedicated developers
 
@@ -51,7 +51,9 @@ React, Next.js, Node.js, TypeScript, React Native, Flutter, Python, PostgreSQL, 
 - Product Engineering: https://blyskode.com/services/product-engineering
 - AI & Automation: https://blyskode.com/services/ai-automation
 - Cloud & DevOps: https://blyskode.com/services/cloud-devops
+- Digital Marketing (SEO, AEO, GEO, paid): https://blyskode.com/services/digital-marketing
 - Hire Developers: https://blyskode.com/hire-developers
+- Portfolio & Case Studies: https://blyskode.com/portfolio
 - About: https://blyskode.com/about
 - Blog: https://blyskode.com/blog
 - Contact: https://blyskode.com/contact
